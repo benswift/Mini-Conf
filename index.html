@@ -1,0 +1,527 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <!-- External Javascript libs  -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+      integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+      integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+      integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- External Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cuprum"
+      rel="stylesheet"
+    />
+
+    <title>ACMC 2020</title>
+    
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acma-logo.png"
+             height="auto"
+             width="180px"
+          />
+        </a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="calendar.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- User Overrides -->
+    
+<style>
+  .back {
+    background: url("static/images/main.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h2>
+        ACMC'20: Inclusion
+      </h2>
+      <h2 class="p-5">
+        July 2020
+      </h2>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<p>The <strong>Australasian Computer Music Conference</strong> will take place <strong>July 3--11,
+2020</strong>. ACMC is the annual gathering of the <a href="https://computermusic.org.au">Australasian Computer Music
+Association</a>, a place to show and discuss research
+and artistic progress in computer/electronic music. It's a festival of
+performances, installations, workshops, and tutorials that inspire, challenge,
+and showcase our community.</p>
+<p>This year’s conference theme is <strong>inclusion</strong>. We want to highlight the diverse
+range of people who contribute to Australia’s computer/electronic music culture
+but may not normally attend an academic conference, including artists and
+scholars who are young/emerging, from regional/remote areas, who have a
+disability, who are First Nations People, who have low/no income, who are
+engaged in community music making, or who simply work outside of academia and
+mainstream institutions.</p>
+<p>The conference is hosted by the <a href="https://music.cass.anu.edu.au">ANU School of
+Music</a> and <a href="https://cs.anu.edu.au">Research School of Computer
+Science</a>, <a href="https://cecs.anu.edu.au">College of Engineering and Computer
+Science</a>. Fun fact: ACMC was <a href="http://computermusic.org.au/conferences/acmc2010/">last hosted in
+Canberra</a> in 2010!</p>
+<p>Registration fees are to be confirmed, but we are committed to providing
+low/no-cost access to ACMC for those who find that cost is a barrier for
+participation.</p>
+<p><em>Ben Swift, Charles Martin, Nat Grant, Alexander Hunter, Kit Devine, Sia Ahmad
+(ACMC committee)</em></p>
+<h2>Call</h2>
+<p><strong>Note</strong>: <em>the call for participation is now closed</em>.</p>
+<p>We invite submissions of performances, installations and musical works, papers
+and artist talks, and finally workshops and tutorials.</p>
+<p>Papers, artist talks, and creative works will selected through a single-blind
+peer-review process with at least two reviewers. Workshops and tutorials will be
+selected by the conference organisers.</p>
+<h3>Performances and Music</h3>
+<p>Composers and performers are invited to submit works in any style of
+electroacoustic music including the following categories:</p>
+<ul>
+<li>
+<p>performances/music involving live electronics, including computer processing</p>
+</li>
+<li>
+<p>laptop ensemble works</p>
+</li>
+<li>
+<p>live coding and algorave performances</p>
+</li>
+<li>
+<p>works combining musical instruments or voice with live or fixed media
+  electronics, with up to 8 channels</p>
+</li>
+<li>
+<p>electroacoustic music for fixed media (up to 8 channels)</p>
+</li>
+<li>
+<p>video and multimedia works (up to 8 channels)</p>
+</li>
+</ul>
+<p>This call is open to all composers, regardless of nationality, age or career
+stage. Composers of selected works are generally expected to attend the
+conference.</p>
+<h3>Installations</h3>
+<p>We invite site-specific installation works for locations at the Australian
+National University School of Music, and Research School of Computer Science,
+these will be installed for the duration of the conference. These could be sound
+art works, multimedia works, sonic sculptures or self-playing systems.</p>
+<h3>Research Papers &amp; Artist Talks</h3>
+<p>We invite extended abstracts of up to 1000 words for research papers and artist
+talks. These could relate to musical performances above or any of the topics
+listed below. All extended abstracts will be subject to single-blind review by
+at least two peer reviewers.</p>
+<p>Accepted papers/talks will be presented in either short (10) or long (20
+minutes) seminar format and the extended abstracts will be included in the
+conference proceedings. Full versions of accepted papers will be invited for
+further peer review and publication in Chroma, the journal of the Australasian
+Computer Music Association.</p>
+<h3>Workshops and Tutorials</h3>
+<p>We invite contributed workshops and tutorials to take place on Saturday 11 July
+at the ANU School of Music. Workshops and tutorials could be about the topics
+listed below and we make a particular call for workshops that are inclusive of
+the broad electronic music community.</p>
+<p>Workshops will be included in the conference promotional materials and program.
+Workshops and tutorials will be selected by the conference committee. Venues and
+facilities will include seminar rooms and the music computing lab at the ANU
+School of Music. We are aiming for short workshops (60 minutes) to enable as
+many as possible. We invite you to get in touch to discuss workshop requirements
+before submitting.</p>
+<h3>Topics</h3>
+<ul>
+<li>3D Audio</li>
+<li>Acoustic Ecology</li>
+<li>Acoustics of Music</li>
+<li>Acoustics, Space, and Sound Distribution</li>
+<li>Aesthetics, Theory, History and Philosophy</li>
+<li>Algorithmic Composition</li>
+<li>Analysis of Electroacoustic Music</li>
+<li>AR &amp; VR</li>
+<li>Archiving &amp; Preservation of electroacoustic Music</li>
+<li>Artificial Intelligence and Music</li>
+<li>Computational Musicology</li>
+<li>Composition Systems and Techniques</li>
+<li>Digital Audio Signal Processing and Audio Effects</li>
+<li>Distributed, Telematic, and Mobile Music</li>
+<li>History of Electroacoustic Music</li>
+<li>Improvisation and Technology</li>
+<li>Languages for Computer Music</li>
+<li>Live Coding</li>
+<li>Mathematical Music Theory</li>
+<li>Music Education</li>
+<li>Music Information Retrieval</li>
+<li>New Interfaces for Musical Expression</li>
+<li>Notation and Scores</li>
+<li>Perception and Cognition</li>
+<li>Software and Hardware Systems</li>
+<li>Sonification</li>
+<li>Sound Synthesis</li>
+<li>Studio Reports</li>
+</ul>
+<h2>Code of Conduct</h2>
+<p>This code of conduct is applicable to all events run by the Australasian
+Computer Music Association, including ACMC. All attendees, sponsors, and
+volunteers at our conferences and events are required to agree with this code of
+conduct. Organisers will enforce this code throughout the conference. We expect
+cooperation from all participants to help ensure a safe environment for
+everybody.</p>
+<h3>Short Version</h3>
+<p>The Australasian Computer Music Association is dedicated to a harassment-free
+experience for everyone. We do not tolerate harassment of conference
+participants in any form. Participants violating these rules may be sanctioned
+or expelled from the conference without a refund at the discretion of the
+organisers.</p>
+<h3>Long Version</h3>
+<p>The <a href="https://computermusic.org.au">Australasian Computer Music Association</a> is
+dedicated to a harassment-free experience for everyone. We do not tolerate
+harassment of conference participants in any form. Participants violating these
+rules may be sanctioned or expelled from the conference without a refund at the
+discretion of the organisers.</p>
+<p>Harassment includes offensive verbal comments related to gender, gender identity
+and expression, age, sexual orientation, disability, physical appearance, body
+size, race, ethnicity, religion, technology choices, sexual images in public
+spaces, deliberate intimidation, stalking, following, harassing photography or
+recording, sustained disruption of talks or other events, inappropriate physical
+contact, and unwelcome sexual attention.</p>
+<p>Participants asked to stop any harassing behaviour are expected to comply
+immediately.</p>
+<p>Sponsors are also subject to the anti-harassment policy. In particular, sponsors
+should not use sexualised images, activities, or other material.</p>
+<p>If a participant engages in harassing behaviour, the conference organisers may
+take any action they deem appropriate, including warning the offender or
+expulsion from the conference with no refund.</p>
+<p>If you are being harassed, notice that someone else is being harassed, or have
+any other concerns, please contact a member of conference staff immediately.
+Conference staff can be identified as they’ll be wearing branded badges. If you
+are unable to contact conference staff, you can also contact the <a href="http://computermusic.org.au/committee/">Australian
+Computer Music Association committee
+members</a>.</p>
+<p>Conference staff will be happy to help participants contact hotel/venue security
+or local law enforcement, provide escorts, or otherwise assist those
+experiencing harassment to feel safe for the duration of the conference. We
+value your attendance.</p>
+<p>We expect participants to follow these rules at conference, workshop and concert
+venues and related social events.</p>
+<p><em>This CoC is adapted from the conference CoC provided at
+<a href="https://confcodeofconduct.com">https://confcodeofconduct.com</a>. Licensed under <a href="https://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution
+3.0 Unported (CC BY
+3.0)</a>.</em></p>
+
+<!-- Organizers -->
+<div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Organizers</h2>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Ben Swift</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            General Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Australian National University /
+            <a class="text-muted" href="http://twitter.com/benswift"
+              >@benswift</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Nat Grant</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Inclusion Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Nat Grant Music
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Charles Martin</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Paper and Artist Talk Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Australian National University /
+            <a class="text-muted" href="http://twitter.com/cpmpercussion"
+              >@cpmpercussion</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Kit Devine</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Installation &amp; Visuals Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Australian National University
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Alexander Hunter</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Music and Performance Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Australian National University
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <h5 class="card-title" align="center">Sia Ahmad</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Venues Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Australian National University
+          </h6>
+        </div>
+        <center>
+          <img src="" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+      </div>
+    </div>
+
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 ACMC Organising Committee</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

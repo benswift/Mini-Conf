@@ -1,0 +1,405 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <!-- External Javascript libs  -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+      integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+      integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"
+      integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- External Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cuprum"
+      rel="stylesheet"
+    />
+
+    <title>ACMC 2020: Schedule</title>
+    
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"
+  integrity="sha256-iFbWWsVYU6rIgbq5wJc4mp8zvV3SkqupxgH/7a9PanY="
+  crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data-10-year-range.min.js"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.min.css"
+/>
+
+<script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+<script src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
+<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.10/dist/css/bootstrap-select.min.css"
+/>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.10/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+<script src="static/js/lazy_load.js"></script>
+<script src="static/js/little_helpers.js"></script>
+<script type="text/javascript" src="static/js/calendar.js"></script>
+
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acma-logo.png"
+             height="auto"
+             width="180px"
+          />
+        </a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="calendar.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        
+<ul class="nav nav-pills justify-content-center">
+  
+  <li class="nav-item">
+    <a
+      class="nav-link active text-muted "
+      data-toggle="tab"
+      href="#tab-calendar"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Calendar
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link  text-muted "
+      data-toggle="tab"
+      href="#tab-day"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Example Day
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+  <!-- Calender tab -->
+  <div
+    class="tab-pane active"
+    id="tab-calendar"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div class="form-group col">
+      <label for="tzOptions">Timezone:</label>
+      <select id="tzOptions" class="selectpicker" data-live-search="true">
+      </select>
+    </div>
+
+    <!-- full cal for browser-->
+    <div id="calendar" class="d-none d-sm-block"></div>
+
+    <!-- small cal for smart phones-->
+    <div id="calendar_small" class="d-sm-none"></div>
+
+    <script type="text/javascript">
+      make_cal("serve_main_calendar.json");
+    </script>
+  </div>
+
+  <!-- Day Tab -->
+
+  <div
+    class="tab-pane fade"
+    id="tab-day"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="day">
+      <!-- Speakers -->
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Speakers</h2>
+  </div>
+</div>
+      <div class="speakers">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_bridget-chappell.html" class="main-title">
+                  TBC
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Bridget Chappell  /  Melbourne Sound School
+              </span>
+            </div>
+            <div class="m-3">
+              None
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="" width="100%" class="img-thumbnail" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h3>
+                <a href="speaker_eve-klein.html" class="main-title">
+                  TBC
+                </a>
+              </h3>
+            </div>
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Eve Klein  /  University of Queensland
+              </span>
+            </div>
+            <div class="m-3">
+              None
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Highlighted Papers</h2>
+  </div>
+</div>
+      <div class="papers">
+        <div class="row my-auto mx-auto">
+  <div
+    id="carouselExample1"
+    class="carousel slide d-none d-md-block"
+    data-interval="false"
+  >
+    <div class="carousel-inner cards" role="listbox">
+      
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExample1"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExample1"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 ACMC Organising Committee</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>
