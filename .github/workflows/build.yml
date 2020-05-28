@@ -23,6 +23,7 @@ jobs:
       run: |-
           poetry version
           poetry show
+          poetry check
           poetry run make freeze
 
     - name: deploy 🚀
