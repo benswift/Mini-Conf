@@ -11,17 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: install deps
+    - name: install deps 🔨
       uses: abatilo/actions-poetry@v1.5.0
       with:
         python_version: 3.7.7
         poetry_version: 1.0.5
         working_directory: .
         args: install
-    - name: freeze
+    - name: freeze ❄
       uses: abatilo/actions-poetry@v1.5.0
       with:
         python_version: 3.7.7
         poetry_version: 1.0.5
         working_directory: .
         args: run make freeze
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
