@@ -10,24 +10,19 @@ jobs:
   freeze-site:
     name: Create static site with Frozen-Flask
     runs-on: ubuntu-latest
+    # built from the Dockerfile in this repo
+    container: benswift/acmc:0.1.0
+
     steps:
     - uses: actions/checkout@v2
-    - name: install deps 🔨
-      uses: abatilo/actions-poetry@v1.5.0
-      with:
-        python_version: 3.7.7
-        poetry_version: 1.0.5
-        working_directory: .
-        args: install
+
     - name: freeze ❄
-      uses: abatilo/actions-poetry@v1.5.0
-      with:
-        python_version: 3.7.7
-        poetry_version: 1.0.5
-        working_directory: .
-        args: run make freeze
+      run: poetry run make freeze
+      working-directory: /app
+
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
+      working-directory: /app
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
