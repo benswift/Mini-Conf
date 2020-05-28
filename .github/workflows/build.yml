@@ -1,5 +1,4 @@
 name: build & deploy
-description: build and deploy the static site to GH pages
 
 on:
   push:
