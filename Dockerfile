@@ -47,5 +47,6 @@ COPY . /app
 WORKDIR /app
 RUN poetry install
 
-CMD ["poetry run"]
+# by default, run the freeze command to build the static site
+CMD ["poetry run make freeze"]
 
