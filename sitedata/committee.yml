@@ -1,11 +1,25 @@
 committee:
-  - role: Developer 
-    name: Alexander Rush
-    aff: Cornell Tech, Hugging Face
-    im: https://avatars0.githubusercontent.com/u/35882?s=400&u=8f382f638b31f13a4754656140256241121c5916&v=4
-    tw: srush_nlp
-  - role: Developer
-    name: Hendrik Strobelt
-    aff: MIT-IBM Watson AI Lab
-    tw: hen_str
-    im: https://pbs.twimg.com/profile_images/885611190126292992/LF4CTcu_.jpg
+  - role: General Chair
+    name: Ben Swift
+    aff: Australian National University
+    tw: benswift
+  - role: Inclusion Chair
+    name: Nat Grant
+    aff: Nat Grant Music
+    tw:
+  - role: Paper and Artist Talk Chair
+    name: Charles Martin
+    aff: Australian National University
+    tw: cpmpercussion
+  - role: Installation & Visuals Chair
+    name: Kit Devine
+    aff: Australian National University
+    tw:
+  - role: Music and Performance Chair
+    name: Alexander Hunter
+    aff: Australian National University
+    tw:
+  - role: Local Venues Chair
+    name: Sia Ahmad
+    aff: Australian National University
+    tw:
