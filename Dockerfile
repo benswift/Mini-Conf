@@ -45,7 +45,7 @@ RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poet
 
 COPY . /app
 WORKDIR /app
-RUN poetry install
+RUN poetry install --no-dev
 
 # by default, run the freeze command to build the static site
 CMD ["poetry run make freeze"]
