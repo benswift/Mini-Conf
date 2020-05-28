@@ -19,14 +19,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: install deps 🔨
+      run: poetry install --no-dev
+
     - name: freeze ❄
-      run: |-
-          poetry version
-          poetry show
-          poetry check
-          poetry env info
-          poetry install
-          poetry run make freeze
+      run: poetry run make freeze
 
     - name: deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
