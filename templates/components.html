@@ -87,13 +87,16 @@
           </h6>
         </div>
 		{% endif %}
-        {% if org.tw %}
         <div>
           <h6 class="card-subtitle text-muted m-1" align="center">
-            <a class="text-muted" href="http://twitter.com/{{org.tw}}">@{{org.tw}}</a >
+			{% if org.web %}
+              <a class="text-muted" href="{{org.web}}">{{org.web}}</a>
+			{% endif %}
+			{% if org.tw %}
+              / <a class="text-muted" href="http://twitter.com/{{org.tw}}">@{{org.tw}}</a >
+			{% endif %}
           </h6>
         </div>
-		{% endif %}
         <center>
           <img src="{{org.im}}" class="rounded" style="height: 150px;" />
         </center>
