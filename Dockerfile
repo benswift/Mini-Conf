@@ -29,7 +29,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # from https://github.com/playpauseandstop/docker-python/blob/master/Dockerfile
-FROM python:3.8.3-slim-buster
+FROM python:3.7.7-slim-buster
 
 RUN apt update -qq \
 	&& apt upgrade -y \
