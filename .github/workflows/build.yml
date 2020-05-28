@@ -17,17 +17,20 @@ jobs:
         working-directory: /app
 
     steps:
-    - uses: actions/checkout@v2
+      - name: checkout 🛎
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-    - name: install deps 🔨
-      run: poetry install --no-dev
+      - name: install deps 🔨
+        run: poetry install --no-dev
 
-    - name: freeze ❄
-      run: poetry run make freeze
+      - name: freeze ❄
+        run: poetry run make freeze
 
-    - name: deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
+      - name: deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
