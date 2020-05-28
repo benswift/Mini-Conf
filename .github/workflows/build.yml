@@ -20,7 +20,7 @@ jobs:
       run: poetry run make freeze
       working-directory: /app
 
-    - name: Deploy 🚀
+    - name: deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       working-directory: /app
       with:
