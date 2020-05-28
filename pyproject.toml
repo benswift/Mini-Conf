@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "acmc2020-miniconf"
+version = "0.1.0"
+description = "A conference website for the 2020 Australasian Computer Music Conference"
+authors = ["Ben Swift <ben.swift@anu.edu.au>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+flask = "^1.1.2"
+frozen-flask = "^0.15"
+Flask-Markdown = "^0.3"
+tqdm = "^4.46.0"
+PyYAML = "^5.3.1"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+pylint = "^2.5.2"
+mypy = "^0.770"
+transformers = "^2.10.0"
+sklearn = "^0.0"
+torch = "^1.5.0"
+ics = "^0.7"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
