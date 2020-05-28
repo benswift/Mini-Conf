@@ -1,0 +1,23 @@
+name: Build
+on: push
+
+jobs:
+  freeze-site:
+    name: Create static site with Frozen-Flask
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install deps
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.7.7
+        poetry_version: 1.0.5
+        working_directory: .
+        args: install
+    - name: freeze
+      uses: abatilo/actions-poetry@v1.5.0
+      with:
+        python_version: 3.7.7
+        poetry_version: 1.0.5
+        working_directory: .
+        args: run make freeze
