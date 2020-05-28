@@ -12,12 +12,14 @@ jobs:
     # built from the Dockerfile in this repo
     container: benswift/acmc:0.1.0
 
+    defaults:
+      working-directory: /app
+
     steps:
     - uses: actions/checkout@v2
 
     - name: freeze ❄
       run: poetry run make freeze
-      working-directory: /app
 
     - name: deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
