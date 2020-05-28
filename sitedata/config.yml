@@ -4,11 +4,11 @@ date: July 2020
 proceedings_title: "ACMC 2020: Proceedings of the 2020 Australasian Computer Music Conference"
 analytics: UA-
 logo:
-  image: static/images/MiniConf.png
+  image: static/images/acma-logo.png
   width: 180px
   height: auto
 # uncomment the following line to show the site title next to the logo image
-site_title: ACMC'20
+# site_title: ACMC'20
 page_title:
   prefix: "ACMC 2020"
   separator: ': '
