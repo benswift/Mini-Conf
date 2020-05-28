@@ -24,6 +24,8 @@ jobs:
           poetry version
           poetry show
           poetry check
+          poetry env info
+          poetry install
           poetry run make freeze
 
     - name: deploy 🚀
