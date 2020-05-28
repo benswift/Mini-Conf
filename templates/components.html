@@ -80,15 +80,20 @@
             {{org.role}}
           </h6>
         </div>
+        {% if org.aff %}
         <div>
           <h6 class="card-subtitle text-muted m-1" align="center">
-            {% if org.aff %}{{org.aff}}{% endif %}
-			{% if org.tw %} /
-            <a class="text-muted" href="http://twitter.com/{{org.tw}}"
-              >@{{org.tw}}</a
-            >{% endif %}
+			{{org.aff}}
           </h6>
         </div>
+		{% endif %}
+        {% if org.tw %}
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            <a class="text-muted" href="http://twitter.com/{{org.tw}}">@{{org.tw}}</a >
+          </h6>
+        </div>
+		{% endif %}
         <center>
           <img src="{{org.im}}" class="rounded" style="height: 150px;" />
         </center>
