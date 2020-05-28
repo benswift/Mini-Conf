@@ -1,7 +1,6 @@
 
-The **Australasian Computer Music Conference** will take place ~~at the
-**Australian National University, Canberra**~~ online, from **July 8-11, 2020**.
-ACMC is the annual gathering of the [Australasian Computer Music
+The **Australasian Computer Music Conference** will take place **July 3--11,
+2020**. ACMC is the annual gathering of the [Australasian Computer Music
 Association](https://computermusic.org.au), a place to show and discuss research
 and artistic progress in computer/electronic music. It's a festival of
 performances, installations, workshops, and tutorials that inspire, challenge,
@@ -25,12 +24,12 @@ Registration fees are to be confirmed, but we are committed to providing
 low/no-cost access to ACMC for those who find that cost is a barrier for
 participation.
 
-Looking forward to your submissions!
-
 _Ben Swift, Charles Martin, Nat Grant, Alexander Hunter, Kit Devine, Sia Ahmad
 (ACMC committee)_
 
 ## Call
+
+**Note**: _the call for participation is now closed_.
 
 We invite submissions of performances, installations and musical works, papers
 and artist talks, and finally workshops and tutorials.
@@ -68,11 +67,6 @@ National University School of Music, and Research School of Computer Science,
 these will be installed for the duration of the conference. These could be sound
 art works, multimedia works, sonic sculptures or self-playing systems.
 
-<!-- Our current installation locations are: -->
-
-<!-- - Listening Space --> <!-- - Llewellyn Hall Stairwell --> <!-- - Hanna
-Neumann Building Foyer -->
-
 ### Research Papers & Artist Talks
 
 We invite extended abstracts of up to 1000 words for research papers and artist
@@ -100,7 +94,7 @@ School of Music. We are aiming for short workshops (60 minutes) to enable as
 many as possible. We invite you to get in touch to discuss workshop requirements
 before submitting.
 
-## Topics
+### Topics
 
 - 3D Audio
 - Acoustic Ecology
@@ -150,11 +144,11 @@ organisers.
 
 ### Long Version
 
-The Australasian Computer Music Association is dedicated to a harassment-free
-experience for everyone. We do not tolerate harassment of conference
-participants in any form. Participants violating these rules may be sanctioned
-or expelled from the conference without a refund at the discretion of the
-organisers.
+The [Australasian Computer Music Association](https://computermusic.org.au) is
+dedicated to a harassment-free experience for everyone. We do not tolerate
+harassment of conference participants in any form. Participants violating these
+rules may be sanctioned or expelled from the conference without a refund at the
+discretion of the organisers.
 
 Harassment includes offensive verbal comments related to gender, gender identity
 and expression, age, sexual orientation, disability, physical appearance, body
@@ -188,7 +182,7 @@ value your attendance.
 We expect participants to follow these rules at conference, workshop and concert
 venues and related social events.
 
-(Adapted from the conference code of conduct provided at:
-[https://confcodeofconduct.com](https://confcodeofconduct.com)). Licensed under
-[Creative Commons Attribution 3.0 Unported (CC BY
-3.0)](https://creativecommons.org/licenses/by/3.0/deed.en_US).
+_This CoC is adapted from the conference CoC provided at
+<https://confcodeofconduct.com>. Licensed under [Creative Commons Attribution
+3.0 Unported (CC BY
+3.0)](https://creativecommons.org/licenses/by/3.0/deed.en_US)._
