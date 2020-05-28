@@ -10,7 +10,7 @@ jobs:
     name: Create static site with Frozen-Flask
     runs-on: ubuntu-latest
     # built from the Dockerfile in this repo
-    container: benswift/acmc:0.2.0
+    container: benswift/acmc:0.3.0
 
     defaults:
       run:
