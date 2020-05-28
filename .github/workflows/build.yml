@@ -13,7 +13,8 @@ jobs:
     container: benswift/acmc:0.1.0
 
     defaults:
-      working-directory: /app
+      run:
+        working-directory: /app
 
     steps:
     - uses: actions/checkout@v2
@@ -23,7 +24,6 @@ jobs:
 
     - name: deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
-      working-directory: /app
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
