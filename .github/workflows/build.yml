@@ -12,10 +12,6 @@ jobs:
     # built from the Dockerfile in this repo
     container: benswift/acmc:0.3.0
 
-    defaults:
-      run:
-        working-directory: /app
-
     steps:
       - name: checkout 🛎
         uses: actions/checkout@v2
