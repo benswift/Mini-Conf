@@ -43,10 +43,6 @@ RUN pip install pip==20.1.1 pre-commit==2.4.0 tox==3.15.1 virtualenv==20.0.21
 ENV POETRY_VERSION=1.0.5
 RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
-COPY . /app
-WORKDIR /app
-RUN poetry install --no-dev && poetry run python --version # run something just to set up the venv
-
 # by default, run the freeze command to build the static site
-CMD ["poetry run make freeze"]
+CMD ["poetry install"]
 
