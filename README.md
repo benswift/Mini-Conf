@@ -1,5 +1,5 @@
 
-The **Australasian Computer Music Conference** will take place **July 3--11,
+The **Australasian Computer Music Conference** will take place **July 3–11,
 2020**. ACMC is the annual gathering of the [Australasian Computer Music
 Association](https://computermusic.org.au), a place to show and discuss research
 and artistic progress in computer/electronic music. It's a festival of
