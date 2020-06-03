@@ -81,11 +81,11 @@ UID,title,institution,speaker,abstract,bio,session
 
 <hr>
 
-### workshops [.csv | .json | .yml]
-The list of workshops or socials.
+### sounds [.csv | .json | .yml]
+The list of sounds or socials.
 
 - UID: `<Unique ID>`
-- title: `<workshop title>`
+- title: `<sound title>`
 - authors: `<organizer names>`
 - abstract: `<abstract text>`
 - [TBD] url: `<external link>`
