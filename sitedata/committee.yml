@@ -18,9 +18,10 @@ committee:
   - role: Paper and Artist Talk Chair
     name: Charles Martin
     aff: Australian National University
-    web: http://charlesmartin.com.au
+    web: https://charlesmartin.com.au
     tw: cpmpercussion
     pronouns: he/him
+    im: static/images/people/charles-martin.jpg
 
   - role: Installation & Visuals Chair
     name: Kit Devine
@@ -33,6 +34,7 @@ committee:
     aff: Australian National University
     web: https://www.alexanderhunter.com.au
     pronouns: he/him
+    im: static/images/people/alexander-hunter.jpg
 
   - role: Local Venues Chair
     name: Sia Ahmad
