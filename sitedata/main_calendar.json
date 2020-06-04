@@ -6,7 +6,7 @@
     "location": "",
     "link": "",
     "category": "keynote",
-    "calendarId": "keynote-bridget"
+    "calendarId": "---"
   },
   {
     "title": "Keynote 2: Eve Klein",
@@ -15,7 +15,7 @@
     "location": "",
     "link": "",
     "category": "keynote",
-    "calendarId": "keynote-bridget"
+    "calendarId": "---"
   },
   {
     "title": "Friday night concert stream 1",
@@ -24,7 +24,7 @@
     "location": "",
     "link": "",
     "category": "performance",
-    "calendarId": ""
+    "calendarId": "---"
   },
   {
     "title": "Friday night concert stream 2",
@@ -33,7 +33,7 @@
     "location": "",
     "link": "",
     "category": "performance",
-    "calendarId": ""
+    "calendarId": "---"
   },
   {
     "title": "Monday paper session",
@@ -42,7 +42,7 @@
     "location": "",
     "link": "",
     "category": "papers",
-    "calendarId": "monday-papers"
+    "calendarId": "---"
   },
   {
     "title": "Tuesday paper session",
@@ -51,7 +51,7 @@
     "location": "",
     "link": "",
     "category": "papers",
-    "calendarId": "tuesday-papers"
+    "calendarId": "---"
   },
   {
     "title": "Wednesday paper session",
@@ -60,7 +60,7 @@
     "location": "",
     "link": "",
     "category": "papers",
-    "calendarId": "wednesday-papers"
+    "calendarId": "---"
   },
   {
     "title": "Thursday paper session",
@@ -69,7 +69,7 @@
     "location": "",
     "link": "",
     "category": "papers",
-    "calendarId": "thursday-papers"
+    "calendarId": "---"
   },
   {
     "title": "Friday paper session",
@@ -78,7 +78,7 @@
     "location": "",
     "link": "",
     "category": "papers",
-    "calendarId": "friday-papers"
+    "calendarId": "---"
   },
   {
     "title": "Monday performances",
@@ -87,7 +87,7 @@
     "location": "",
     "link": "",
     "category": "performances",
-    "calendarId": "monday-performances"
+    "calendarId": "---"
   },
   {
     "title": "Tuesday performances",
@@ -96,7 +96,7 @@
     "location": "",
     "link": "",
     "category": "performances",
-    "calendarId": "tuesday-performances"
+    "calendarId": "---"
   },
   {
     "title": "Wednesday performances",
@@ -105,7 +105,7 @@
     "location": "",
     "link": "",
     "category": "performances",
-    "calendarId": "wednesday-performances"
+    "calendarId": "---"
   },
   {
     "title": "ACMC Live!",
@@ -114,7 +114,7 @@
     "location": "",
     "link": "",
     "category": "performances",
-    "calendarId": "acmc-live"
+    "calendarId": "---"
   },
   {
     "title": "Friday performances",
@@ -123,6 +123,6 @@
     "location": "",
     "link": "",
     "category": "performances",
-    "calendarId": "friday-performances"
+    "calendarId": "---"
   }
 ]
