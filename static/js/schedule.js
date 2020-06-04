@@ -15,7 +15,7 @@ function updateTable() {
     const day_parse = d3.utcParse('%Y-%m-%e');
 
     //TODO: replace
-    const today = day_parse('2020-04-28');
+    const today = day_parse('2020-07-03');
 
     const days = d3.select('.main-table')
       .selectAll('.day').data(sc.conference)
