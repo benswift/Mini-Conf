@@ -52,14 +52,20 @@ function make_cal(name) {
             // console.log(min_date, "--- min_date");
             const Calendar = tui.Calendar;
             const calendar = new Calendar('#calendar', {
-                defaultView: 'week',
+                defaultView: 'month',
                 isReadOnly: true,
                 // useDetailPopup: true,
                 taskView: false,
                 scheduleView: ['time'],
                 usageStatistics: false,
                 week: {
-                    workweek: !config.calendar["sunday_saturday"]
+                  workweek: !config.calendar["sunday_saturday"],
+                  startDayOfWeek: 5,
+                  hourStart: 10
+                },
+                month: {
+                  workweek: !config.calendar["sunday_saturday"],
+                  visibleWeeksCount: 2
                 },
                 timezones: [{
                     timezoneOffset: -moment.tz.zone(timezoneName)
