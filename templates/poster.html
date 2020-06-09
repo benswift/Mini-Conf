@@ -65,6 +65,9 @@
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
         {{paper.content.abstract}}
+
+        <span class="font-weight-bold">Bio:</span>
+        {{paper.content.bio}}
       </div>
     </div>
     <p></p>
@@ -74,8 +77,16 @@
 <!-- Presentation Embed -->
 {{ components.section("Paper") }}
 
-<h5 style="color: red;">
-  Add content for posters. This could be a video, embedded pdf, chat room ....
-</h5>
+<img src="static/paper-images/{{paper.id}}.jpg">
+
+<span class="font-weight-bold">Abstract:</span>
+
+{{paper.content.abstract | markdown}}
+        
+<span class="font-weight-bold">Bio:</span>
+
+{{paper.content.bio | markdown}}
+
+<!-- add more stuff here... other links etc. -->
 
 {% endblock %}
