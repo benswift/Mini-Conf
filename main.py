@@ -128,6 +128,7 @@ def format_paper(v):
             "authors": v["authors"].split("|"),
             "keywords": v["keywords"].split("|"),
             "abstract": v["abstract"],
+            "bio": v["bio"],
             "TLDR": v["abstract"],
             "recs": [],
             "session": v.get("session", "").split("|"),
