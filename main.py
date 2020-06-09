@@ -75,6 +75,17 @@ def about():
     data["FAQ"] = site_data["faq"]["FAQ"]
     return render_template("about.html", **data)
 
+@app.route("/policies.html")
+def policies():
+    data = _data()
+    data["codeofconduct"] = open("codeofconduct.md").read()
+    return render_template("policies.html", **data)
+
+@app.route("/submissions.html")
+def submissions():
+    data = _data()
+    data["callforcontributions"] = open("callforcontributions.md").read()
+    return render_template("submissions.html", **data)
 
 @app.route("/papers.html")
 def papers():
