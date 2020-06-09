@@ -3,3 +3,84 @@ FAQ:
     QA:
       - Question: How can I register for the conference?
         Answer: "We'll have registration information up on this site asap: stay tuned."
+
+  - Section: Submissions
+    QA:
+      - Question: How do I submit my final abstract/performance?
+        Answer: |
+          Here is the information for delivering your presentations and performance materials.
+          
+          Final materials are due on 22/6/2020, although sending them through earlier would be great if possible.
+          
+          Each submission will require:
+          
+          - video of your presentation/performance or a sound file (link to dropbox or other file-sharing system)
+          - edited abstract or program note
+          - updated title as you want it to appear
+          - updated author(s) name(s) as you want it to appear
+          - a representative image for your paper or work (if available, also supplied through file sharing link)
+          - streaming link to SoundCloud/Bandcamp/Youtube/Vimeo for your work or presentation (if available)
+          - a link to your personal website, music website, or a public social media profile
+          
+          You can provide this information in the following form: <https://forms.gle/Vd6BHM9HCk3RMF9Y7>
+          
+          Please address any question to our EasyChair email address: [acmc2020@easychair.org](mailto:acmc2020@easychair.org) and one of the committee members will respond.
+          
+      - Question: What format should my video file be?
+        Answer: |
+          We will transcode videos before streaming to our output resolution but you can provide videos in the following format to help us out: 
+          
+          - 1920x1080 resolution @ 30FPS
+          - H.264 codec
+          - MP4 container
+          - Only 2 audio channels will be supported
+      
+      - Question: What format should my audio file be?
+        Answer: |
+          We require a stereo uncompressed audio file in WAV format.
+          
+      - Question: What format should my abstract or program notes be?
+          
+          Only plain text or [markdown](https://en.wikipedia.org/wiki/Markdown) format is supported.
+          
+          Please revise your abstract/program note to how you would like it to appear on the website and limit it to a maximum of 1000 words (shorter is also fine).
+
+      - Question: What format should my representative image be?      
+        Answer: |
+          Please provide a JPEG image with a maximum width of 2000 pixels.
+
+      - Question: How are papers and artist talks going to be presented?
+        Answer: |
+          All papers will be presented as pre-recorded videos (10 minutes). 
+
+          We will produce live-streamed presentation with each video  including time for questions over video or chat and a potential panel call to discuss the papers.
+ 
+          Your abstract will appear on the conference website.
+ 
+          We will archive your paper presentations on YouTube for one month after the conference. If you would like to keep it online, please upload on your own account and send the link to us.
+
+          We encourage you to archive your presentation on your own Youtube (or other) channel, and we will will link to it in our program.
+
+      - Question: How are performances / music going to be presented?
+        Answer: |
+          We have three options for artistic works:
+
+          - Presenting a 2-channel sound file to be available to stream on the conference website. This could be most appropriate for acousmatic and pre-rendered works 
+        
+          - Presenting a pre-recorded 2-channel + visuals video as part of a live-streamed concert that we will produce. This would be most appropriate for works with visual components or involving live performance.
+          
+          - Live streaming a performance from your location into our concert. This will be offered by invitation only and we will require a pre-recorded version as a backup.
+          
+          For all options, your edited program notes will be included as a blog post in the conference website.
+          
+          If you already have a pre-rendered version of your work (either audio or audio+visual), you are very welcome to simply contribute that to our pre-recorded program.
+          
+          Performances will be archived online on YouTube or SoundCloud for one month after the conference and removed after that. If you would like to keep it online, please upload on your own account and send the link to us.
+      - Question: How long will you archive the audio and video of submissions?
+        Answer: |
+          We will provide an archive of audio (on Soundcloud) and video (on Youtube) for a month following the conference. After that time they will be removed.
+
+          If you have your audio/video on your own account (on any streaming platform) we are happy to link to it from your submission page.
+
+      - Question: I need to get in touch with the conference organisers, how should I do that?
+        Answer: "The best way to get in touch with us is via email to acmc2020@easychair.org"
