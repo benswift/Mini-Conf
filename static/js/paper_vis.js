@@ -247,7 +247,6 @@ const tooltip_template = (d) => `
     <div>
         <div class="tt-title">${d.content.title}</div>
         <p>${d.content.authors.join(', ')}</p>
-        <img src="/static/paper-images/${d.id}.png" width=100%/>
      </div>   
 `
 
