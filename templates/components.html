@@ -39,27 +39,21 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <div class="row">
-          <div class="col-md-2 col-sm-5">
-            <img src="{{speaker.im}}" width="100%" class="img-thumbnail" />
-          </div>
-          <div class="col-md-10 col-sm-6">
-            <div class="m-3 text-muted">
-              <h3>
-                <a href="speaker_{{speaker.UID}}.html" class="main-title">
-                  {{speaker.speaker}}
-                </a>
-              </h3>
-            </div>
-            <div class="m-3 text-muted">
-              <span class="card-title h3">
-                {{speaker.institution}}
-              </span>
-            </div>
-            <div class="m-3">
-              {{speaker.abstract | markdown}}
-            </div>
-          </div>
+        <img src="{{speaker.im}}" width="100%" class="img-thumbnail" />
+        <div class="m-3 text-muted">
+          <h3>
+            <a href="speaker_{{speaker.UID}}.html" class="main-title">
+              {{speaker.speaker}}
+            </a>
+          </h3>
+        </div>
+        <div class="m-3 text-muted">
+          <span class="card-title h3">
+            {{speaker.institution}}
+          </span>
+        </div>
+        <div class="m-3">
+          {{speaker.abstract | markdown}}
         </div>
       </div>
     </div>
