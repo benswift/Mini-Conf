@@ -13,6 +13,7 @@ page_title:
   prefix: "ACMC 2020"
   separator: ': '
 background_image: static/images/main.jpg
+header_banner: static/images/header-banner-1920.jpg
 organization: ACMC Organising Committee
 calendar:
   colors: #  Colors for the different event hashtags:

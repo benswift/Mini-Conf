@@ -1,4 +1,4 @@
-{% set page_title = speaker.title %}
+{% set page_title = speaker.speaker %}
 {% extends "base.html" %}
 {% block content %}
 
@@ -6,31 +6,37 @@
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
-      {{speaker.title}}
+      {{speaker.speaker}}
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      {{speaker.speaker}} / {{speaker.institution}}
+       {{speaker.institution}}
     </h3>
-    <div class="text-center p-3">
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+    <!-- <div class="text-center p-3"> -->
+      <!-- <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Abstract & Bio
-      </a>
-    </div>
+      </a> -->
+    <!-- </div> -->
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <h4>Abstract</h4>
+<!-- <div id="details" class="pp-card m-3 collapse"> -->
+  <!-- <div class="card-body"> -->
+    <!-- <div class="card-text"> -->
+      <!-- <div id="abstractExample"> -->
+<!--         <h4>Abstract</h4>
         {{speaker.abstract|safe}} <br /><br />
-
         <h4>Bio</h4>
-        {{speaker.bio|safe}}
-      </div>
-    </div>
-    <p></p>
-  </div>
+        {{speaker.bio|safe}} -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!-- <p></p> -->
+  <!-- </div> -->
+<!-- </div> -->
+
+<div>
+  <center><img src="{{speaker.im}}" width="80%" /></center>
+
+  <h4>Bio</h4>
+  {{speaker.bio|markdown}}
 </div>
 
 <!-- Presentation Embed -->
