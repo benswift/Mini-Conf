@@ -1,0 +1,47 @@
+{% set active_page = "Access" %}
+{% set page_title = "Access" %}
+{% extends "base.html" %}
+
+{% block top %}
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+    /*padding: 2rem;*/
+  }
+  .back h2 {
+    background: rgba(255,255,255,0.9);
+    font-size: 77px;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    color: #333;
+  }
+  .back h1 {
+    background: rgba(255,255,255,0.9);
+    font-size: 130px;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    color: #333;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px; padding-top: 20px">
+  <div class="row header p-6 m-3">
+    <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h2>
+        Access
+      </h2>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{{ access | markdown }}
+
+{% endblock %}

@@ -60,7 +60,6 @@ def index():
 
 # TOP LEVEL PAGES
 
-
 @app.route("/index.html")
 def home():
     data = _data()
@@ -68,7 +67,6 @@ def home():
     data["committee"] = site_data["committee"]["committee"]
     data["speakers"] = site_data["speakers"]
     return render_template("index.html", **data)
-
 
 @app.route("/about.html")
 def about():
@@ -87,6 +85,12 @@ def submissions():
     data = _data()
     data["callforcontributions"] = open("callforcontributions.md").read()
     return render_template("submissions.html", **data)
+
+@app.route("/access.html")
+def access():
+    data = _data()
+    data["access"] = open("access.md").read()
+    return render_template("access.html", **data)
 
 @app.route("/papers.html")
 def papers():
