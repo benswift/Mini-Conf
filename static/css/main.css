@@ -1,9 +1,9 @@
 body a {
-  color: #2294e0;
+  color: #5084a6;
 }
 
 body a:hover {
-  color: #2294e0;
+  color: #5084a6;
   text-decoration: none;
 }
 
@@ -125,7 +125,7 @@ h3.card-subtitle.text-muted {
 
 .main-title {
   font-weight: 700;
-  color: #2294e0;
+  color: #5084a6;
 }
 
 .myAccordion {
