@@ -1,0 +1,75 @@
+UID,title,authors,abstract,bio,keywords,session-name,session-position,soundcloud,youtube,vimeo
+1,Subespai - Performance submission,Mauri Edo,TBA,,music,TBA,TBA,,,
+2,Corrupted Vinyl,Adam Melzer,TBA,,music,TBA,TBA,,,
+4,Totem,Steven Harran,TBA,,music,TBA,TBA,,,
+5,Illuminations I,Matthew Barnard,TBA,,music,TBA,TBA,,,
+7,No-Input Mixing Board Workshop,Reuben Ingall,TBA,,workshop,TBA,TBA,,,
+8,Compute and Resonate. Creating electro acoustic music of the acid genre for presentation within a club environment utilizing accessible Artificial Intelligence and computer based generative tools.,Dylan Davis,TBA,,paper,TBA,TBA,,,
+9,"Vari-Gen: A Generative System for Creating Musical Variations Using Max, Bach, and Cage in Real-Time",David Hirst,"This talk will demonstrate a new system for generating variations on segments of music that have been previously recorded or composed and saved as MIDI files.
+
+The system builds on work presented at the ACMC 2018 Perth conference which was documented in the paper Hacking Music Notation with Bach and Cage (Hirst, 2018). That paper documented the “Composer’s Little Helper” (CLH) which is a Max patcher that makes use of the “Bach” and “Cage” libraries to manipulate and mix musical notation that has been saved in a “shelf” as separate segments. CLH implements musical operations such as transposition, inversion, retrograde, plus a number of other “treatments” that use the high-level “Cage” library for real-time computer-aided composition.
+
+The Composer’s Little Helper was a non-realtime system to assist in the compositional process. In contrast, Vari-Gen is like the next generation development where a generative system is used to produce note information in realtime. Reading from a MIDI file, variations in pitch, onset time, durations and note velocity are produced and can be varied in realtime using a Markov methodology for each parameter independently.
+
+Using the “bach.roll” representation of the original MIDI file, which is a musical staff with note-heads notated in proportional notation, the composer/performer can select a specific number of notes for treatment, vary the transposition, durations, onset times, velocities, and the order of the Markov chain for each parameter of the variation generator.
+
+Realtime output triggers sound using a VST instrument plugin, which can be varied to suit the musical style. The note output is recorded in another bach.roll object, which can be saved as a MIDI file at any time.
+
+In essence, the system functions as an exotic sequencer/variation generator, and because it all happens in realtime, it could also function as a performance instrument.
+
+The two part work Pierre and Frank was created using a combination of the Vari-Gen software and non-realtime editing (to be screened at ACMC 2020).","David Hirst’s electroacoustic music compositions have been performed in the United States, Canada, the UK, the Netherlands, New Zealand, South Korea and nationally across Australia. He studied computer music at La Trobe University, composition with Jonty Harrison at the University of Birmingham, and completed a PhD in electroacoustic music composition and analysis at the University of Melbourne. Hirst has worked as an academic at the Tasmanian Conservatorium of Music, La Trobe University, and at the University of Melbourne. He is currently Honorary Principal Fellow at the Melbourne Conservatorium of Music, University of Melbourne. His most recent album, “The Shape of Water” is available on iTunes and Spotify.",paper,TBA,TBA,,,
+10,Pierre and Frank (Parts 1&2),David Hirst,TBA,,music,TBA,TBA,,,
+14,Qualia (2017) electroacoustic sound composition. duration 9:40 minutes,Panayiotis Kokoras,TBA,,music,TBA,TBA,,,
+15,Laputa: Castle in the Sky – A comparison of Joe Hisaishi’s scores for the film’s Japanese and English versions.,Shally Pais,TBA,,paper,TBA,TBA,,,
+18,Exploring Liveness in Instrumental Practise through DAW Processes,Tom Pierard,TBA,,paper,TBA,TBA,,,
+27,The Sky Is The Score #1,Michael Spicer,TBA,,music,TBA,TBA,,,
+28,Atlas of Uncertainty,Massimo Vito Avantaggiato,TBA,,music,TBA,TBA,,,
+29,Chromaticity,Vicki Hallett|Jem Savage|Ferne Millen,TBA,,music,TBA,TBA,,,
+30,Making the Enabled System,Michael Spicer,TBA,,paper,TBA,TBA,,,
+32,Scrapes and Sighs,Alexis Weaver,TBA,,music,TBA,TBA,,,
+33,The Shimmering Haze,Alexis Weaver,TBA,,music,TBA,TBA,,,
+35,Unawakened Routine of a Salaryman,Minchang Han,TBA,,music,TBA,TBA,,,
+37,Dysthymia,Jaeyoung Park,TBA,,music,TBA,TBA,,,
+38,Dorfl Sings,Abigail Thomas,TBA,,music,TBA,TBA,,,
+39,Composing Real-Time Electronic Dance Music: How studio and performance based-practices combine to create Acid,David Haberfeld,TBA,,music,TBA,TBA,,,
+41,Diantara,Fahmi Mursyid,TBA,,music,TBA,TBA,,,
+46,Multiple Monophony and the Multichannel Monophonic Compositional Framework,Jesse Austin-Stewart|Bridget Johnson,TBA,,paper,TBA,TBA,,,
+48,鬼哭 Wailing Ghosts,Tao Li,TBA,,music,TBA,TBA,,,
+52,Composing Real-Time Electronic Dance Music: an improvisation approach to composing Acid Techno,David Haberfeld,TBA,,workshop,TBA,TBA,,,
+53,Polvere nera,Nicola Fumo Frattegiani,TBA,,music,TBA,TBA,,,
+56,Magnetic Stripes,Matthew Davis,TBA,,music,TBA,TBA,,,
+63,community development through online radio,Eugenia Stuart|Nicholas Trivett|Laurence Hughes,TBA,,paper,TBA,TBA,,,
+64,Vertical Harmony: Flightpath as Musical Form,Robert Jarvis|Darrin Verhagen|Adam Nash,TBA,,paper,TBA,TBA,,,
+65,Aileron One,Robert Jarvis,TBA,,music,TBA,TBA,,,
+68,The Evolution of Music in Pokémon Console Games: How does musical texture and aesthetic of the Pokémon videogame theme evolve from 1996- 2017?,Madhuri Suresh,TBA,,paper,TBA,TBA,,,
+74,Biomimetic discourse and the creation of the Distance Mixer,Nicholas McConaghy,TBA,,paper,TBA,TBA,,,
+75,Braided Streams: Intertwining Soundscape Strata and Ecological Data in South Australia’s Limestone Coast,Jesse Budel,TBA,,paper,TBA,TBA,,,
+77,"Towards realising a vision for fully synchronous, online, DAW collaboration on post-production music projects",Scott Stickland|Nathan Scott|Rukshan Athauda,TBA,,paper,TBA,TBA,,,
+79,CROAKE,Stephen Oakes,TBA,,music,TBA,TBA,,,
+81,Algorithmic music generation: solving the right problem.,Matthew Whitley,TBA,,paper,TBA,TBA,,,
+82,"Darshan with a Pelican: Multiplicities – A 40 channel sound composition for the GRM Paris concert series, May 2020",Warren Burt,TBA,,paper,TBA,TBA,,,
+83,"Darshan with a Pelican: Multiplicities – An 8 Channel mixdown of a 40 channel sound composition for the GRM Paris concert series, May 2020",Warren Burt,TBA,,music,TBA,TBA,,,
+84,Physical Energy In Computer-Based Live Performance,Becki Whitton,TBA,,paper,TBA,TBA,,,
+85,Instrument of Failure - Gelido,Andrea Gelido,TBA,,music,TBA,TBA,,,
+90,Curve2020,Sharyn Brand,TBA,,music,TBA,TBA,,,
+91,"Abletweet: Harnessing Social Media APIs for Encoding, Co-Creating and Performing Generative Electronic Music",James Curtis,TBA,,paper,TBA,TBA,,,
+92,Dim Unit,Damian Mason,TBA,,music,TBA,TBA,,,
+94,Solo. Confabulate.,Carl Polke,TBA,,music,TBA,TBA,,,
+95,Abletweet (Performance / live demonstration),James Curtis,TBA,,music,TBA,TBA,,,
+96,Peace Wall Belfast: Spatial Audio Representation of Divided Spaces and Soundwalks,Georgios Varoutsos,TBA,,paper,TBA,TBA,,,
+97,Unseen - for modular synthesiser and live visuals,Benjamin Carey,TBA,,music,TBA,TBA,,,
+98,Divided Spaces,Georgios Varoutsos,TBA,,music,TBA,TBA,,,
+99,Dark Path #4,Anna Terzaroli,TBA,,music,TBA,TBA,,,
+103,Touch Virtual Nature,Susannah Langley|Jessica Williams|Ann Borda,TBA,,music,TBA,TBA,,,
+100,THESE WOULD BE OTHER,Brigid Burke,TBA,,music,TBA,TBA,,,https://vimeo.com/397733269
+6,"t o r b u a m m p a [2019] for flute, bass clarinet, electric guitar, harp, percussion and tape.",Lindsay Vickery,TBA,,music,TBA,TBA,,,
+40,The Decibel Scoreplayer as a portable medium for spatial music performance.,Lindsay Vickery and Stuart James,TBA,,paper,TBA,TBA,,,
+43,Musica ex machina: integrating the sonic pallet of machines with acoustic instruments.,Lindsay Vickery,TBA,,paper,TBA,TBA,,,
+50,妃子笑 Smile of Yang,Yue Pan,TBA,,music,TBA,TBA,,,
+59,Introducing an Acousmatic Skillset for The Composition of Popular Electronic Music,Patrick Carroll,TBA,,paper,TBA,TBA,,,
+60,Volca,Patrick Carroll,TBA,,music,TBA,TBA,,,
+62,Black Summer,Mark Oliveiro,TBA,,music,TBA,TBA,,,
+67,"‘Critical Feedback - The evolution of the drums, feedback and the computer’",Nicholas Meredith,TBA,,music,TBA,TBA,,,
+69,Graphic Notation Methods for Extended Vocal Techniques and Throat-Singing for Vowels in Retrograde,Sophie Rose,TBA,,paper,TBA,TBA,,,
+72,P-Bow: a profane electric violin and bow for use in Ambisonic audio environments,Cloud Unknowing and Sophie Rose,TBA,,paper,TBA,TBA,,,
+78,Piece No. 3,Lynden Bassett,TBA,,music,TBA,TBA,,,

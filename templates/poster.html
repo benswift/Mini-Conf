@@ -34,7 +34,7 @@
       >{{ "," if not loop.last }}
       {% endfor %}
     </h3>
-    <p class="card-text text-center">
+    <!-- <p class="card-text text-center">
       <span class="">Keywords:</span>
       {% for keyword in paper.content.keywords %}
       <a
@@ -43,22 +43,25 @@
         >{{keyword}}</a
       >{{ "," if not loop.last }}
       {% endfor %}
-    </p>
+    </p> -->
     <div class="text-center p-3">
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      <a class="card-link" target="_blank" href="{{paper.link}}">
-        Paper
-      </a>
-      {% if paper.content.code != blank %}
-      <a href="{{paper.content.code}}" target="_blank" class="card-link">
-        Code
-      </a>
-      {% endif %}
+      {% if paper.content.bandcamp %}<a class="card-link" href="{{paper.content.bandcamp}}">bandcamp</a>{% endif %}
+      {% if paper.content.vimeo %}<a class="card-link" href="{{paper.content.vimeo}}">vimeo</a>{% endif %}
+      {% if paper.content.soundcloud %}<a class="card-link" href="{{paper.content.soundcloud}}">soundcloud</a>{% endif %}
+      {% if paper.content.youtube %}<a class="card-link" href="{{paper.content.youtube}}">youtube</a>{% endif %}
+      {% if paper.content.website %}<a class="card-link" href="{{paper.content.website}}">web</a>{% endif %}
     </div>
   </div>
 </div>
+
+<!-- {% if paper.content.bandcamp %}{{paper.content.bandcamp}}{% endif %}
+{% if paper.content.vimeo %}{{paper.content.vimeo}}{% endif %}
+{% if paper.content.soundcloud %}{{paper.content.soundcloud}}{% endif %}
+{% if paper.content.youtube %}{{paper.content.youtube}}{% endif %}
+{% if paper.content.website %}{{paper.content.website}}{% endif %} -->
+
+{% if paper.content.image %}<center><img src="static/paper-images/{{paper.id}}.jpg" width="80%" /></center>{% endif %}
+
 <div id="details" class="pp-card m-3 collapse">
   <div class="card-body">
     <div class="card-text">

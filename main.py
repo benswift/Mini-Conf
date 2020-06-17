@@ -138,8 +138,30 @@ def format_paper(v):
             "recs": [],
             "session": v.get("session", "").split("|"),
             "pdf_url": v.get("pdf_url", ""),
+            "website": v.get("website", ""),
+            "youtube": v.get("youtube", ""),
+            "soundcloud": v.get("soundcloud", ""),
+            "vimeo": v.get("vimeo", ""),
+            "bandcamp": v.get("bandcamp", ""),
+            "image": v.get("image-url", ""),
         },
     }
+# UID,
+# title,
+# authors,
+# abstract,
+# bio,
+# keywords,
+# session-name,
+# session-position,
+# soundcloud,
+# youtube,
+# vimeo,
+# bandcamp,
+# website,
+# download-url,
+# image-url,
+# online-url
 
 
 # ITEM PAGES
