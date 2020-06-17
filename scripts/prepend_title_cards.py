@@ -6,8 +6,8 @@ typeface="AlegreyaSans" # use a font with Thin, Regular & Bold weights
 input_path = "."
 output_path = "."
 
-def make_title_card(artist, title, UID):
-    title_card_path = f"{output_path}/{UID}-titlecard.mkv"
+def make_titlecard(artist, title, UID):
+    titlecard_path = f"{output_path}/{UID}-titlecard.mkv"
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
@@ -22,17 +22,17 @@ def make_title_card(artist, title, UID):
             # conference
             f"drawtext=fontfile='{typeface}\:style=Regular':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
             # output file
-            title_card_path
+            titlecard_path
         ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    return title_card_path
+    return titlecard_path
 
 def process_video(artist, title, UID):
 
-    title_card_path = make_title_card(artist, title, UID)
+    titlecard_path = make_titlecard(artist, title, UID)
 
     # now just smoosh them together
     # TODO
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     title="Untitled #3"
     UID = 123
 
-    make_title_card(artist, title, UID)
+    make_titlecard(artist, title, UID)
