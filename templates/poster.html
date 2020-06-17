@@ -62,23 +62,12 @@
 
 {% if paper.content.image %}<center><img src="static/paper-images/{{paper.id}}.jpg" width="80%" /></center>{% endif %}
 
-<div id="details" class="pp-card m-3 collapse">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <h4>Abstract</h4>
-        {{paper.content.abstract}}
-
-        <h4>Bio</h4>
-        {{paper.content.bio}}
-      </div>
-    </div>
-    <p></p>
+<div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">Details</h2>
   </div>
 </div>
-
-<!-- Presentation Embed -->
-{{ components.section("Paper") }}
 
 <h4>Abstract</h4>
 
@@ -87,7 +76,5 @@
 <h4>Bio</h4>
 
 {{paper.content.bio | markdown}}
-
-<!-- add more stuff here... other links etc. -->
 
 {% endblock %}
