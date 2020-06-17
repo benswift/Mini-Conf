@@ -1,6 +1,6 @@
 import subprocess
 
-conference="ACMC'20"
+conference="ACMC 2020"
 input_path = "."
 output_path = "."
 
@@ -12,9 +12,13 @@ def make_title_card(artist, title, UID):
             "-f", "lavfi",
             # set bg colour, video size & duration
             "-i", "color=c=black:s=1920x1080:d=3",
-            # draw artist name
-            "-vf", f"drawtext=fontfile=AlegreyaSans-Light.otf:fontsize=120:fontcolor=#EEEEEE:x=100:y=h-400:text='{title}', " +
-            f"drawtext=fontfile=AlegreyaSans-Black.otf:fontsize=80:fontcolor=#BBBBBB:x=100:y=h-280:text='{artist}'",
+            # title
+            "-vf", f"drawtext=fontfile='AlegreyaSans\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
+            # artist
+            f"drawtext=fontfile='AlegreyaSans\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
+            # conference
+            f"drawtext=fontfile='AlegreyaSans\:style=Regular':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
+            # output file
             f"{output_path}/{UID}-titlecard.mkv"
         ]
     )
