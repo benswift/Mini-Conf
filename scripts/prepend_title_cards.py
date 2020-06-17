@@ -7,7 +7,8 @@ input_path = "."
 output_path = "."
 
 def make_title_card(artist, title, UID):
-    subprocess.run(
+    title_card_path = f"{output_path}/{UID}-titlecard.mkv"
+    proc = subprocess.run(
         [
             "ffmpeg", "-y",
             # select virtual input device
@@ -21,9 +22,21 @@ def make_title_card(artist, title, UID):
             # conference
             f"drawtext=fontfile='{typeface}\:style=Regular':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
             # output file
-            f"{output_path}/{UID}-titlecard.mkv"
+            title_card_path
         ]
     )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+    return title_card_path
+
+def process_video(artist, title, UID):
+
+    title_card_path = make_title_card(artist, title, UID)
+
+    # now just smoosh them together
+    # TODO
+
 
 if __name__ == '__main__':
     artist="Ben Swift"
