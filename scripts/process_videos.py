@@ -10,6 +10,14 @@ titlecard_length_sec = 3
 media_path = Path("media")
 output_path = media_path / "processed"
 
+
+def uid_from_filename(media_filename):
+    try:
+        return re.search('([0-9]+).(mp4|mkv|mov)', media_filename).group(1)
+    except:
+        return False
+
+
 def make_titlecard(artist, title, UID):
     titlecard_path = media_path / "titlecards" / f"{UID}-titlecard.mkv"
     proc = subprocess.run(
@@ -36,13 +44,6 @@ def make_titlecard(artist, title, UID):
         raise ChildProcessError(proc.returncode)
 
     return titlecard_path
-
-
-def uid_from_filename(media_filename):
-    try:
-        return re.search('([0-9]+).(mp4|mkv|mov)', media_filename).group(1)
-    except:
-        return False
 
 
 def process_video():
