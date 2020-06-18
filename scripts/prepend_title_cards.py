@@ -21,7 +21,7 @@ def make_titlecard(artist, title, UID):
             # set bg colour, video size & duration
             "-f", "lavfi",
             # select virtual input video device
-            "-i", f"color=c=black:s=1920x1080:d={titlecard_length_sec}",
+            "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
             # title
             "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
             # artist
