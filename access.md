@@ -8,7 +8,10 @@ Music](https://music.cass.anu.edu.au) and [Research School of Computer
 Science](https://cs.anu.edu.au), [College of Engineering and Computer
 Science](https://cecs.anu.edu.au).
 
-The online conference will mostly take place on YouTube. Links to all presentations, videos and the schedule are on this website.
+The online conference will mostly take place on the [ACMC Youtube Channel](https://www.youtube.com/channel/UCKK95K68yVuok-qWNS4Z6Jw). 
+
+Links to all presentations, videos and the schedule are on this website.
+
 
 There will be daily email updates to the [ACMA Mailing List](http://computermusic.org.au/acma-list/), on [Twitter](https://twitter.com/acma89), and on [Facebook](https://www.facebook.com/acma89) about what events will occur during the day.
 

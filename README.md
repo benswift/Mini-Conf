@@ -2,6 +2,8 @@
 The **Australasian Computer Music Conference** will take place **July 3–11,
 2020 as an online event**. 
 
+Concerts and talks will take place on the [ACMC Youtube Channel](https://www.youtube.com/channel/UCKK95K68yVuok-qWNS4Z6Jw).
+
 ACMC is the annual gathering of the [Australasian Computer Music
 Association](https://computermusic.org.au), a place to show and discuss research
 and artistic progress in computer/electronic music. It's a festival of
@@ -22,7 +24,7 @@ Science](https://cs.anu.edu.au), [College of Engineering and Computer
 Science](https://cecs.anu.edu.au). Fun fact: ACMC was [last hosted in
 Canberra](http://computermusic.org.au/conferences/acmc2010/) in 2010!
 
-ACMC this year is free and has no registration fee. Access details will be available here soon. 
+ACMC this year is free and has no registration fee.
 
 For now, feel free to browse through the Words and Sounds accepted at this years conference.
 
