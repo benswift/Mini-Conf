@@ -1,4 +1,5 @@
 import subprocess
+import csv
 from pathlib import Path
 import re
 
@@ -10,6 +11,14 @@ titlecard_length_sec = 3
 media_path = Path("media")
 output_path = media_path / "processed"
 
+PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
+
+
+def title_and_artist_from_uid(uid):
+    for p in PAPERS:
+        if p["UID"] == uid:
+            return (p["title"], p["authors"])
+
 
 def uid_from_filename(media_filename):
     try:
@@ -18,8 +27,9 @@ def uid_from_filename(media_filename):
         return False
 
 
-def make_titlecard(artist, title, UID):
-    titlecard_path = media_path / "titlecards" / f"{UID}-titlecard.mkv"
+def make_titlecard(uid):
+    title, artist = title_and_artist_from_uid(uid)
+    titlecard_path = media_path / "titlecards" / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
@@ -58,7 +68,7 @@ def process_video():
         uid = uid_from_filename(p.name)
         if uid:
             videos.append("-i")
-            videos.append(make_titlecard("artist", "title", uid))
+            videos.append(make_titlecard(uid))
             videos.append("-i")
             videos.append(p)
             filter_string = filter_string + f"[{video_index}:v] [{video_index}:a] [{video_index+1}:v] [{video_index+1}:a] "

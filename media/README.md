@@ -11,9 +11,6 @@ Here's the deal:
 
 ## TODO
 
-- [ ] pull the actual artist & title of the piece (from `papers.csv`) rather
-      than the current "artist"/"title" placeholders
-
 - [ ] make it automatically create the `media/{processed,titlecard}` folders if
       they don't exist (because it currently bails out opaquely, which isn't a
       great look)
