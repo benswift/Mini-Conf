@@ -37,6 +37,14 @@ def make_titlecard(artist, title, UID):
 
     return titlecard_path
 
+
+def uid_from_filename(media_filename):
+    try:
+        return re.search('([0-9]+).(mp4|mkv|mov)', media_filename).group(1)
+    except:
+        return False
+
+
 def process_video():
 
     # accumulator variables
@@ -46,10 +54,10 @@ def process_video():
 
     # build up the list of files & filters for the ffmpeg command
     for p in media_path.iterdir():
-        m = re.search('([0-9]+).(mp4|mkv|mov)', p.name)
-        if m:
+        uid = uid_from_filename(p.name)
+        if uid:
             videos.append("-i")
-            videos.append(make_titlecard("artist", "title", m.group(1)))
+            videos.append(make_titlecard("artist", "title", uid))
             videos.append("-i")
             videos.append(p)
             filter_string = filter_string + f"[{video_index}:v] [{video_index}:a] [{video_index+1}:v] [{video_index+1}:a] "
