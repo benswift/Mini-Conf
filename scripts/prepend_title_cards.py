@@ -17,7 +17,7 @@ def make_titlecard(artist, title, UID):
             "ffmpeg", "-y",
             "-f", "lavfi",
             # add blank audio
-            "-i", "anullsrc", "-t", str(titlecard_length_sec),
+            "-i", f"anoisesrc=d={titlecard_length_sec}:c=pink:a=0.0",
             # set bg colour, video size & duration
             "-f", "lavfi",
             # select virtual input video device
