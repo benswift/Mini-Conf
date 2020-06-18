@@ -6,7 +6,8 @@ Here's the deal:
 
 2. run the script
 
-3. when complete (might take a while) the output will be in `processed/output.mkv`
+3. when complete (might take a while) the output will be in
+   `processed/output.mkv`
 
 ## TODO
 
@@ -16,4 +17,5 @@ Here's the deal:
 
 - [ ] provide a way of specifying the order of the pieces in a session
 
-- [ ] handle audio-only pieces (add the title card, but leave it up for the whole thing)
+- [ ] handle audio-only pieces (add the title card, but leave it up for the
+      whole thing)
