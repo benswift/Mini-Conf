@@ -27,7 +27,7 @@ def make_titlecard(artist, title, UID):
             # artist
             f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
             # conference
-            f"drawtext=fontfile='{typeface}\:style=Regular':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
+            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
             # output file
             titlecard_path
         ]
