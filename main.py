@@ -28,7 +28,7 @@ def main(site_data_path):
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "sounds"]:
+    for typ in ["papers", "speakers", "sessions"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -66,6 +66,7 @@ def home():
     data["readme"] = open("README.md").read()
     data["committee"] = site_data["committee"]["committee"]
     data["speakers"] = site_data["speakers"]
+    data["sessions"] = site_data["sessions"]
     return render_template("index.html", **data)
 
 @app.route("/about.html")
@@ -136,34 +137,17 @@ def format_paper(v):
             "bio": v["bio"],
             "TLDR": v["abstract"],
             "recs": [],
-            "session": v.get("session-name", "").split("|"),
-            "sessionpos": v.get("session-position", "").split("|"),
+            "session": v.get("session_name", "").split("|"),
+            "sessionpos": v.get("session_position", "").split("|"),
             "pdf_url": v.get("pdf_url", ""),
             "website": v.get("website", ""),
             "youtube": v.get("youtube", ""),
             "soundcloud": v.get("soundcloud", ""),
             "vimeo": v.get("vimeo", ""),
             "bandcamp": v.get("bandcamp", ""),
-            "image": v.get("image-url", ""),
+            "image": v.get("image_url", ""),
         },
     }
-# UID,
-# title,
-# authors,
-# abstract,
-# bio,
-# keywords,
-# session-name,
-# session-position,
-# soundcloud,
-# youtube,
-# vimeo,
-# bandcamp,
-# website,
-# download-url,
-# image-url,
-# online-url
-
 
 # ITEM PAGES
 
@@ -185,6 +169,14 @@ def speaker(speaker):
     data["speaker"] = v
     return render_template("speaker.html", **data)
 
+@app.route("/session_<session>.html")
+def session(session):
+    uid = session
+    v = by_uid["sessions"][uid]
+    data = _data()
+    data["session"] = v
+    data["papers"] = site_data["papers"]
+    return render_template("session.html", **data)
 
 @app.route("/sound_<sound>.html")
 def sound(sound):
@@ -229,6 +221,8 @@ def generator():
         yield "speaker", {"speaker": str(speaker["UID"])}
     for sound in site_data["sounds"]:
         yield "sound", {"sound": str(sound["UID"])}
+    for session in site_data["sessions"]:
+        yield "session", {"session": str(session["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}

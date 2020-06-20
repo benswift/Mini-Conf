@@ -30,11 +30,8 @@
 <div class="jumbotron jumbotron-fluid back" style="padding-top: 20px; padding-bottom: 20px;">
   <div class="row header p-6 m-5">
     <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
-      <h1>ACMC2020</h1>
-      <h2>{ i n c l u s i o n }</h2>
-<!--       <h2 class="p-5">
-        {{config.date|safe}}
-      </h2> -->
+      <h1 class="p-5">ACMC2020</h1>
+      <h2 class="p-5">{ i n c l u s i o n }</h2>
     </div>
   </div>
 </div>
@@ -51,5 +48,26 @@
 <!-- Organisers -->
 {{ components.section("Organisers") }}
 {{ components.organizergroup(committee) }}
+
+<!-- Sessions -->
+{{ components.section("Sessions") }}
+<div class="row">
+  {% for session in sessions %}
+  {% if session.title %}
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <a href="/session_{{session.UID}}.html"><h5 class="card-title" align="center">{{session.title}}</h5></a>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            {{session.date}}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
 
 {% endblock %}

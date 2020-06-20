@@ -1,0 +1,60 @@
+{% set page_title = session.title %}
+{% extends "base.html" %}
+{% block content %}
+
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      Session: {{session.title}}
+    </h2>
+  </div>
+</div>
+
+<div class="m-3 text-muted">
+  <span class="card-title h4">
+    {{session.date}}
+  </span>
+</div>
+
+{% if session.youtube_link %}
+<div class="m-3 text-muted">
+  <span class="card-title h4">
+    <a href="{{session.youtube_link}}">YouTube Link</a>
+  </span>
+</div>
+{% endif %}
+
+<div class="border-top my-3"></div>
+<div class="row p-4" id="faq">
+  <div class="col-12 bd-content">
+    <h2 class="text-center">{{Works}}</h2>
+  </div>
+</div>
+
+<div class="row">
+  {% for paper in papers %}
+  {% if paper.session_name == session.UID %}
+  <div class="col-md-4 col-xs-6">
+    <div class="pp-card">
+      <div class="pp-card-header" class="text-muted">
+        <a href="/poster_{{paper.UID}}.html"><h5 class="card-title" align="center">{{paper.title}}</h5></a>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            {{paper.authors}}
+          </h6>
+        {% if paper.image_url %}
+        <center>
+          <img src="/static/paper-images/{{paper.UID}}.jpg" class="rounded" style="height: 180px;" />
+          <!-- style="height: 200px;" -->
+          <!-- <center><img class="lazy-load-img cards_img rounded" data-src="static/paper-images/{{paper.UID}}.jpg" width="80%"/></center> -->
+        </center>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock %}
