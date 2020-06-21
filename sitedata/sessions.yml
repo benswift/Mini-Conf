@@ -8,81 +8,99 @@
 #   chair:
 #   date: Friday 2020-07-10 8-9pm
 
+# Concerts
+
 - UID: C1_Monday
   title:
   chair:
   date:
+  type: music
   youtube_link:
 
 - UID: C2_Tuesday
   title:
   chair:
   date:
+  type: music
   youtube_link:
 
 - UID: C3_Wednesday
   title:
   chair:
   date:
+  type: music
   youtube_link:
 
 - UID: C4_Thursday
   title:
   chair:
   date:
+  type: music
   youtube_link:
+
+# Podcasts
 
 - UID: P1_Monday
   title:
   chair:
   date:
+  type: music
   youtube_link:
 
 - UID: P2_Tuesday
   title:
   chair:
   date:
+  type: music
   youtube_link:
 
 - UID: P3_Wednesday
   title:
   chair:
   date:
+  type: music
   youtube_link:
-
 
 - UID: P4_Thursday
   title:
   chair:
   date:
+  type: music
   youtube_link:
+
+# Paper sessions
 
 - UID: daws-live-algo
   title: DAWs, Liveness, and Algorithms
   chair: Charles Martin
   date: Monday 2020-07-06 2-3:30pm
+  type: papers
   youtube_link:
 
 - UID: musico-comp
   title: Computer Musicology and Composition
   chair:
   date: Tuesday 2020-07-07 2-3:30pm
+  type: papers
   youtube_link:
 
 - UID: cult-comm-eco
   title: Culture, Communities, and Ecology
   chair:
   date: Wednesday 2020-07-08 2-3:30pm
+  type: papers
   youtube_link:
 
 - UID: spatial-perf
   title: Spatialised Audio and Performance
   chair:
   date: Thursday 2020-07-09 2-3:30pm
+  type: papers
   youtube_link:
 
 - UID: synth-nota-inter
   title: Synthesis, Interaction, and Notation
   chair:
   date: Friday 2020-07-10 2-3:30pm
+  type: papers
   youtube_link:
