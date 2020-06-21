@@ -63,6 +63,11 @@
             {{session.date}}
           </h6>
         </div>
+        {% if session.im %}
+        <center>
+          <img src="{{session.im}}" class="rounded" style="height: 200px;" {% if org.imcredit %}alt="📸 image credit: {{session.imcredit}}" {% endif %} />
+        </center>
+        {% endif %}
       </div>
     </div>
   </div>

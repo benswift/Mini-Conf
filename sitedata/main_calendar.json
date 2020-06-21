@@ -3,19 +3,19 @@
     "title": "Keynote 1: Bridget Chappell",
     "start": "2020-07-03T20:00:00+10:00",
     "end": "2020-07-03T21:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "speaker_bridget-chappell.html",
+    "link": "speaker_bridget-chappell.html",
     "category": "time",
-    "calendarId": "---"
+    "calendarId": "qa"
   },
   {
     "title": "Keynote 2: Eve Klein",
     "start": "2020-07-10T20:00:00+10:00",
     "end": "2020-07-10T21:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "speaker_eve-klein.html",
+    "link": "speaker_eve-klein.html",
     "category": "time",
-    "calendarId": "---"
+    "calendarId": "qa"
   },
   {
     "title": "Friday night concert stream 1",
@@ -39,8 +39,8 @@
     "title": "DAWs, Liveness, and Algorithms",
     "start": "2020-07-06T14:00:00+10:00",
     "end": "2020-07-06T15:30:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_daws-live-algo.html",
+    "link": "session_daws-live-algo.html",
     "category": "time",
     "calendarId": "---"
   },
@@ -48,8 +48,8 @@
     "title": "Computer Musicology and Composition",
     "start": "2020-07-07T14:00:00+10:00",
     "end": "2020-07-07T15:30:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_musico-comp.html",
+    "link": "session_musico-comp.html",
     "category": "time",
     "calendarId": "---"
   },
@@ -57,8 +57,8 @@
     "title": "Culture, Communities, and Ecology",
     "start": "2020-07-08T14:00:00+10:00",
     "end": "2020-07-08T15:30:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_cult-comm-eco.html",
+    "link": "session_cult-comm-eco.html",
     "category": "time",
     "calendarId": "---"
   },
@@ -66,8 +66,8 @@
     "title": "Spatialised Audio and Performance",
     "start": "2020-07-09T14:00:00+10:00",
     "end": "2020-07-09T15:30:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_spatial-perf.html",
+    "link": "session_spatial-perf.html",
     "category": "time",
     "calendarId": "---"
   },
@@ -75,44 +75,44 @@
     "title": "Synthesis, Interaction, and Notation",
     "start": "2020-07-10T14:00:00+10:00",
     "end": "2020-07-10T15:30:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_synth-nota-inter.html",
+    "link": "session_synth-nota-inter.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Monday performances",
+    "title": "Monday Concert",
     "start": "2020-07-06T17:00:00+10:00",
     "end": "2020-07-06T20:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_C1_Monday.html",
+    "link": "session_C1_Monday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Tuesday performances",
+    "title": "Tuesday Concert",
     "start": "2020-07-07T17:00:00+10:00",
     "end": "2020-07-07T20:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_C2_Tuesday.html",
+    "link": "session_C2_Tuesday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Wednesday performances",
+    "title": "Wednesday Concert",
     "start": "2020-07-08T17:00:00+10:00",
     "end": "2020-07-08T20:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_C3_Wednesday.html",
+    "link": "session_C3_Wednesday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "ACMC Live!",
+    "title": "Thursday Concert",
     "start": "2020-07-09T19:00:00+10:00",
     "end": "2020-07-09T21:00:00+10:00",
-    "location": "",
-    "link": "",
+    "location": "session_C4_Thursday.html",
+    "link": "session_C4_Thursday.html",
     "category": "time",
     "calendarId": "---"
   },

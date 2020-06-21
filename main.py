@@ -115,6 +115,7 @@ def schedule():
             format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
         ],
     }
+    data["sessions"] = site_data["sessions"]
     return render_template("schedule.html", **data)
 
 
