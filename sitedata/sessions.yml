@@ -15,6 +15,7 @@
   chair:
   date:
   type: music
+  im: 
   youtube_link:
 
 - UID: C2_Tuesday
@@ -22,6 +23,7 @@
   chair:
   date:
   type: music
+  im: 
   youtube_link:
 
 - UID: C3_Wednesday
@@ -29,6 +31,7 @@
   chair:
   date:
   type: music
+  im: 
   youtube_link:
 
 - UID: C4_Thursday
@@ -36,6 +39,7 @@
   chair:
   date:
   type: music
+  im: 
   youtube_link:
 
 # Podcasts
@@ -45,6 +49,7 @@
   chair:
   date:
   type: music
+  im: 
   youtube_link:
 
 - UID: P2_Tuesday
@@ -52,6 +57,7 @@
   chair:
   date:
   type: music
+  im:
   youtube_link:
 
 - UID: P3_Wednesday
@@ -59,6 +65,7 @@
   chair:
   date:
   type: music
+  im:
   youtube_link:
 
 - UID: P4_Thursday
@@ -66,6 +73,7 @@
   chair:
   date:
   type: music
+  im:
   youtube_link:
 
 # Paper sessions
@@ -75,6 +83,7 @@
   chair: Charles Martin
   date: Monday 2020-07-06 2-3:30pm
   type: papers
+  im: static/images/sessions/studio-composing.jpg
   youtube_link:
 
 - UID: musico-comp
@@ -82,6 +91,7 @@
   chair:
   date: Tuesday 2020-07-07 2-3:30pm
   type: papers
+  im: static/images/sessions/rehearsal-lynden.jpg
   youtube_link:
 
 - UID: cult-comm-eco
@@ -89,6 +99,7 @@
   chair:
   date: Wednesday 2020-07-08 2-3:30pm
   type: papers
+  im: static/images/sessions/chloe-ben-performing.jpg
   youtube_link:
 
 - UID: spatial-perf
@@ -96,6 +107,7 @@
   chair:
   date: Thursday 2020-07-09 2-3:30pm
   type: papers
+  im: static/images/sessions/hololens.jpg
   youtube_link:
 
 - UID: synth-nota-inter
@@ -103,4 +115,5 @@
   chair:
   date: Friday 2020-07-10 2-3:30pm
   type: papers
+  im: static/images/sessions/lens-people.jpg
   youtube_link:

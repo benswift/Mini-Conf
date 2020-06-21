@@ -80,7 +80,7 @@
         </div>
         {% if session.im %}
         <center>
-          <img src="{{session.im}}" class="rounded" style="height: 200px;" {% if org.imcredit %}alt="📸 image credit: {{session.imcredit}}" {% endif %} />
+          <a href="/session_{{session.UID}}.html"><img src="{{session.im}}" class="rounded" style="object-fit: cover; height: 200px;  width: 90%;" /></a>
         </center>
         {% endif %}
       </div>
