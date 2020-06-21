@@ -34,9 +34,10 @@
 {%- endmacro %}
 
 {% macro speakergroup(speakers) -%}
+<div class="container">
+<div class="row">
 {% for speaker in speakers %}
-<div class="row p-4">
-  <div class="col-md-12">
+  <div class="col">
     <div class="card">
       <div class="card-header">
         <img src="{{speaker.im}}" width="100%" class="img-thumbnail" />
@@ -63,8 +64,9 @@
       </div>
     </div>
   </div>
-</div>
 {% endfor %}
+</div>
+</div>
 {%- endmacro %}
 
 {% macro organizergroup(committee) -%}
