@@ -2,7 +2,7 @@
   {
     "title": "Keynote 1: Bridget Chappell",
     "start": "2020-07-03T20:00:00+10:00",
-    "end": "2020-07-03T21:00:00+10:00",
+    "end": "2020-07-03T21:30:00+10:00",
     "location": "speaker_bridget-chappell.html",
     "link": "speaker_bridget-chappell.html",
     "category": "time",
@@ -11,29 +11,11 @@
   {
     "title": "Keynote 2: Eve Klein",
     "start": "2020-07-10T20:00:00+10:00",
-    "end": "2020-07-10T21:00:00+10:00",
+    "end": "2020-07-10T21:30:00+10:00",
     "location": "speaker_eve-klein.html",
     "link": "speaker_eve-klein.html",
     "category": "time",
     "calendarId": "qa"
-  },
-  {
-    "title": "Friday night concert stream 1",
-    "start": "2020-07-03T21:00:00+10:00",
-    "end": "2020-07-03T23:00:00+10:00",
-    "location": "",
-    "link": "",
-    "category": "time",
-    "calendarId": "---"
-  },
-  {
-    "title": "Friday night concert stream 2",
-    "start": "2020-07-10T21:00:00+10:00",
-    "end": "2020-07-10T23:00:00+10:00",
-    "location": "",
-    "link": "",
-    "category": "time",
-    "calendarId": "---"
   },
   {
     "title": "DAWs, Liveness, and Algorithms",
@@ -81,47 +63,92 @@
     "calendarId": "---"
   },
   {
-    "title": "Monday Concert",
-    "start": "2020-07-06T17:00:00+10:00",
-    "end": "2020-07-06T20:00:00+10:00",
+    "title": "ACMC Live",
+    "start": "2020-07-04T20:00:00+10:00",
+    "end": "2020-07-04T21:30:00+10:00",
+    "location": "session_ACMC_Live.html",
+    "link": "session_ACMC_Live.html",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "ANU Laptop Ensemble Replay",
+    "start": "2020-07-04T22:00:00+10:00",
+    "end": "2020-07-04T23:30:00+10:00",
+    "location": "",
+    "link": "",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "Concert 1",
+    "start": "2020-07-06T20:00:00+10:00",
+    "end": "2020-07-06T21:30:00+10:00",
     "location": "session_C1_Monday.html",
     "link": "session_C1_Monday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Tuesday Concert",
-    "start": "2020-07-07T17:00:00+10:00",
-    "end": "2020-07-07T20:00:00+10:00",
+    "title": "Concert 2",
+    "start": "2020-07-07T20:00:00+10:00",
+    "end": "2020-07-07T21:30:00+10:00",
     "location": "session_C2_Tuesday.html",
     "link": "session_C2_Tuesday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Wednesday Concert",
-    "start": "2020-07-08T17:00:00+10:00",
-    "end": "2020-07-08T20:00:00+10:00",
+    "title": "Concert 3",
+    "start": "2020-07-08T20:00:00+10:00",
+    "end": "2020-07-08T21:30:00+10:00",
     "location": "session_C3_Wednesday.html",
     "link": "session_C3_Wednesday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Thursday Concert",
-    "start": "2020-07-09T19:00:00+10:00",
-    "end": "2020-07-09T21:00:00+10:00",
+    "title": "Concert 4",
+    "start": "2020-07-09T20:00:00+10:00",
+    "end": "2020-07-09T21:30:00+10:00",
     "location": "session_C4_Thursday.html",
     "link": "session_C4_Thursday.html",
     "category": "time",
     "calendarId": "---"
   },
   {
-    "title": "Friday performances",
-    "start": "2020-07-10T17:00:00+10:00",
-    "end": "2020-07-10T20:00:00+10:00",
-    "location": "",
-    "link": "",
+    "title": "Listening Room 1",
+    "start": "2020-07-06T08:00:00+10:00",
+    "end": "2020-07-06T09:00:00+10:00",
+    "location": "session_P1_Monday.html",
+    "link": "session_P1_Monday.html",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "Listening Room 2",
+    "start": "2020-07-07T08:00:00+10:00",
+    "end": "2020-07-07T09:00:00+10:00",
+    "location": "session_P2_Tuesday.html",
+    "link": "session_P2_Tuesday.html",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "Listening Room 3",
+    "start": "2020-07-08T08:00:00+10:00",
+    "end": "2020-07-08T09:00:00+10:00",
+    "location": "session_P3_Wednesday.html",
+    "link": "session_P3_Wednesday.html",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "Listening Room 4",
+    "start": "2020-07-09T08:00:00+10:00",
+    "end": "2020-07-09T09:00:00+10:00",
+    "location": "session_P4_Thursday.html",
+    "link": "session_P4_Thursday.html",
     "category": "time",
     "calendarId": "---"
   }

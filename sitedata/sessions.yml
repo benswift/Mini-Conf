@@ -10,34 +10,42 @@
 
 # Concerts
 
-- UID: C1_Monday
-  title:
+- UID: ACMC_Live
+  title: ACMC Live
   chair:
-  date:
+  date: Saturday 2020-07-04 8-9:30pm
+  type: music
+  im: 
+  youtube_link:
+
+- UID: C1_Monday
+  title: Concert 1
+  chair:
+  date: Monday 2020-07-06 8-9:30pm
   type: music
   im: 
   youtube_link:
 
 - UID: C2_Tuesday
-  title:
+  title: Concert 2
   chair:
-  date:
+  date: Tuesday 2020-07-07 8-9:30pm
   type: music
   im: 
   youtube_link:
 
 - UID: C3_Wednesday
-  title:
+  title: Concert 3
   chair:
-  date:
+  date: Wednesday 2020-07-08 8-9:30pm
   type: music
   im: 
   youtube_link:
 
 - UID: C4_Thursday
-  title:
+  title: Concert 4
   chair:
-  date:
+  date: Thursday 2020-07-09 8-9:30pm
   type: music
   im: 
   youtube_link:
@@ -45,33 +53,33 @@
 # Podcasts
 
 - UID: P1_Monday
-  title:
+  title: Listening Room 1
   chair:
-  date:
+  date: Monday 2020-07-06 8-9:00am
   type: music
   im: 
   youtube_link:
 
 - UID: P2_Tuesday
-  title:
+  title: Listening Room 2
   chair:
-  date:
+  date: Tuesday 2020-07-07 8-9:00am
   type: music
   im:
   youtube_link:
 
 - UID: P3_Wednesday
-  title:
+  title: Listening Room 3
   chair:
-  date:
+  date: Wednesday 2020-07-08 8-9:00am
   type: music
   im:
   youtube_link:
 
 - UID: P4_Thursday
-  title:
+  title: Listening Room 4
   chair:
-  date:
+  date: Thursday 2020-07-09 8-9:00am
   type: music
   im:
   youtube_link:
