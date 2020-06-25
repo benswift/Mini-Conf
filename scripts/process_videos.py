@@ -1,5 +1,6 @@
 import subprocess
 import csv
+import json
 from pathlib import Path
 import re
 
@@ -18,6 +19,28 @@ def title_and_artist_from_uid(uid):
     for p in PAPERS:
         if p["UID"] == uid:
             return (p["title"], p["authors"])
+
+
+def probe(media_filename):
+    proc = subprocess.run(
+        [
+            "ffprobe",
+            "-v",
+            "quiet",
+            "-print_format",
+            "json",
+            "-show_format",
+            "-show_streams",
+            media_filename,
+        ],
+        capture_output=True,
+    )
+    return json.loads(proc.stdout.decode("utf-8"))
+
+
+def is_audio_only(media_filename):
+    streams = [s["codec_type"] for s in probe(media_filename)["streams"]]
+    return "video" not in streams
 
 
 def uid_from_filename(media_filename):
