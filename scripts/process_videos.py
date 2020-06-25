@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 
 conference="ACMC 2020"
-typeface="AlegreyaSans" # use a font with Thin, Regular & Bold weights
+typeface="Lato" # use a font with Thin, Regular & Bold weights
 titlecard_length_sec = 3
 
 
