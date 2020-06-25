@@ -6,7 +6,7 @@ import re
 
 conference="ACMC 2020"
 typeface="Lato" # use a font with Thin, Regular & Bold weights
-titlecard_length_sec = 3
+titlecard_length_sec = 10
 
 
 media_path = Path("media")
