@@ -17,7 +17,7 @@ PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
 def title_and_artist_from_uid(uid):
     for p in PAPERS:
-        if p["UID"] == uid:
+        if int(p["UID"]) == uid:
             return (p["title"], p["authors"])
 
 
