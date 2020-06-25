@@ -15,12 +15,28 @@ output_path = media_path / "processed"
 
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
+# paper/session order helpers
 
 def title_and_artist_from_uid(uid):
     for p in PAPERS:
         if int(p["UID"]) == uid:
             return (p["title"], p["authors"])
 
+
+def all_sessions():
+    return set(p["session_name"] for p in PAPERS)
+
+
+def get_session_schedule(session_name):
+    schedule = []
+    for p in PAPERS:
+        if p["session_name"] == session_name:
+            schedule.append((int(p["UID"]), p["session_position"]))
+
+    return sorted(schedule, key = lambda p: p[1])
+
+
+# FFmpeg helpers
 
 def probe(media_filename):
     proc = subprocess.run(
