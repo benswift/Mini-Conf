@@ -106,10 +106,66 @@ def make_titlecard(uid):
     return titlecard_path
 
 
+def make_audiovideo(uid):
+
+
+    title, artist = title_and_artist_from_uid(uid)
+    mp = get_media_path(uid)
+    of = output_path / f"{uid}-audiovideo.mkv"
+
+    assert is_audio_only(mp)
+
+    proc = subprocess.run(
+        [
+            "ffmpeg", "-y",
+            # add blank audio
+            "-i", mp,
+            # set bg colour, video size & duration
+            "-f", "lavfi",
+            # select virtual input video device
+            "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
+            # title
+            "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
+            # artist
+            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
+            # conference
+            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
+            # output file
+            of
+        ]
+    )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+    return of
+
+
 def make_video(uid):
 
     tc = make_titlecard(uid)
     mp = get_media_path(uid)
+    of = output_path / f"{uid}.mkv"
+
+    assert not is_audio_only(mp)
+    # now smoosh it on to the front
+
+    subprocess.run(
+        ["ffmpeg",
+         "-i", tc,
+         "-i", mp,
+         "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
+         "-map", "[v]", "-map", "[a]",
+         "-y", of
+        ]
+    )
+
+
+def make_audio(uid):
+
+    # TODO this is currently just a copy of the make-video version
+
+    tc = make_titlecard(uid)
+    mp = output_path / f"{uid}-audiovideo.mkv"
     of = output_path / f"{uid}.mkv"
 
     # now smoosh it on to the front
