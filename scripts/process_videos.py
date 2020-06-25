@@ -43,6 +43,14 @@ def is_audio_only(media_filename):
     return "video" not in streams
 
 
+def video_dimensions(filename):
+    for stream in probe(filename)["streams"]:
+        if stream["codec_type"] == "video":
+            return (int(stream["width"]), int(stream["height"]))
+
+    raise ValueError(f"no video streams found in {filename}")
+
+
 def uid_from_filename(media_filename):
     try:
         return re.search('([0-9]+).(mp4|mkv|mov)', media_filename).group(1)
