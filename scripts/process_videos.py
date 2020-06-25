@@ -55,7 +55,6 @@ def video_dimensions(filename):
 def get_media_path(uid):
 
     for mf in media_path.glob(f"{uid}.*"):
-        print(mf, mf.suffix)
         if mf.suffix in media_extensions:
             return mf
 
