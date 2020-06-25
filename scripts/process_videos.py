@@ -59,8 +59,11 @@ def get_media_path(uid):
             return mf
 
     raise ValueError(f"No media file found for UID {uid}")
+
+def make_titlecard(uid):
+
     title, artist = title_and_artist_from_uid(uid)
-    titlecard_path = media_path / "titlecards" / f"{uid}-titlecard.mkv"
+    titlecard_path = output_path / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
@@ -87,50 +90,26 @@ def get_media_path(uid):
     return titlecard_path
 
 
-def process_video():
+def make_video(uid):
 
-    # accumulator variables
-    videos = []
-    filter_string = ""
-    video_index = 0
+    tc = make_titlecard(uid)
+    mp = get_media_path(uid)
+    of = output_path / f"{uid}.mkv"
 
-    # build up the list of files & filters for the ffmpeg command
-    for p in media_path.iterdir():
-        uid = uid_from_filename(p.name)
-        if uid:
-            videos.append("-i")
-            videos.append(make_titlecard(uid))
-            videos.append("-i")
-            videos.append(p)
-            filter_string = filter_string + f"[{video_index}:v] [{video_index}:a] [{video_index+1}:v] [{video_index+1}:a] "
-            video_index += 2
+    # now smoosh it on to the front
 
-    if not videos:
-        print("No valid videos found, aborting")
-        exit(1)
-
-    else:
-        filter_string = filter_string + f"concat=n={video_index}:v=1:a=1 [v] [a]"
-
-        print(filter_string)
-
-        # it's showtime!
-        subprocess.run(
-            ["ffmpeg"] + videos
-            + [
-                "-filter_complex",
-                filter_string,
-                "-map",
-                "[v]",
-                "-map",
-                "[a]",
-                "-y",
-                (output_path / "output.mkv").resolve(),
-            ]
-        )
-        return True
+    subprocess.run(
+        ["ffmpeg",
+         "-i", tc,
+         "-i", mp,
+         "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
+         "-map", "[v]", "-map", "[a]",
+         "-y", of
+        ]
+    )
 
 
 if __name__ == '__main__':
 
-    process_video()
+    # process_video()
+    print(make_video(16))
