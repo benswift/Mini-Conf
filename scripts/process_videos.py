@@ -52,14 +52,14 @@ def video_dimensions(filename):
     raise ValueError(f"no video streams found in {filename}")
 
 
-def uid_from_filename(media_filename):
-    try:
-        return re.search('([0-9]+).(mp4|mkv|mov)', media_filename).group(1)
-    except:
-        return False
+def get_media_path(uid):
 
+    for mf in media_path.glob(f"{uid}.*"):
+        print(mf, mf.suffix)
+        if mf.suffix in media_extensions:
+            return mf
 
-def make_titlecard(uid):
+    raise ValueError(f"No media file found for UID {uid}")
     title, artist = title_and_artist_from_uid(uid)
     titlecard_path = media_path / "titlecards" / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
