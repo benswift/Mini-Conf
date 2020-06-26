@@ -76,6 +76,7 @@ def get_media_path(uid):
 
     raise ValueError(f"No media file found for UID {uid}")
 
+
 def make_titlecard(uid):
 
     title, artist = title_and_artist_from_uid(uid)
@@ -106,15 +107,19 @@ def make_titlecard(uid):
     return titlecard_path
 
 
-def make_audiovideo(uid):
+def make_audio(uid):
 
-
-    title, artist = title_and_artist_from_uid(uid)
     mp = get_media_path(uid)
-    of = output_path / f"{uid}-audiovideo.mkv"
-
     assert is_audio_only(mp)
 
+    # make the titlecard (no audio, just 10s)
+    tc = make_titlecard(uid)
+
+    # attach the titlecard to the actual audio file
+    title, artist = title_and_artist_from_uid(uid)
+    tmp = output_path / f"{uid}-audio-with-titlecard.mkv"
+
+    # make the
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
@@ -131,18 +136,30 @@ def make_audiovideo(uid):
             # conference
             f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
             # output file
-            of
+            tmp
         ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
+
+    of = output_path / f"{uid}.mkv"
+    # now smoosh it on to the front
+
+    subprocess.run(
+        ["ffmpeg",
+         "-i", tc,
+         "-i", tmp,
+         "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
+         "-map", "[v]", "-map", "[a]",
+         "-y", of
+        ]
+    )
 
     return of
 
 
 def make_video(uid):
 
-    tc = make_titlecard(uid)
     mp = get_media_path(uid)
     of = output_path / f"{uid}.mkv"
 
@@ -160,23 +177,44 @@ def make_video(uid):
     )
 
 
-def make_audio(uid):
+def make_media(uid):
 
-    # TODO this is currently just a copy of the make-video version
+    mp = get_media_path(uid)
 
-    tc = make_titlecard(uid)
-    mp = output_path / f"{uid}-audiovideo.mkv"
-    of = output_path / f"{uid}.mkv"
+    if is_audio_only(mp):
+        make_audio(uid)
+    else:
+        make_video(uid)
 
-    # now smoosh it on to the front
 
-    subprocess.run(
-        ["ffmpeg",
-         "-i", tc,
-         "-i", mp,
-         "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
-         "-map", "[v]", "-map", "[a]",
-         "-y", of
+def make_session(output_filename, uid_list):
+
+    n = length(uid_list)
+    ffmpeg_input_args = []
+
+    # prepare the input file args
+    for i in range(n):
+        input_args.append("-i")
+        input_args.append(media_path / "processed" / f"{uid}.mkv")
+
+    # construct the filter command
+    filter_string = f"concat=n={n}:v=1:a=1 [v] [a]"
+    for i in reversed(range(n)):
+        filter_string = f"[{i}:v] [{i}:a] " + filter_string
+
+    # it's showtime!
+    proc = subprocess.run(
+        ["ffmpeg"] +
+        ffmpeg_input_args +
+        [
+            "-filter_complex",
+            filter_string,
+            "-map",
+            "[v]",
+            "-map",
+            "[a]",
+            "-y",
+            output_filename,
         ]
     )
 
@@ -184,4 +222,4 @@ def make_audio(uid):
 if __name__ == '__main__':
 
     # process_video()
-    print(make_video(16))
+    make_media(14)
