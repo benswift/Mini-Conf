@@ -166,6 +166,8 @@ def make_video(uid):
     assert not is_audio_only(mp)
     # now smoosh it on to the front
 
+    tc = make_titlecard(uid)
+
     subprocess.run(
         ["ffmpeg",
          "-i", tc,
