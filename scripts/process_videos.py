@@ -80,7 +80,7 @@ def get_media_path(uid):
 def make_titlecard(uid):
 
     title, artist = title_and_artist_from_uid(uid)
-    titlecard_path = output_path / f"{uid}-titlecard.mkv"
+    titlecard_path = output_path / "tmp" / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
@@ -117,7 +117,7 @@ def make_audio(uid):
 
     # attach the titlecard to the actual audio file
     title, artist = title_and_artist_from_uid(uid)
-    tmp = output_path / f"{uid}-audio-with-titlecard.mkv"
+    tmp = output_path / "tmp" / f"{uid}-audio-with-titlecard.mkv"
 
     # make the
     proc = subprocess.run(
