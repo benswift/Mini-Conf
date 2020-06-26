@@ -5,7 +5,6 @@ from pathlib import Path
 import re
 
 conference="ACMC 2020"
-typeface="Lato" # use a font with Thin, Regular & Bold weights
 titlecard_length_sec = 10
 
 
@@ -77,9 +76,22 @@ def get_media_path(uid):
     raise ValueError(f"No media file found for UID {uid}")
 
 
+def titlecard_drawtext_filter(uid):
+
+    typeface="Lato" # use a font with Thin, Regular & Bold weights
+    title, artist = title_and_artist_from_uid(uid)
+
+    return [
+        "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
+        # artist
+        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
+        # conference
+        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
+    ]
+
+
 def make_titlecard(uid):
 
-    title, artist = title_and_artist_from_uid(uid)
     titlecard_path = output_path / "tmp" / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
         [
@@ -91,15 +103,11 @@ def make_titlecard(uid):
             "-f", "lavfi",
             # select virtual input video device
             "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
-            # title
-            "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
-            # artist
-            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
-            # conference
-            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
-            # output file
-            titlecard_path
-        ]
+        ] +
+        # title
+        titlecard_drawtext_filter(uid) +
+        # output file
+        [titlecard_path]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
@@ -116,7 +124,6 @@ def make_audio(uid):
     tc = make_titlecard(uid)
 
     # attach the titlecard to the actual audio file
-    title, artist = title_and_artist_from_uid(uid)
     tmp = output_path / "tmp" / f"{uid}-audio-with-titlecard.mkv"
 
     # make the
@@ -129,15 +136,11 @@ def make_audio(uid):
             "-f", "lavfi",
             # select virtual input video device
             "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
-            # title
-            "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
-            # artist
-            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
-            # conference
-            f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
-            # output file
-            tmp
-        ]
+        ] +
+        # title
+        titlecard_drawtext_filter(uid) +
+        # output file
+        [tmp]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
