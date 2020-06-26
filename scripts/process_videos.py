@@ -191,15 +191,15 @@ def make_media(uid):
 
 def make_session(output_filename, uid_list):
 
-    n = length(uid_list)
     ffmpeg_input_args = []
 
     # prepare the input file args
-    for i in range(n):
-        input_args.append("-i")
-        input_args.append(media_path / "processed" / f"{uid}.mkv")
+    for uid in uid_list:
+        ffmpeg_input_args.append("-i")
+        ffmpeg_input_args.append(media_path / "processed" / f"{uid}.mkv")
 
     # construct the filter command
+    n = len(uid_list)
     filter_string = f"concat=n={n}:v=1:a=1 [v] [a]"
     for i in reversed(range(n)):
         filter_string = f"[{i}:v] [{i}:a] " + filter_string
@@ -216,7 +216,7 @@ def make_session(output_filename, uid_list):
             "-map",
             "[a]",
             "-y",
-            output_filename,
+            output_path / output_filename,
         ]
     )
 
