@@ -148,7 +148,7 @@ def make_audio(uid):
     of = output_path / f"{uid}.mkv"
     # now smoosh it on to the front
 
-    subprocess.run(
+    proc = subprocess.run(
         ["ffmpeg",
          "-i", tc,
          "-i", tmp,
@@ -157,6 +157,8 @@ def make_audio(uid):
          "-y", of
         ]
     )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
 
     return of
 
@@ -171,7 +173,7 @@ def make_video(uid):
 
     tc = make_titlecard(uid)
 
-    subprocess.run(
+    proc = subprocess.run(
         ["ffmpeg",
          "-i", tc,
          "-i", mp,
@@ -180,6 +182,10 @@ def make_video(uid):
          "-y", of
         ]
     )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+    return of
 
 
 def make_media(uid):
@@ -187,9 +193,9 @@ def make_media(uid):
     mp = get_media_path(uid)
 
     if is_audio_only(mp):
-        make_audio(uid)
+        return make_audio(uid)
     else:
-        make_video(uid)
+        return make_video(uid)
 
 
 def make_session(output_filename, uid_list):
@@ -199,7 +205,7 @@ def make_session(output_filename, uid_list):
     # prepare the input file args
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
-        ffmpeg_input_args.append(media_path / "processed" / f"{uid}.mkv")
+        ffmpeg_input_args.append(make_media(uid))
 
     # construct the filter command
     n = len(uid_list)
