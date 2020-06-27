@@ -240,7 +240,26 @@ def make_session(output_filename, uid_list):
     )
 
 
+def print_video_program_status():
+
+    # do we have a media file
+    print("## Presentations with no media file\n")
+    for p in PAPERS:
+        try:
+            get_media_path(p["UID"])
+        except ValueError as e:
+            print(f"{p['UID']}: '{p['title']}' by {p['authors']} ({p['session_name']})")
+    print()
+
+    print("## Presentations with no session position\n")
+    for p in PAPERS:
+        if not isinstance(p["session_position"], int):
+            print(f"{p['UID']}: '{p['title']}' by {p['authors']} ({p['session_name']})")
+    print()
+
 if __name__ == '__main__':
 
     # process_video()
-    make_media(14)
+    # make_media(14)
+
+    print_video_program_status()
