@@ -26,10 +26,12 @@ for p in PAPERS:
 
 # paper/session order helpers
 
-def title_and_artist_from_uid(uid):
+def info_from_uid(uid):
     for p in PAPERS:
         if p["UID"] == uid:
-            return (p["title"], p["authors"])
+            return p
+
+    raise KeyError(f"no paper found with UID {uid}")
 
 
 def all_sessions():
@@ -97,7 +99,9 @@ def get_media_path(uid):
 def titlecard_drawtext_filter(uid):
 
     typeface="Lato" # use a font with Thin, Regular & Bold weights
-    title, artist = title_and_artist_from_uid(uid)
+    info = info_from_uid(uid)
+    title = info["title"]
+    artist = info["author"]
 
     return [
         "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
@@ -251,19 +255,43 @@ def make_session(output_filename, uid_list):
 def print_video_program_status():
 
     # do we have a media file
-    print("## Presentations with no media file\n")
-    for p in PAPERS:
-        try:
-            get_media_path(p["UID"])
-        except ValueError as e:
-            print(f"{p['UID']}: '{p['title']}' by {p['authors']} ({p['session_name']})")
-    print()
 
-    print("## Presentations with no session position\n")
+    problems = {"nofile": {}, "badres": {}, "badchan": {}, "nosession": {}, "noposition": {}}
+
     for p in PAPERS:
+        uid = p["UID"]
+        try:
+            mf = get_media_path(uid)
+        except ValueError:
+            problems["nofile"][uid] = "no media file"
+            continue
+
+        channels = audio_channels(mf)
+        if channels != 2:
+            problems["badchan"][uid] = f"{channels} audio channels"
+
+        if not is_audio_only(mf):
+            width, height = video_dimensions(mf)
+            if (width, height) != (1920, 1080):
+                problems["badres"][uid] = f"video dimensions {width}x{height}"
+
         if not isinstance(p["session_position"], int):
-            print(f"{p['UID']}: '{p['title']}' by {p['authors']} ({p['session_name']})")
-    print()
+            problems["noposition"][uid] = f"no position in session {p['session_name']}"
+
+    # ok, now print out the problems
+    def print_problems(problem_type):
+        pr = problems[problem_type]
+        print(f"## Found {len(pr)} '{problem_type}' problems\n")
+        for uid in pr.keys():
+            info = info_from_uid(uid)
+            print(f"{uid}: '{info['title']}' by {info['authors']} ({pr[uid]})")
+        print()
+
+    print_problems("nofile")
+    print_problems("badchan")
+    print_problems("badres")
+    print_problems("noposition")
+
 
 if __name__ == '__main__':
 
