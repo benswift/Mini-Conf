@@ -14,11 +14,21 @@ output_path = media_path / "processed"
 
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
+# transform a couple of columns to integer
+for p in PAPERS:
+    p["UID"] = int(p["UID"])
+
+    # for session position, just let the "TBA" ones slide for now
+    try:
+        p["session_position"] = int(p["session_position"])
+    except ValueError:
+        pass
+
 # paper/session order helpers
 
 def title_and_artist_from_uid(uid):
     for p in PAPERS:
-        if int(p["UID"]) == uid:
+        if p["UID"] == uid:
             return (p["title"], p["authors"])
 
 
@@ -30,7 +40,7 @@ def get_session_schedule(session_name):
     schedule = []
     for p in PAPERS:
         if p["session_name"] == session_name:
-            schedule.append((int(p["UID"]), p["session_position"]))
+            schedule.append((p["UID"], p["session_position"]))
 
     return sorted(schedule, key = lambda p: p[1])
 
