@@ -259,7 +259,4 @@ def print_video_program_status():
 
 if __name__ == '__main__':
 
-    # process_video()
-    # make_media(14)
-
     print_video_program_status()
