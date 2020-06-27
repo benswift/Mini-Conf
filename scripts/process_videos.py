@@ -77,6 +77,14 @@ def video_dimensions(filename):
     raise ValueError(f"no video streams found in {filename}")
 
 
+def audio_channels(filename):
+    for stream in probe(filename)["streams"]:
+        if stream["codec_type"] == "audio":
+            return int(stream["channels"])
+
+    raise ValueError(f"no audio streams found in {filename}")
+
+
 def get_media_path(uid):
 
     for mf in media_path.glob(f"{uid}.*"):
