@@ -256,41 +256,41 @@ def print_video_program_status():
 
     # do we have a media file
 
-    problems = {"nofile": {}, "badres": {}, "badchan": {}, "nosession": {}, "noposition": {}}
+    problems = {"no_file": {}, "bad_resolution": {}, "bad_num_channels": {}, "no_session_assigned": {}, "no_session_position_assigned": {}}
 
     for p in PAPERS:
         uid = p["UID"]
         try:
             mf = get_media_path(uid)
         except ValueError:
-            problems["nofile"][uid] = "no media file"
+            problems["no_file"][uid] = "no media file"
             continue
 
         channels = audio_channels(mf)
         if channels != 2:
-            problems["badchan"][uid] = f"{channels} audio channels"
+            problems["bad_num_channels"][uid] = f"{channels} audio channels"
 
         if not is_audio_only(mf):
             width, height = video_dimensions(mf)
             if (width, height) != (1920, 1080):
-                problems["badres"][uid] = f"video dimensions {width}x{height}"
+                problems["bad_resolution"][uid] = f"video dimensions {width}x{height}"
 
         if not isinstance(p["session_position"], int):
-            problems["noposition"][uid] = f"no position in session {p['session_name']}"
+            problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
 
     # ok, now print out the problems
     def print_problems(problem_type):
         pr = problems[problem_type]
-        print(f"## Found {len(pr)} '{problem_type}' problems\n")
+        print(f"## Found {len(pr)} **{problem_type}** problems\n")
         for uid in pr.keys():
             info = info_from_uid(uid)
-            print(f"{uid}: '{info['title']}' by {info['authors']} ({pr[uid]})")
+            print(f"{uid}: _{info['title']}_ by {info['authors']} ({pr[uid]})")
         print()
 
-    print_problems("nofile")
-    print_problems("badchan")
-    print_problems("badres")
-    print_problems("noposition")
+    print_problems("no_file")
+    print_problems("bad_num_channels")
+    print_problems("bad_resolution")
+    print_problems("no_session_position_assigned")
 
 
 if __name__ == '__main__':
