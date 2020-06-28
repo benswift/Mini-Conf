@@ -111,6 +111,11 @@ def titlecard_drawtext_filter(uid):
     artist = info["authors"]
 
     return [
+        # set bg colour, video size & duration
+        "-f", "lavfi",
+        # select virtual input video device
+        "-i", f"color=c=#111111:s=1920x1080:d={titlecard_length_sec}",
+        # title
         "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
         # artist
         f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
@@ -128,10 +133,6 @@ def make_titlecard(uid):
             "-f", "lavfi",
             # add blank audio
             "-i", f"anoisesrc=d={titlecard_length_sec}:c=pink:a=0.0",
-            # set bg colour, video size & duration
-            "-f", "lavfi",
-            # select virtual input video device
-            "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
         ] +
         # title
         titlecard_drawtext_filter(uid) +
@@ -160,11 +161,7 @@ def make_audio(uid):
         [
             "ffmpeg", "-y",
             # add blank audio
-            "-i", mp,
-            # set bg colour, video size & duration
-            "-f", "lavfi",
-            # select virtual input video device
-            "-i", f"color=c=#222222:s=1920x1080:d={titlecard_length_sec}",
+            "-i", mp
         ] +
         # title
         titlecard_drawtext_filter(uid) +
