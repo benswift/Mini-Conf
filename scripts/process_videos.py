@@ -89,11 +89,16 @@ def audio_channels(filename):
 
 def get_media_path(uid):
 
-    for mf in media_path.glob(f"{uid}.*"):
+    files = media_path.glob(f"{uid}.*")
+
+    if len(files) == 0:
+        raise ValueError(f"No media file found for UID {uid}")
+    if len(files) > 1:
+        raise ValueError(f"Too many media files found for UID {uid} ({files})")
+
+    for mf in files:
         if mf.suffix in media_extensions:
             return mf
-
-    raise ValueError(f"No media file found for UID {uid}")
 
 
 def titlecard_drawtext_filter(uid):
