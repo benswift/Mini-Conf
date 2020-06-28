@@ -110,6 +110,7 @@ def titlecard_drawtext_filter(uid):
     # - check which one is the real spreadsheet which populates papers.csv
     # - where possible, edit spreadsheet fields into sensible multi-line ones
     # - otherwise, just shrink font-size based on string length
+    # - get non-ascii chars working (e.g. Chinese chars)
 
     typeface="Lato" # same font as ACMC website, needs Thin & Black weights
     info = info_from_uid(uid)
