@@ -103,24 +103,39 @@ def get_media_path(uid):
 
     raise ValueError(f"no media file found for UID {uid}")
 
+
 def titlecard_drawtext_filter(uid):
 
     typeface="Lato" # use a font with Thin, Regular & Bold weights
     info = info_from_uid(uid)
-    title = info["title"]
-    artist = info["authors"]
+    title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
+    artist = info["authors"].strip()
+
+    # text positioning stuff
+    left_margin = 50
+    title_size = 120
+    # a heuristic about title/subtitles using ':'
+    if ":" in title:
+        parts = title.split(":")
+        title = parts[0].strip()
+        subtitle = parts[1].strip()
+    else:
+        subtitle = ""
 
     return [
         # set bg colour, video size & duration
         "-f", "lavfi",
         # select virtual input video device
         "-i", f"color=c=#111111:s=1920x1080:d={titlecard_length_sec}",
+        "-vf",
         # title
-        "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
+        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size}:fontcolor=#EEEEEE:x={left_margin}:y=h-600:text='{title}', " +
+        # subtitle (may be an empty string)
+        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size*0.5}:fontcolor=#EEEEEE:x={left_margin}:y=h-450:text='{subtitle}', " +
         # artist
-        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=70:fontcolor=#EEEEEE:x=100:y=h-280:text='{artist}', " +
+        f"drawtext=fontfile='{typeface}\:style=Black':fontsize={title_size*0.4}:fontcolor=#EEEEEE:x={left_margin}:y=h-350:text='{artist}', " +
         # conference
-        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize=50:fontcolor=#EEEEEE:x=100:y=h-200:text='{conference}'",
+        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size*0.4}:fontcolor=#EEEEEE:x={left_margin}:y=h-100:text='{conference}'",
     ]
 
 
