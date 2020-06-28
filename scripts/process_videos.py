@@ -317,7 +317,6 @@ def check_string_lengths(uid):
     info = info_from_uid(uid)
     title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
     artist = info["authors"].strip()
-    max_len = 60
 
     # a heuristic about title/subtitles using ':'
     if ":" in title:
@@ -327,13 +326,13 @@ def check_string_lengths(uid):
     else:
         subtitle = ""
 
-    if len(title) > max_len:
+    if len(title) > 30:
         print(f"long title (length {len(title)}) for {uid}: {title}")
 
-    if len(subtitle) > max_len:
+    if len(subtitle) > 70:
         print(f"long subtitle (length {len(subtitle)}) for {uid}: {subtitle}")
 
-    if len(artist) > max_len:
+    if len(artist) > 70:
         print(f"long artist (length {len(artist)}) for {uid}: {artist}")
 
 
