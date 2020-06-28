@@ -141,7 +141,7 @@ def titlecard_drawtext_filter(uid):
         # artist
         f"drawtext=fontfile='{typeface}\:style=Black':fontsize={title_size*0.4}:fontcolor=#EEEEEE:x={left_margin}:y=h-350:text='{artist}', " +
         # conference
-        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size*0.4}:fontcolor=#EEEEEE:x={left_margin}:y=h-100:text='{conference}'",
+        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize={title_size*0.4}:fontcolor=#222222:box=1:boxcolor=#EEEEEE@0.5:boxborderw=20:x=w-tw-{left_margin}-20:y=h-100:text='ACMC2020 {{inclusion}}'",
     ]
 
 
