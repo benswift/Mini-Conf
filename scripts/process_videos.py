@@ -343,4 +343,9 @@ def check_string_lengths(uid):
 
 if __name__ == '__main__':
 
-    print_video_program_status()
+    # print_video_program_status()
+    make_session("test-session.mkv", [32, 39])
+
+    # for p in PAPERS:
+    #     # make_titlecard(p["UID"])
+    #     check_string_lengths(p["UID"])
