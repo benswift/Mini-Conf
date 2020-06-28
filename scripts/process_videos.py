@@ -106,11 +106,12 @@ def get_media_path(uid):
 
 def titlecard_drawtext_filter(uid):
 
-    typeface="Lato" # use a font with Thin, Regular & Bold weights
     # TODO for titlecards
     # - check which one is the real spreadsheet which populates papers.csv
     # - where possible, edit spreadsheet fields into sensible multi-line ones
     # - otherwise, just shrink font-size based on string length
+
+    typeface="Lato" # same font as ACMC website, needs Thin & Black weights
     info = info_from_uid(uid)
     title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
     artist = info["authors"].strip()
