@@ -8,11 +8,12 @@ conference="ACMC 2020"
 titlecard_length_sec = 10
 
 
-media_path = Path("media")
 media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif"]
+media_path = Path("media")
 output_path = media_path / "processed"
+tmp_path = output_path / "tmp"
 # ensure all the required folders are all there
-output_path.mkdir(parents=True, exist_ok=True)
+tmp_path.mkdir(parents=True, exist_ok=True)
 
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
@@ -120,7 +121,7 @@ def titlecard_drawtext_filter(uid):
 
 def make_titlecard(uid):
 
-    titlecard_path = output_path / "tmp" / f"{uid}-titlecard.mkv"
+    titlecard_path = tmp_path / f"{uid}-titlecard.mkv"
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
