@@ -312,6 +312,31 @@ def print_video_program_status():
     print_problems("no_session_position_assigned")
 
 
+def check_string_lengths(uid):
+    # filthy hack - copypasta'd from above
+    info = info_from_uid(uid)
+    title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
+    artist = info["authors"].strip()
+    max_len = 60
+
+    # a heuristic about title/subtitles using ':'
+    if ":" in title:
+        parts = title.split(":")
+        title = parts[0].strip()
+        subtitle = parts[1].strip()
+    else:
+        subtitle = ""
+
+    if len(title) > max_len:
+        print(f"long title (length {len(title)}) for {uid}: {title}")
+
+    if len(subtitle) > max_len:
+        print(f"long subtitle (length {len(subtitle)}) for {uid}: {subtitle}")
+
+    if len(artist) > max_len:
+        print(f"long artist (length {len(artist)}) for {uid}: {artist}")
+
+
 if __name__ == '__main__':
 
     print_video_program_status()
