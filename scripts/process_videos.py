@@ -108,7 +108,7 @@ def titlecard_drawtext_filter(uid):
     typeface="Lato" # use a font with Thin, Regular & Bold weights
     info = info_from_uid(uid)
     title = info["title"]
-    artist = info["author"]
+    artist = info["authors"]
 
     return [
         "-vf", f"drawtext=fontfile='{typeface}\:style=Thin':fontsize=160:fontcolor=#EEEEEE:x=100:y=h-500:text='{title}', " +
