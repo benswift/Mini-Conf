@@ -89,17 +89,16 @@ def audio_channels(filename):
 
 def get_media_path(uid):
 
-    files = media_path.glob(f"{uid}.*")
+    files = list(media_path.glob(f"{uid}.*"))
 
-    if len(files) == 0:
-        raise ValueError(f"No media file found for UID {uid}")
     if len(files) > 1:
-        raise ValueError(f"Too many media files found for UID {uid} ({files})")
+        raise ValueError(f"too many media files found for UID {uid} ({files})")
 
     for mf in files:
         if mf.suffix in media_extensions:
             return mf
 
+    raise ValueError(f"no media file found for UID {uid}")
 
 def titlecard_drawtext_filter(uid):
 
@@ -261,14 +260,14 @@ def print_video_program_status():
 
     # do we have a media file
 
-    problems = {"no_file": {}, "bad_resolution": {}, "bad_num_channels": {}, "no_session_assigned": {}, "no_session_position_assigned": {}}
+    problems = {"file": {}, "bad_resolution": {}, "bad_num_channels": {}, "no_session_assigned": {}, "no_session_position_assigned": {}}
 
     for p in PAPERS:
         uid = p["UID"]
         try:
             mf = get_media_path(uid)
-        except ValueError:
-            problems["no_file"][uid] = "no media file"
+        except ValueError as e:
+            problems["file"][uid] = str(e)
             continue
 
         channels = audio_channels(mf)
@@ -292,7 +291,7 @@ def print_video_program_status():
             print(f"{uid}: _{info['title']}_ by {info['authors']} ({pr[uid]})")
         print()
 
-    print_problems("no_file")
+    print_problems("file")
     print_problems("bad_num_channels")
     print_problems("bad_resolution")
     print_problems("no_session_position_assigned")
