@@ -11,6 +11,8 @@ titlecard_length_sec = 10
 media_path = Path("media")
 media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif"]
 output_path = media_path / "processed"
+# ensure all the required folders are all there
+output_path.mkdir(parents=True, exist_ok=True)
 
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
