@@ -104,6 +104,14 @@ def get_media_path(uid):
     raise ValueError(f"no media file found for UID {uid}")
 
 
+def has_media_file(uid):
+    try:
+        get_media_path(uid)
+        return True
+    except ValueError:
+        return False
+
+
 def make_titlecard(uid):
     """ok, let's do it with reveal.js (and decktape)
     """
