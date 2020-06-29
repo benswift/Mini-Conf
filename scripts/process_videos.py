@@ -13,6 +13,8 @@ tmp_path = output_path / "tmp"
 # ensure all the required folders are all there
 tmp_path.mkdir(parents=True, exist_ok=True)
 
+# the length of this file determines the length of the titlecard
+silence_file_path = media_path / "silence.wav"
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 
 # transform a couple of columns to integer
