@@ -5,9 +5,6 @@ from pathlib import Path
 import re
 from jinja2 import Template
 
-conference="ACMC 2020"
-titlecard_length_sec = 10
-
 
 media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif"]
 media_path = Path("media")
