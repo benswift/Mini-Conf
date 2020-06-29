@@ -226,12 +226,11 @@ def make_audio(uid):
     # now smoosh it on to the front
 
     proc = subprocess.run(
-        ["ffmpeg",
+        ["ffmpeg", "-y",
          "-i", tc,
          "-i", tmp,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
-         "-map", "[v]", "-map", "[a]",
-         "-y", of
+         "-map", "[v]", "-map", "[a]", of
         ]
     )
     if proc.returncode != 0:
@@ -251,12 +250,11 @@ def make_video(uid):
     tc = make_titlecard(uid)
 
     proc = subprocess.run(
-        ["ffmpeg",
+        ["ffmpeg", "-y",
          "-i", tc,
          "-i", mp,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
-         "-map", "[v]", "-map", "[a]",
-         "-y", of
+         "-map", "[v]", "-map", "[a]", of
         ]
     )
     if proc.returncode != 0:
@@ -292,17 +290,12 @@ def make_session(output_filename, uid_list):
 
     # it's showtime!
     proc = subprocess.run(
-        ["ffmpeg"] +
+        ["ffmpeg", "-y"] +
         ffmpeg_input_args +
         [
             "-filter_complex",
             filter_string,
-            "-map",
-            "[v]",
-            "-map",
-            "[a]",
-            "-y",
-            output_path / output_filename,
+            "-map", "[v]", "-map", "[a]", output_path / output_filename,
         ]
     )
 
