@@ -1,5 +1,6 @@
 import subprocess
 import csv
+import yaml
 import json
 from pathlib import Path
 import re
@@ -16,6 +17,7 @@ tmp_path.mkdir(parents=True, exist_ok=True)
 # the length of this file determines the length of the titlecard
 silence_file_path = media_path / "silence.wav"
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
+SESSIONS = list(yaml.load(open("sitedata/sessions.yml")))
 
 # transform a couple of columns to integer
 for p in PAPERS:
@@ -35,10 +37,6 @@ def info_from_uid(uid):
             return p
 
     raise KeyError(f"no paper found with UID {uid}")
-
-
-def all_sessions():
-    return set(p["session_name"] for p in PAPERS)
 
 
 def get_session_schedule(session_name):
