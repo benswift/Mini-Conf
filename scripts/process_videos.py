@@ -3,6 +3,7 @@ import csv
 import json
 from pathlib import Path
 import re
+from jinja2 import Template
 
 conference="ACMC 2020"
 titlecard_length_sec = 10
@@ -102,6 +103,27 @@ def get_media_path(uid):
             return mf
 
     raise ValueError(f"no media file found for UID {uid}")
+
+
+def make_titlecard_image(uid):
+    """ok, let's do it with reveal.js (and decktape)
+    """
+
+    typeface="Lato" # same font as ACMC website, needs Thin & Black weights
+    info = info_from_uid(uid)
+    title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
+    artist = info["authors"].strip()
+
+    # a heuristic about title/subtitles using ':'
+    if ":" in title:
+        parts = title.split(":")
+        title = parts[0].strip()
+        subtitle = parts[1].strip()
+    else:
+        subtitle = None
+
+    template = Template(open("media/reveal.js/index.j2").read())
+    template.stream(title=title, subtitle=subtitle, artist=artist).dump("media/reveal.js/index.html")
 
 
 def titlecard_drawtext_filter(uid):
