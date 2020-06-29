@@ -36,7 +36,9 @@
 			<div class="slides">
 			  <section class="titleslide" data-background-image="acmc-background.jpg">
 				<div class="titlecard title">{{ title }}</div>
+                {% if subtitle %}
 				<div class="titlecard subtitle">{{ subtitle }}</div>
+                {% endif %}
 				<div class="titlecard artist">{{ artist }}</div>
 			  </section>
 			</div>
