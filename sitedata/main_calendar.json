@@ -63,18 +63,27 @@
     "calendarId": "---"
   },
   {
-    "title": "ACMC Live",
-    "start": "2020-07-04T20:00:00+10:00",
-    "end": "2020-07-04T21:30:00+10:00",
-    "location": "session_ACMC_Live.html",
-    "link": "session_ACMC_Live.html",
+    "title": "ACMC Live - 1",
+    "start": "2020-07-07T20:00:00+10:00",
+    "end": "2020-07-07T20:15:00+10:00",
+    "location": "session_acmc_live_1.html",
+    "link": "session_acmc_live_1.html",
+    "category": "time",
+    "calendarId": "---"
+  },
+  {
+    "title": "ACMC Live - 2",
+    "start": "2020-07-08T13:00:00+10:00",
+    "end": "2020-07-08T13:30:00+10:00",
+    "location": "session_acmc_live_2.html",
+    "link": "session_acmc_live_2.html",
     "category": "time",
     "calendarId": "---"
   },
   {
     "title": "ANU Laptop Ensemble Replay",
-    "start": "2020-07-04T22:00:00+10:00",
-    "end": "2020-07-04T23:30:00+10:00",
+    "start": "2020-07-04T20:00:00+10:00",
+    "end": "2020-07-04T21:30:00+10:00",
     "location": "",
     "link": "",
     "category": "time",
@@ -91,8 +100,8 @@
   },
   {
     "title": "Concert 2",
-    "start": "2020-07-07T20:00:00+10:00",
-    "end": "2020-07-07T21:30:00+10:00",
+    "start": "2020-07-07T20:20:00+10:00",
+    "end": "2020-07-07T21:50:00+10:00",
     "location": "session_C2_Tuesday.html",
     "link": "session_C2_Tuesday.html",
     "category": "time",
