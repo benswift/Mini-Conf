@@ -104,9 +104,11 @@ def get_media_path(uid):
     raise ValueError(f"no media file found for UID {uid}")
 
 
-def make_titlecard_image(uid):
+def make_titlecard(uid):
     """ok, let's do it with reveal.js (and decktape)
     """
+
+    output_path = tmp_path / f"{uid}-titlecard.mkv"
 
     typeface="Lato" # same font as ACMC website, needs Thin & Black weights
     info = info_from_uid(uid)
@@ -132,21 +134,14 @@ def make_titlecard_image(uid):
     )
 
     # this is the output filename that Decktape will give the png
-    return tmp_path / f"{uid}-titlecard_1_1920x1080.png"
+    titlecard_path = tmp_path / f"{uid}-titlecard_1_1920x1080.png"
 
-
-def make_titlecard(uid):
-
-    output_path = tmp_path / f"{uid}-titlecard.mkv"
-    titlecard_path = make_titlecard_image(uid)
+    # now, make the titlecard video
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
-            # add blank audio
-            "-f", "lavfi",
-            "-i", f"anoisesrc=d={titlecard_length_sec}:c=pink:a=0.0",
             # titlecard png as an input source
-            "-i", titlecard_path,
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
             output_path
         ]
     )
