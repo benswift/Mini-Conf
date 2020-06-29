@@ -110,6 +110,12 @@ def has_media_file(uid):
         return False
 
 
+def render_revealjs_index_html(title, subtitle, artist):
+
+    template = Template(open("media/reveal.js/index.j2").read())
+    template.stream(title=title, subtitle=subtitle, artist=artist).dump("media/reveal.js/index.html")
+
+
 def make_titlecard(uid):
     """ok, let's do it with reveal.js (and decktape)
     """
@@ -129,8 +135,7 @@ def make_titlecard(uid):
     else:
         subtitle = None
 
-    template = Template(open("media/reveal.js/index.j2").read())
-    template.stream(title=title, subtitle=subtitle, artist=artist).dump("media/reveal.js/index.html")
+    render_revealjs_index_html(title, subtitle, artist)
 
     # ok, now run decktape to get the png
     proc = subprocess.run(
