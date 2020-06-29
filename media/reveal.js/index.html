@@ -8,16 +8,37 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link
+		  href="https://fonts.googleapis.com/css?family=Lato:300,900&display=swap"
+		  rel="stylesheet"
+		/>
 	</head>
 	<body>
+	  <style>
+	   .reveal .slides {
+		 font-family: "Lato";
+		 font-size: 5vw;
+	   }
+	   .titlecard {
+		 text-align: left;
+		 background-color: rgba(256, 256, 256, 0.8);
+		 display: table;
+		 padding: 1vw 2vh;
+	     margin-bottom: 2vw;
+	   }
+	   .titlecard.title { font-weight: 300; }
+	   .titlecard.subtitle { font-size: 0.5em; font-weight: 300; }
+	   .titlecard.artist { font-size: 0.5em; font-weight: 900; }
+
+	  </style>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+			  <section class="titleslide" data-background-image="acmc-background.jpg">
+				<div class="titlecard title">{{ title }}</div>
+				<div class="titlecard subtitle">{{ subtitle }}</div>
+				<div class="titlecard artist">{{ artist }}</div>
+			  </section>
 			</div>
 		</div>
 
@@ -33,7 +54,7 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: []
 			});
 		</script>
 	</body>
