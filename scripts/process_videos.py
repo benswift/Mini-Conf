@@ -127,7 +127,7 @@ def make_titlecard_image(uid):
 
     # ok, now run decktape to get the png
     proc = subprocess.run(
-        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", tmp_path, "media/reveal.js/index.html", f"{uid}.pdf"]
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", tmp_path, "media/reveal.js/index.html", tmp_path / f"{uid}.pdf"]
     )
 
     # this is the output filename that Decktape will give the png
