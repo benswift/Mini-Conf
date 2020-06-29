@@ -1,63 +1,62 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
 
-		<link
-		  href="https://fonts.googleapis.com/css?family=Lato:300,900&display=swap"
-		  rel="stylesheet"
-		/>
-	</head>
-	<body>
-	  <style>
-	   .reveal .slides {
-		 font-family: "Lato";
-		 font-size: 3vw;
-	   }
-	   .titlecard {
-		 text-align: left;
-		 background-color: rgba(256, 256, 256, 0.8);
-		 display: table;
-		 padding: 1vw 2vh;
-	     margin-bottom: 2vw;
-	   }
-	   .titlecard.title { font-weight: 300; }
-	   .titlecard.subtitle { font-size: 0.5em; font-weight: 300; }
-	   .titlecard.artist { font-size: 0.5em; font-weight: 900; }
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+     .reveal .slides {
+       font-family: "Lato";
+       font-size: 3vw;
+     }
+     .titlecard {
+       text-align: left;
+       background-color: rgba(256, 256, 256, 0.8);
+       display: table;
+       padding: 1vw 2vh;
+     }
+     .titlecard.title { font-weight: 300; }
+     .titlecard.subtitle { font-size: 0.5em; font-weight: 300; }
+     .titlecard.artist { font-size: 0.5em; font-weight: 900; }
 
-	  </style>
-		<div class="reveal">
-			<div class="slides">
-			  <section class="titleslide" data-background-image="acmc-background.jpg">
-				<div class="titlecard title">{{ title }}</div>
-                {% if subtitle %}
-				<div class="titlecard subtitle">{{ subtitle }}</div>
-                {% endif %}
-				<div class="titlecard artist">{{ artist }}</div>
-			  </section>
-			</div>
-		</div>
+    </style>
+    <div class="reveal">
+      <div class="slides">
+        <section class="titleslide" data-background-image="acmc-background.jpg">
+          <div class="titlecard title">{{ title }}</div>
+          {% if subtitle %}
+            <div class="titlecard subtitle">{{ subtitle }}</div>
+          {% endif %}
+          <div class="titlecard artist">{{ artist }}</div>
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+     // More info about initialization & config:
+     // - https://revealjs.com/initialization/
+     // - https://revealjs.com/config/
+     Reveal.initialize({
+       hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: []
-			});
-		</script>
-	</body>
+       // Learn about plugins: https://revealjs.com/plugins/
+       plugins: []
+     });
+    </script>
+  </body>
 </html>
