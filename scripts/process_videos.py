@@ -273,7 +273,7 @@ def print_video_program_status():
         if not is_audio_only(mf):
             width, height = video_dimensions(mf)
             if (width, height) != (1920, 1080):
-                problems["bad_resolution"][uid] = f"video dimensions {width}x{height}"
+                problems["bad_resolution"][uid] = f"video dimensions {width}x{height} (aspect ratio {width/height:.2f})"
 
         if not isinstance(p["session_position"], int):
             problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
