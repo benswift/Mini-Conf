@@ -127,73 +127,34 @@ def make_titlecard_image(uid):
 
     # ok, now run decktape to get the png
     proc = subprocess.run(
-        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", tmp_path, "media/reveal.js/index.html", tmp_path / f"{uid}.pdf"]
+        # the path to index.html is a bit gross, but otherwise decktape insists on polluting the top-level with pdf files
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../../reveal.js/index.html", f"{uid}-titlecard.pdf"],
+        cwd = tmp_path
     )
 
     # this is the output filename that Decktape will give the png
-    return tmp_path / f"{uid}_1_1920x1080.png"
-
-
-def titlecard_drawtext_filter(uid):
-
-    # TODO for titlecards
-    # - check which one is the real spreadsheet which populates papers.csv
-    # - where possible, edit spreadsheet fields into sensible multi-line ones
-    # - otherwise, just shrink font-size based on string length
-    # - get non-ascii chars working (e.g. Chinese chars)
-
-    typeface="Lato" # same font as ACMC website, needs Thin & Black weights
-    info = info_from_uid(uid)
-    title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
-    artist = info["authors"].strip()
-
-    # text positioning stuff
-    left_margin = 50
-    title_size = 120
-    # a heuristic about title/subtitles using ':'
-    if ":" in title:
-        parts = title.split(":")
-        title = parts[0].strip()
-        subtitle = parts[1].strip()
-    else:
-        subtitle = ""
-
-    return [
-        # set bg colour, video size & duration
-        "-f", "lavfi",
-        # select virtual input video device
-        "-i", f"color=c=#111111:s=1920x1080:d={titlecard_length_sec}",
-        "-vf",
-        # title
-        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size}:fontcolor=#EEEEEE:x={left_margin}:y=h-600:text='{title}', " +
-        # subtitle (may be an empty string)
-        f"drawtext=fontfile='{typeface}\:style=Thin':fontsize={title_size*0.5}:fontcolor=#EEEEEE:x={left_margin}:y=h-450:text='{subtitle}', " +
-        # artist
-        f"drawtext=fontfile='{typeface}\:style=Black':fontsize={title_size*0.4}:fontcolor=#EEEEEE:x={left_margin}:y=h-350:text='{artist}', " +
-        # conference
-        f"drawtext=fontfile='{typeface}\:style=Bold':fontsize={title_size*0.4}:fontcolor=#222222:box=1:boxcolor=#EEEEEE@0.5:boxborderw=20:x=w-tw-{left_margin}-20:y=h-100:text='ACMC2020 {{inclusion}}'",
-    ]
+    return tmp_path / f"{uid}-titlecard_1_1920x1080.png"
 
 
 def make_titlecard(uid):
 
-    titlecard_path = tmp_path / f"{uid}-titlecard.mkv"
+    output_path = tmp_path / f"{uid}-titlecard.mkv"
+    titlecard_path = make_titlecard_image(uid)
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
-            "-f", "lavfi",
             # add blank audio
+            "-f", "lavfi",
             "-i", f"anoisesrc=d={titlecard_length_sec}:c=pink:a=0.0",
-        ] +
-        # title
-        titlecard_drawtext_filter(uid) +
-        # output file
-        [titlecard_path]
+            # titlecard png as an input source
+            "-i", titlecard_path,
+            output_path
+        ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    return titlecard_path
+    return output_path
 
 
 def make_audio(uid):
