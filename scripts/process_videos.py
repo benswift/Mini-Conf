@@ -122,7 +122,6 @@ def make_titlecard(uid):
 
     output_path = tmp_path / f"{uid}-titlecard.mkv"
 
-    typeface="Lato" # same font as ACMC website, needs Thin & Black weights
     info = info_from_uid(uid)
     title = info["title"].strip() # to not bork the stringly passing of args
     artist = info["authors"].strip()
