@@ -225,7 +225,7 @@ def make_media(uid):
         return make_video(uid)
 
 
-def make_session(output_filename, uid_list):
+def make_session_video(output_filename, uid_list):
 
     ffmpeg_input_args = []
 
