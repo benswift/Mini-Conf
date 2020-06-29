@@ -10,10 +10,18 @@
 
 # Concerts
 
-- UID: ACMC_Live
-  title: ACMC Live
-  chair:
-  date: Saturday 2020-07-04 8-9:30pm
+- UID: acmc_live_1
+  title: ACMC Live 1
+  chair: Charles Martin
+  date: Tuesday 2020-07-07 8-8:15pm
+  type: music
+  im: 
+  youtube_link:
+
+- UID: acmc_live_2
+  title: ACMC Live 2
+  chair: Charles Martin
+  date: Saturday 2020-07-08 1-1:30pm
   type: music
   im: 
   youtube_link:
