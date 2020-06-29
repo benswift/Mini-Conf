@@ -111,7 +111,7 @@ def make_titlecard_image(uid):
 
     typeface="Lato" # same font as ACMC website, needs Thin & Black weights
     info = info_from_uid(uid)
-    title = info["title"].replace("'", "\u2019").strip() # to not bork the stringly passing of args
+    title = info["title"].strip() # to not bork the stringly passing of args
     artist = info["authors"].strip()
 
     # a heuristic about title/subtitles using ':'
