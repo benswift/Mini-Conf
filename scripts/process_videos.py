@@ -260,6 +260,13 @@ def print_video_program_status():
 
     for p in PAPERS:
         uid = p["UID"]
+
+        if not isinstance(p["session_name"], str):
+            problems["no_session_assigned"][uid] = f"no session name assigned"
+
+        if not isinstance(p["session_position"], int):
+            problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
+
         try:
             mf = get_media_path(uid)
         except ValueError as e:
@@ -275,9 +282,6 @@ def print_video_program_status():
             if (width, height) != (1920, 1080):
                 problems["bad_resolution"][uid] = f"video dimensions {width}x{height} (aspect ratio {width/height:.2f})"
 
-        if not isinstance(p["session_position"], int):
-            problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
-
     # ok, now print out the problems
     def print_problems(problem_type):
         pr = problems[problem_type]
@@ -290,6 +294,7 @@ def print_video_program_status():
     print_problems("file")
     print_problems("bad_num_channels")
     print_problems("bad_resolution")
+    print_problems("no_session_assigned")
     print_problems("no_session_position_assigned")
 
 
@@ -320,8 +325,13 @@ def check_string_lengths(uid):
 if __name__ == '__main__':
 
     # print_video_program_status()
-    make_session("test-session.mkv", [32, 39])
 
     # for p in PAPERS:
     #     # make_titlecard(p["UID"])
     #     check_string_lengths(p["UID"])
+
+    # print(set(p["session_name"] for p in PAPERS))
+    # print(set(p["session_position"] for p in PAPERS))
+
+    for session_name in all_sessions():
+        make_session_video()
