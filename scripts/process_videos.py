@@ -156,8 +156,8 @@ def make_audio(uid):
     mp = get_media_path(uid)
     assert is_audio_only(mp)
 
-    # make the titlecard (no audio, just 10s)
-    tc = make_titlecard(uid)
+    # make the titlecard video
+    titlecard_path = make_titlecard(uid)
 
     # attach the titlecard to the actual audio file
     tmp = output_path / "tmp" / f"{uid}-audio-with-titlecard.mkv"
@@ -166,13 +166,10 @@ def make_audio(uid):
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
-            # add blank audio
-            "-i", mp
-        ] +
-        # title
-        titlecard_drawtext_filter(uid) +
-        # output file
-        [tmp]
+            "-i", titlecard_path,
+            "-i", mp,
+            "-map", "0:v", "-c:v", "copy", "-map", "1:a", "-c:a", "copy", tmp
+        ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
@@ -182,7 +179,7 @@ def make_audio(uid):
 
     proc = subprocess.run(
         ["ffmpeg", "-y",
-         "-i", tc,
+         "-i", titlecard_path,
          "-i", tmp,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
          "-map", "[v]", "-map", "[a]", of
@@ -202,11 +199,11 @@ def make_video(uid):
     assert not is_audio_only(mp)
     # now smoosh it on to the front
 
-    tc = make_titlecard(uid)
+    titlecard_path = make_titlecard(uid)
 
     proc = subprocess.run(
         ["ffmpeg", "-y",
-         "-i", tc,
+         "-i", titlecard_path,
          "-i", mp,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
          "-map", "[v]", "-map", "[a]", of
