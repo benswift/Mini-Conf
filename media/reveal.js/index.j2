@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="dist/reveal.css">
 
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,900&display=swap"
+      href="https://fonts.googleapis.com/css?family=Lato:300,700,900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -18,7 +18,7 @@
     <style>
      .reveal .slides {
        font-family: "Lato";
-       font-size: 3vw;
+       font-size: 4vw;
      }
      .titlecard {
        text-align: left;
@@ -26,10 +26,19 @@
        display: table;
        padding: 1vw 2vh;
      }
-     .titlecard.title { font-weight: 300; }
-     .titlecard.subtitle { font-size: 0.5em; font-weight: 300; }
+     .titlecard.title { font-weight: 300; margin-bottom: 0.1vw; }
+     .titlecard.subtitle { font-size: 0.5em; font-weight: 300; margin-bottom: 2vw; }
      .titlecard.artist { font-size: 0.5em; font-weight: 900; }
 
+     .titlecard.logo {
+       text-align: center;
+       font-size: 0.5em;
+       font-weight: 700;
+       position: fixed;
+       padding: 0.6vw 1vw;
+       bottom: 0;
+       right: 0;
+     }
     </style>
     <div class="reveal">
       <div class="slides">
@@ -40,6 +49,9 @@
           {% endif %}
           <div class="titlecard artist">{{ artist }}</div>
         </section>
+
+        <!-- logo -->
+        <div class="titlecard logo">ACMC2020<br>{ inclusion }</div>
       </div>
     </div>
 
@@ -52,10 +64,8 @@
      // - https://revealjs.com/initialization/
      // - https://revealjs.com/config/
      Reveal.initialize({
-       hash: true,
-
-       // Learn about plugins: https://revealjs.com/plugins/
-       plugins: []
+       width: "100%",
+       hash: true
      });
     </script>
   </body>
