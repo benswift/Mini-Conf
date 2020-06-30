@@ -285,6 +285,11 @@ def make_session_titlecard(session_uid):
     return output_path
 
 
+def is_live_session(session_name):
+    # a dirty heuristic, but it'll do
+    return session_name[:10] == "acmc_live_"
+
+
 def make_session_video(session_uid, skip_missing=False):
 
     ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
@@ -333,7 +338,7 @@ def print_video_program_status():
             problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
 
         # live performances won't have videos
-        if p["session_name"][:10] == "acmc_live_":
+        if is_live_session(p["session_name"]):
             continue
 
         try:
