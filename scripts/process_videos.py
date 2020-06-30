@@ -174,7 +174,7 @@ def make_audio(uid):
     titlecard_path = make_titlecard(uid)
 
     # attach the titlecard to the actual audio file
-    tmp = tmp_path / f"{uid}-audio-with-titlecard.mkv"
+    tmpfile = tmp_path / f"{uid}-audio-with-titlecard.mkv"
 
     # make the
     proc = subprocess.run(
@@ -182,7 +182,7 @@ def make_audio(uid):
             "ffmpeg", "-y",
             "-i", titlecard_path,
             "-i", mp,
-            "-map", "0:v", "-c:v", "copy", "-map", "1:a", "-c:a", "copy", tmp
+            "-map", "0:v", "-c:v", "copy", "-map", "1:a", "-c:a", "copy", tmpfile
         ]
     )
     if proc.returncode != 0:
@@ -194,7 +194,7 @@ def make_audio(uid):
     proc = subprocess.run(
         ["ffmpeg", "-y",
          "-i", titlecard_path,
-         "-i", tmp,
+         "-i", tmpfile,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
          "-map", "[v]", "-map", "[a]", of
         ]
