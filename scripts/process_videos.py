@@ -17,7 +17,7 @@ tmp_path.mkdir(parents=True, exist_ok=True)
 # the length of this file determines the length of the titlecard
 silence_file_path = media_path / "silence.wav"
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
-SESSIONS = list(yaml.load(open("sitedata/sessions.yml")))
+SESSIONS = list(yaml.safe_load(open("sitedata/sessions.yml")))
 
 # transform a couple of columns to integer
 for p in PAPERS:
