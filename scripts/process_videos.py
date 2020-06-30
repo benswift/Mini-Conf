@@ -299,7 +299,7 @@ def make_session_video(session_uid, skip_missing=False):
         ffmpeg_input_args.append(make_media(uid))
 
     # construct the filter command
-    n = len(ffmpeg_input_args)/2
+    n = int(len(ffmpeg_input_args)/2)
     filter_string = f"concat=n={n}:v=1:a=1 [v] [a]"
     for i in reversed(range(n)):
         filter_string = f"[{i}:v] [{i}:a] " + filter_string
