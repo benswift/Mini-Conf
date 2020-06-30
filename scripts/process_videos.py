@@ -311,7 +311,7 @@ def make_session_video(session_uid, skip_missing=False):
          "-filter_complex",
          filter_string,
          *ffmpeg_encoder_args,
-         "-map", "[v]", "-map", "[a]", output_path / output_filename,
+         "-map", "[v]", "-map", "[a]", output_path / f"{session_uid}.mkv",
         ]
     )
 
