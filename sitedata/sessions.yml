@@ -13,7 +13,7 @@
 - UID: acmc_live_1
   title: ACMC Live 1
   chair: Charles Martin
-  date: Tuesday 2020-07-07 8-8:15pm
+  date: Tuesday 2020-07-07 8pm-8:15pm
   type: music
   im: 
   youtube_link:
@@ -21,7 +21,7 @@
 - UID: acmc_live_2
   title: ACMC Live 2
   chair: Charles Martin
-  date: Wednesday 2020-07-08 1-1:30pm
+  date: Wednesday 2020-07-08 1pm-1:30pm
   type: music
   im: 
   youtube_link:
@@ -29,7 +29,7 @@
 - UID: C1_Monday
   title: Concert 1
   chair:
-  date: Monday 2020-07-06 8-9:30pm
+  date: Monday 2020-07-06 8pm-9:30pm
   type: music
   im: 
   youtube_link:
@@ -37,7 +37,7 @@
 - UID: C2_Tuesday
   title: Concert 2
   chair:
-  date: Tuesday 2020-07-07 8-9:30pm
+  date: Tuesday 2020-07-07 8pm-9:30pm
   type: music
   im: 
   youtube_link:
@@ -45,7 +45,7 @@
 - UID: C3_Wednesday
   title: Concert 3
   chair:
-  date: Wednesday 2020-07-08 8-9:30pm
+  date: Wednesday 2020-07-08 8pm-9:30pm
   type: music
   im: 
   youtube_link:
@@ -53,7 +53,7 @@
 - UID: C4_Thursday
   title: Concert 4
   chair:
-  date: Thursday 2020-07-09 8-9:30pm
+  date: Thursday 2020-07-09 8pm-9:30pm
   type: music
   im: 
   youtube_link:
@@ -63,7 +63,7 @@
 - UID: P1_Monday
   title: Listening Room 1
   chair:
-  date: Monday 2020-07-06 8-9:00am
+  date: Monday 2020-07-06 8am-9am
   type: music
   im: 
   youtube_link:
@@ -71,7 +71,7 @@
 - UID: P2_Tuesday
   title: Listening Room 2
   chair:
-  date: Tuesday 2020-07-07 8-9:00am
+  date: Tuesday 2020-07-07 8am-9am
   type: music
   im:
   youtube_link:
@@ -79,7 +79,7 @@
 - UID: P3_Wednesday
   title: Listening Room 3
   chair:
-  date: Wednesday 2020-07-08 8-9:00am
+  date: Wednesday 2020-07-08 8am-9am
   type: music
   im:
   youtube_link:
@@ -87,7 +87,7 @@
 - UID: P4_Thursday
   title: Listening Room 4
   chair:
-  date: Thursday 2020-07-09 8-9:00am
+  date: Thursday 2020-07-09 8am-9am
   type: music
   im:
   youtube_link:
@@ -97,7 +97,7 @@
 - UID: daws-live-algo
   title: DAWs, Liveness, and Algorithms
   chair: Charles Martin
-  date: Monday 2020-07-06 2-3:30pm
+  date: Monday 2020-07-06 2pm-3:30pm
   type: papers
   im: static/images/sessions/studio-composing.jpg
   youtube_link:
@@ -105,7 +105,7 @@
 - UID: musico-comp
   title: Computer Musicology and Composition
   chair:
-  date: Tuesday 2020-07-07 2-3:30pm
+  date: Tuesday 2020-07-07 2pm-3:30pm
   type: papers
   im: static/images/sessions/rehearsal-lynden.jpg
   youtube_link:
@@ -113,7 +113,7 @@
 - UID: cult-comm-eco
   title: Culture, Communities, and Ecology
   chair:
-  date: Wednesday 2020-07-08 2-3:30pm
+  date: Wednesday 2020-07-08 2pm-3:30pm
   type: papers
   im: static/images/sessions/chloe-ben-performing.jpg
   youtube_link:
@@ -121,7 +121,7 @@
 - UID: spatial-perf
   title: Spatialised Audio and Performance
   chair:
-  date: Thursday 2020-07-09 2-3:30pm
+  date: Thursday 2020-07-09 2pm-3:30pm
   type: papers
   im: static/images/sessions/hololens.jpg
   youtube_link:
@@ -129,7 +129,7 @@
 - UID: synth-nota-inter
   title: Synthesis, Interaction, and Notation
   chair:
-  date: Friday 2020-07-10 2-3:30pm
+  date: Friday 2020-07-10 2pm-3:30pm
   type: papers
   im: static/images/sessions/lens-people.jpg
   youtube_link:
