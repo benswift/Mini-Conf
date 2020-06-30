@@ -215,8 +215,8 @@ def make_video(uid):
         ["ffmpeg", "-y",
          "-i", titlecard_path,
          "-i", mp,
-         "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
-         "-map", "[v]", "-map", "[a]", of
+         "-filter_complex", "[1:v] setsar=sar=1/1, scale=1920:1080 [v]; [0:v] [0:a] [v] [1:a] concat=n=2:v=1:a=1",
+         of
         ]
     )
     if proc.returncode != 0:
