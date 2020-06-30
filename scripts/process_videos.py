@@ -362,14 +362,14 @@ def print_video_program_status():
         print(f"## Found {len(pr)} **{problem_type}** problems\n")
         for uid in pr.keys():
             info = info_from_uid(uid)
-            print(f"{uid}: _{info['title']}_ by {info['authors']} ({pr[uid]})")
+            print(f"- {uid}: _{info['title']}_ by {info['authors']} ({pr[uid]})")
         print()
 
     print_problems("file")
-    print_problems("bad_num_channels")
     print_problems("bad_resolution")
-    print_problems("no_session_assigned")
-    print_problems("no_session_position_assigned")
+    # print_problems("bad_num_channels")
+    # print_problems("no_session_assigned")
+    # print_problems("no_session_position_assigned")
 
 
 def check_string_lengths(uid):
