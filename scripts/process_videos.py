@@ -263,7 +263,7 @@ def make_session_titlecard(session_uid):
     # ok, now run decktape to get the png
     proc = subprocess.run(
         # the path to index.html is a bit gross, but otherwise decktape insists on polluting the top-level with pdf files
-        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../../reveal.js/index.html", f"{session_uid}-titlecard.pdf"],
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../reveal.js/index.html", f"{session_uid}-titlecard.pdf"],
         cwd = tmp_path
     )
 
