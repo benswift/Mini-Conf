@@ -174,7 +174,7 @@ def make_audio(uid):
     titlecard_path = make_titlecard(uid)
 
     # attach the titlecard to the actual audio file
-    tmp = output_path / "tmp" / f"{uid}-audio-with-titlecard.mkv"
+    tmp = tmp_path / f"{uid}-audio-with-titlecard.mkv"
 
     # make the
     proc = subprocess.run(
