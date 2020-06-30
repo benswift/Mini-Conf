@@ -235,17 +235,67 @@ def make_media(uid):
         return make_video(uid)
 
 
-def make_session_video(output_filename, uid_list):
+def make_session_titlecard(session_uid):
+    """NOTE: this is mostly copy-pasted from above
 
-    ffmpeg_input_args = []
+    should refactor, but can't be arsed right now
+
+    """
+
+    session_data = None
+    for s in SESSIONS:
+        if s["UID"] == session_uid:
+            session_data = s
+            break
+
+    if not session_data:
+        raise ValueError(f"no session found for UID {session_uid}")
+
+    output_path = tmp_path / f"{session_uid}-titlecard.mkv"
+
+    render_revealjs_index_html(s["title"], f"s['date'] AEST", f"session chair: {s['chair']}")
+
+    # ok, now run decktape to get the png
+    proc = subprocess.run(
+        # the path to index.html is a bit gross, but otherwise decktape insists on polluting the top-level with pdf files
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../../reveal.js/index.html", f"{session_uid}-titlecard.pdf"],
+        cwd = tmp_path
+    )
+
+    # this is the output filename that Decktape will give the png
+    titlecard_path = tmp_path / f"{session_uid}-titlecard_1_1920x1080.png"
+
+    # now, make the titlecard video
+    proc = subprocess.run(
+        [
+            "ffmpeg", "-y",
+            # titlecard png as an input source
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            output_path
+        ]
+    )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+    return output_path
+
+
+def make_session_video(session_uid, skip_missing=False):
+
+    ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
 
     # prepare the input file args
+    if skip_missing:
+        uid_list = [p["UID"] for p in PAPERS if p["session_name"] == session_uid and has_media_file(p["UID"])]
+    else:
+        uid_list = [p["UID"] for p in PAPERS if p["session_name"] == session_uid]
+
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
         ffmpeg_input_args.append(make_media(uid))
 
     # construct the filter command
-    n = len(uid_list)
+    n = len(ffmpeg_input_args)/2
     filter_string = f"concat=n={n}:v=1:a=1 [v] [a]"
     for i in reversed(range(n)):
         filter_string = f"[{i}:v] [{i}:a] " + filter_string
