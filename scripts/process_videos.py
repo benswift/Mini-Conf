@@ -19,6 +19,10 @@ silence_file_path = media_path / "silence.wav"
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 SESSIONS = list(yaml.safe_load(open("sitedata/sessions.yml")))
 
+# tweak as necessary for your platform
+ffmpeg_encoder_args = ["-vcodec", "h264_nvenc", "-preset", "slow", "-b:v", "2M", "-maxrate", "2M", "-bufsize", "1M"]
+# ffmpeg_encoder_args = []
+
 # transform a couple of columns to integer
 for p in PAPERS:
     p["UID"] = int(p["UID"])
@@ -302,12 +306,12 @@ def make_session_video(session_uid, skip_missing=False):
 
     # it's showtime!
     proc = subprocess.run(
-        ["ffmpeg", "-y"] +
-        ffmpeg_input_args +
-        [
-            "-filter_complex",
-            filter_string,
-            "-map", "[v]", "-map", "[a]", output_path / output_filename,
+        ["ffmpeg", "-y",
+         *ffmpeg_input_args,
+         "-filter_complex",
+         filter_string,
+         *ffmpeg_encoder_args,
+         "-map", "[v]", "-map", "[a]", output_path / output_filename,
         ]
     )
 
