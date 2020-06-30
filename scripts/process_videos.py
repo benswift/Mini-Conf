@@ -7,7 +7,7 @@ import re
 from jinja2 import Template
 
 
-media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif"]
+media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif", ".mp3"]
 media_path = Path("media")
 output_path = media_path / "processed"
 tmp_path = media_path / "tmp"
