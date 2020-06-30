@@ -332,6 +332,10 @@ def print_video_program_status():
         if not isinstance(p["session_position"], int):
             problems["no_session_position_assigned"][uid] = f"no position in session {p['session_name']}"
 
+        # live performances won't have videos
+        if p["session_name"][:10] == "acmc_live_":
+            continue
+
         try:
             mf = get_media_path(uid)
         except ValueError as e:
