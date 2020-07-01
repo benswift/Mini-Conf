@@ -8,11 +8,15 @@ from jinja2 import Template
 
 
 media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif", ".mp3"]
-media_path = Path("media")
+media_path = Path("/media/storage/ben/media")
 output_path = media_path / "processed"
 tmp_path = media_path / "tmp"
 # ensure all the required folders are all there
 tmp_path.mkdir(parents=True, exist_ok=True)
+
+## don't even ask me why this is necessary unless you want to see RAGE face.
+decktape_tmp_path = Path("tmp")
+decktape_tmp_path.mkdir(parents=True, exist_ok=True)
 
 # the length of this file determines the length of the titlecard
 silence_file_path = media_path / "silence.wav"
@@ -116,8 +120,8 @@ def has_media_file(uid):
 
 def render_revealjs_index_html(title, subtitle, artist):
 
-    template = Template(open("media/reveal.js/index.j2").read())
-    template.stream(title=title, subtitle=subtitle, artist=artist).dump("media/reveal.js/index.html")
+    template = Template(open("scripts/reveal.js/index.j2").read())
+    template.stream(title=title, subtitle=subtitle, artist=artist).dump("scripts/reveal.js/index.html")
 
 
 def make_titlecard(uid):
@@ -143,12 +147,12 @@ def make_titlecard(uid):
     # ok, now run decktape to get the png
     proc = subprocess.run(
         # the path to index.html is a bit gross, but otherwise decktape insists on polluting the top-level with pdf files
-        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../reveal.js/index.html", f"{uid}-titlecard.pdf"],
-        cwd = tmp_path
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../scripts/reveal.js/index.html", f"{uid}-titlecard.pdf"],
+        cwd = decktape_tmp_path
     )
 
     # this is the output filename that Decktape will give the png
-    titlecard_path = tmp_path / f"{uid}-titlecard_1_1920x1080.png"
+    titlecard_path = decktape_tmp_path / f"{uid}-titlecard_1_1920x1080.png"
 
     # now, make the titlecard video
     proc = subprocess.run(
@@ -263,12 +267,12 @@ def make_session_titlecard(session_uid):
     # ok, now run decktape to get the png
     proc = subprocess.run(
         # the path to index.html is a bit gross, but otherwise decktape insists on polluting the top-level with pdf files
-        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../reveal.js/index.html", f"{session_uid}-titlecard.pdf"],
-        cwd = tmp_path
+        ["npx", "decktape", "--size", "1920x1080", "--screenshots", "--screenshots-directory", "." , "../scripts/reveal.js/index.html", f"{session_uid}-titlecard.pdf"],
+        cwd = decktape_tmp_path
     )
 
     # this is the output filename that Decktape will give the png
-    titlecard_path = tmp_path / f"{session_uid}-titlecard_1_1920x1080.png"
+    titlecard_path = decktape_tmp_path / f"{session_uid}-titlecard_1_1920x1080.png"
 
     # now, make the titlecard video
     proc = subprocess.run(
