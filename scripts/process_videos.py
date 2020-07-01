@@ -321,7 +321,7 @@ def make_session_video(session_uid, skip_missing=False):
 
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
-        ffmpeg_input_args.append(make_media(uid))
+        ffmpeg_input_args.append(make_media(uid, False))
 
     # construct the filter command
     n = int(len(ffmpeg_input_args)/2)
