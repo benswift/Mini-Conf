@@ -24,7 +24,7 @@ PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 SESSIONS = list(yaml.safe_load(open("sitedata/sessions.yml")))
 
 # tweak as necessary for your platform
-ffmpeg_encoder_args = ["-vcodec", "h264_nvenc", "-preset", "slow", "-b:v", "2M", "-maxrate", "2M", "-bufsize", "1M"]
+ffmpeg_encoder_args = ["-vcodec", "h264_nvenc", "-preset", "slow", "-b:v", "10M", "-maxrate", "10M", "-bufsize", "1M"]
 # ffmpeg_encoder_args = []
 
 # transform a couple of columns to integer
