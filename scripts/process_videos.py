@@ -8,36 +8,37 @@ from jinja2 import Template
 
 
 media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif", ".mp3"]
+# tweak as necessary for your platform, or use an empty list for defaults
+ffmpeg_encoder_args = ["-vcodec", "h264_nvenc", "-preset", "slow", "-b:v", "10M", "-maxrate", "10M", "-bufsize", "1M"]
+
+
+# paths - tweak `media_path` as necessary for your setup
 media_path = Path("/media/storage/ben/media")
-output_path = media_path / "processed"
 tmp_path = media_path / "tmp"
+processed_output_path = media_path / "processed"
+
+if not media_path.exists():
+    raise FileNotFoundError(f"no media folder found at {media_path}, exiting.")
+
+
 # ensure all the required folders are all there
 tmp_path.mkdir(parents=True, exist_ok=True)
-
+processed_output_path.mkdir(parents=True, exist_ok=True)
 ## don't even ask me why this is necessary unless you want to see RAGE face.
 decktape_tmp_path = Path("tmp")
 decktape_tmp_path.mkdir(parents=True, exist_ok=True)
 
-# the length of this file determines the length of the titlecard
-silence_file_path = media_path / "silence.wav"
+
+# read in the data about the sessions & performances
 PAPERS = list(csv.DictReader(open("sitedata/papers.csv")))
 SESSIONS = list(yaml.safe_load(open("sitedata/sessions.yml")))
 
-# tweak as necessary for your platform
-ffmpeg_encoder_args = ["-vcodec", "h264_nvenc", "-preset", "slow", "-b:v", "10M", "-maxrate", "10M", "-bufsize", "1M"]
-# ffmpeg_encoder_args = []
 
 # transform a couple of columns to integer
 for p in PAPERS:
     p["UID"] = int(p["UID"])
+    p["session_position"] = int(p["session_position"])
 
-    # for session position, just let the "TBA" ones slide for now
-    try:
-        p["session_position"] = int(p["session_position"])
-    except ValueError:
-        pass
-
-# paper/session order helpers
 
 def info_from_uid(uid):
     for p in PAPERS:
@@ -200,7 +201,7 @@ def make_audio(uid):
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    of = output_path / f"{uid}.mkv"
+    output_path = tmp_path / f"{uid}.mkv"
     # now smoosh it on to the front
 
     proc = subprocess.run(
@@ -208,19 +209,19 @@ def make_audio(uid):
          "-i", titlecard_path,
          "-i", tmpfile,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
-         "-map", "[v]", "-map", "[a]", of
+         "-map", "[v]", "-map", "[a]", output_path
         ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    return of
+    return output_path
 
 
 def make_video(uid):
 
     mp = get_media_path(uid)
-    of = output_path / f"{uid}.mkv"
+    output_path = temp_path / f"{uid}.mkv"
 
     assert not is_audio_only(mp)
     # now smoosh it on to the front
@@ -233,13 +234,13 @@ def make_video(uid):
          "-i", mp,
          "-filter_complex", "[1:v] scale=1920:1080, setsar=sar=1/1 [v]; [0:v] [0:a] [v] [1:a] concat=n=2:v=1:a=1",
          *ffmpeg_encoder_args,
-         of
+         output_path
         ]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    return of
+    return output_path
 
 
 def make_media(uid):
@@ -329,7 +330,7 @@ def make_session_video(session_uid, skip_missing=False):
          "-filter_complex",
          filter_string,
          *ffmpeg_encoder_args,
-         "-map", "[v]", "-map", "[a]", output_path / f"{session_uid}.mkv",
+         "-map", "[v]", "-map", "[a]", processed_output_path / f"{session_uid}.mkv",
         ]
     )
 
