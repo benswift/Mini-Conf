@@ -88,6 +88,14 @@ def video_dimensions(filename):
     raise ValueError(f"no video streams found in {filename}")
 
 
+def video_bitrate(filename):
+    for stream in probe(filename)["streams"]:
+        if stream["codec_type"] == "video":
+            return (int(stream["bit_rate"]))
+
+    raise ValueError(f"no video streams found in {filename}")
+
+
 def audio_channels(filename):
     for stream in probe(filename)["streams"]:
         if stream["codec_type"] == "audio":
