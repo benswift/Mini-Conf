@@ -18,7 +18,7 @@
   chair:
   date: Monday 2020-07-06 8am-9am
   type: music
-  im: 
+  im: static/images/sessions/stair1.jpg
   youtube_link:
 
 - UID: daws-live-algo
@@ -34,7 +34,7 @@
   chair:
   date: Monday 2020-07-06 8pm-9:30pm
   type: music
-  im: 
+  im: static/images/sessions/screen.jpg
   youtube_link:
 
 # Tuesday
@@ -44,7 +44,7 @@
   chair:
   date: Tuesday 2020-07-07 8am-9am
   type: music
-  im:
+  im: static/images/sessions/stair2.jpg
   youtube_link:
 
 - UID: musico-comp
@@ -60,7 +60,7 @@
   chair: Charles Martin
   date: Tuesday 2020-07-07 8pm-8:15pm
   type: music
-  im: 
+  im: static/images/sessions/triangle.jpg
   youtube_link:
 
 - UID: C2_Tuesday
@@ -68,7 +68,7 @@
   chair:
   date: Tuesday 2020-07-07 8pm-9:30pm
   type: music
-  im: 
+  im: static/images/sessions/rig3.jpg
   youtube_link:
 
 
@@ -81,7 +81,7 @@
   chair:
   date: Wednesday 2020-07-08 8am-9am
   type: music
-  im:
+  im: static/images/sessions/stair3.jpg
   youtube_link:
 
 - UID: acmc_live_2
@@ -89,7 +89,7 @@
   chair: Charles Martin
   date: Wednesday 2020-07-08 1pm-1:30pm
   type: music
-  im: 
+  im: static/images/sessions/keys.jpg
   youtube_link:
 
 - UID: cult-comm-eco
@@ -105,7 +105,7 @@
   chair:
   date: Wednesday 2020-07-08 8pm-9:30pm
   type: music
-  im: 
+  im: static/images/sessions/rig4.jpg
   youtube_link:
 
 
@@ -118,7 +118,7 @@
   chair:
   date: Thursday 2020-07-09 8am-9am
   type: music
-  im:
+  im: static/images/sessions/stair4.jpg
   youtube_link:
 
 - UID: spatial-perf
@@ -134,7 +134,7 @@
   chair:
   date: Thursday 2020-07-09 8pm-9:30pm
   type: music
-  im: 
+  im: static/images/sessions/pd.jpg
   youtube_link:
 
 # Friday
