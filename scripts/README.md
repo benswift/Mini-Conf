@@ -34,4 +34,4 @@ Then you can use `rclone` to pull the latest files:
 
 or, to push the your latest media files (note the directories are swapped):
 
-    rclone copy --progress --exclude "media/{processed,tmp}/" media/ cloudstor:Shared/acmc
+    rclone copy --progress --exclude "{processed,tmp}/**" media/ cloudstor:Shared/acmc
