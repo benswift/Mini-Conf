@@ -138,3 +138,5 @@ dmypy.json
 
 # node
 node_modules/
+/tmp/
+/scripts/reveal.js/index.html
