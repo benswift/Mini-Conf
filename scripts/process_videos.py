@@ -243,9 +243,15 @@ def make_video(uid):
     return output_path
 
 
-def make_media(uid):
+def make_media(uid, overwrite=True):
 
     mp = get_media_path(uid)
+
+    # if overwrite is False, check if a processed file already exists, and if
+    # so just use that
+    output_path = tmp_path / f"{uid}.mkv"
+    if not overwrite and output_path.exists():
+        return output_path
 
     if is_audio_only(mp):
         return make_audio(uid)
