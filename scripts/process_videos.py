@@ -221,7 +221,7 @@ def make_audio(uid):
 def make_video(uid):
 
     mp = get_media_path(uid)
-    output_path = temp_path / f"{uid}.mkv"
+    output_path = tmp_path / f"{uid}.mkv"
 
     assert not is_audio_only(mp)
     # now smoosh it on to the front
