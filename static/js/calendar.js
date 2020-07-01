@@ -1,4 +1,4 @@
-function make_cal(name) {
+function make_cal(name, defaultView) {
 
     // console.log(location.search, "--- location.search");
 
@@ -52,7 +52,7 @@ function make_cal(name) {
             // console.log(min_date, "--- min_date");
             const Calendar = tui.Calendar;
             const calendar = new Calendar('#calendar', {
-                defaultView: 'month',
+                defaultView: defaultView,
                 isReadOnly: true,
                 // useDetailPopup: true,
                 taskView: false,
