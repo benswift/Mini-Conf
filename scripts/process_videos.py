@@ -294,11 +294,11 @@ def make_session_video(session_uid, skip_missing=False):
 
     ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
 
-    # prepare the input file args
+    uid_list = get_session_schedule(session_uid)
+
+    # filter out the missing ones, if you want to
     if skip_missing:
-        uid_list = [p["UID"] for p in PAPERS if p["session_name"] == session_uid and has_media_file(p["UID"])]
-    else:
-        uid_list = [p["UID"] for p in PAPERS if p["session_name"] == session_uid]
+        uid_list = [uid for uid, pos in uid_list if has_media_file(uid)]
 
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
