@@ -1,24 +1,37 @@
-This directory contains extensions to help support the mini-conf library.
+# Media folder
 
-These include:
+## requirements
 
-* `embeddings.py` : For turning abstracts into embeddings. Creates an `embeddings.torch` file. 
+- [Decktape](https://github.com/astefanutti/decktape) (for making the titlecards)
+- [FFmpeg](http://ffmpeg.org/) for the video stuff
 
-```bash
-python embeddings.py ../sitedata/papers.csv
+## use
+
+1. audio/video files go in this folder, with the filename `UID.{mp4,mkv,mov,m4v,avi,wav,aif}`
+
+2. run the `process_videos.py` script, calling the desired function (e.g.
+   `make_media()` or `make_session_video()` as appropriate)
+
+3. when complete (might take a while) the output will be in `processed/`
+
+### rclone
+
+The media files are currently stored in a shared folder on cloudstor. If you've
+got something like this in your `.config/rclone/rclone.conf`:
+
+```config
+[cloudstor]
+type = webdav
+url = https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/
+vendor = owncloud
+user = <first.last>@anu.edu.au
+pass = <access_token>
 ```
 
-* `reduce.py` : For creating two-dimensional representations of the embeddings.
+Then you can use `rclone` to pull the latest files:
 
-```bash
-python embeddings.py ../sitedata/papers.csv embeddings.torch > ../sitedata/papers_projection.json
-```
+    rclone copy --progress cloudstor:Shared/acmc media/
 
-* `parse_calendar.py` : to convert a local or remote ICS file to JSON. -- more on importing calendars see [README_Schedule.md](README_Schedule.md)
+or, to push the your latest media files (note the directories are swapped):
 
-```bash
-python parse_calendar.py --in sample_cal.ics
-```
-
-* Image-Extraction: https://github.com/Mini-Conf/image-extraction for pulling images from PDF files. 
-
+    rclone copy --progress --exclude "media/{processed,tmp}/" media/ cloudstor:Shared/acmc
