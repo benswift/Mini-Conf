@@ -32,7 +32,8 @@ user = <first.last>@anu.edu.au
 pass = <access_token>
 ```
 
-Then you can use `rclone` to pull the latest files:
+Then you can use `rclone` to pull the latest files (run this command from the
+directory one level up from your `media/` folder):
 
     rclone copy --progress cloudstor:Shared/acmc media/
 
