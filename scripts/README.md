@@ -7,17 +7,21 @@
 
 ## use
 
-1. audio/video files go in this folder, with the filename `UID.{mp4,mkv,mov,m4v,avi,wav,aif}`
+1. audio/video files go in any folder with the filename
+   `<UID>.{mp4,mkv,mov,m4v,avi,wav,aif}`, where `<UID>` is the paper/performance
+   UID
 
-2. run the `process_videos.py` script, calling the desired function (e.g.
+2. change `media_path` at the top of `process_videos.py` to point to that folder
+
+3. run the `process_videos.py` script, calling the desired function (e.g.
    `make_media()` or `make_session_video()` as appropriate)
 
-3. when complete (might take a while) the output will be in `processed/`
+4. when complete (might take a while) the output will be in `processed/`
 
 ### rclone
 
-The media files are currently stored in a shared folder on cloudstor. If you've
-got something like this in your `.config/rclone/rclone.conf`:
+The media files are currently also stored in a shared folder on cloudstor. If
+you've got something like this in your `.config/rclone/rclone.conf`:
 
 ```config
 [cloudstor]
