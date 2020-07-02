@@ -112,6 +112,48 @@ FAQ:
       - Question: I need to get in touch with the conference organisers, how should I do that?
         Answer: "The best way to get in touch with us is via email to acmc2020@easychair.org"
 
+  - Section: Website
+    QA:
+      - Question: Can you fix an error/typo in my performance/paper description?
+        Answer: |
+          The titles, artist names, descriptions, etc are all taken from the
+          information that presenters submitted through the web form (as
+          documented above).
+
+          However, if you notice an error or typo, then send an email to [the
+          ACMC committee](mailto:acmc2020@easychair.org) and we'll fix it up as
+          soon as we can?
+
+      - Question: Who made this website?
+        Answer: |
+          The ACMC website is based on the open source
+          [Mini-Conf](https://github.com/Mini-Conf/Mini-Conf) template, with
+          substantial additions by Ben Swift & Charles Martin.
+
+          All the source code required to build _this_ ACMC website is publicly
+          available on GitHub
+          (<https://github.com/australasian-computer-music-association/acmc2020>),
+          so if you're curious about how it works then you can [poke around in
+          the GH
+          project](https://github.com/australasian-computer-music-association/acmc2020/pulse)
+          and see for yourself.
+
+          It's available under the **MIT License**, so if you want to use
+          anything for your own online conference you can do so under the (very
+          permissive) terms of that license.
+
+      - Question: Is this website accessible?
+        Answer: |
+          [Web
+          Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
+          (a11y) is really important to the ACMC committee---it's a key part of
+          running an inclusive online conference.
+
+          While we've tried our best to use accessible web technologies in
+          building this website, if there's anything which isn't accessible for
+          you then please [let us know](mailto:acmc2020@easychair.org) and we'll
+          try our best to fix it.
+
   - Section : Article Publications
     QA: 
       - Question: Where will the papers be published?
