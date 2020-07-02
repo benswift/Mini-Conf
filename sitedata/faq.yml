@@ -53,7 +53,9 @@ FAQ:
           
       - Question: What format should my video file be?
         Answer: |
-          We will transcode videos before streaming to our output resolution but you can provide videos in the following format to help us out: 
+          We will transcode videos before streaming to our output resolution
+          (1920x1080) but you can provide videos in the following format to help
+          us out:
           
           - 1920x1080 resolution @ 30FPS
           - H.264 codec
