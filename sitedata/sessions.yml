@@ -1,12 +1,12 @@
 # - UID: keynote-1
 #   title: Keynote 1 - Bridget Chappell
 #   chair:
-#   date: Friday 2020-07-03 8-9pm
+#   date: Friday 2020-07-03 8-9pm AEST
 
 # - UID: keynote_2
 #   title: Keynote 2 - Eve Klein
 #   chair:
-#   date: Friday 2020-07-10 8-9pm
+#   date: Friday 2020-07-10 8-9pm AEST
 
 
 # Friday
@@ -16,7 +16,7 @@
 - UID: P1_Monday
   title: Listening Room 1
   chair:
-  date: Monday 2020-07-06 8am-9am
+  date: Monday 2020-07-06 8am-9am AEST
   type: music
   im: static/images/sessions/stair1.jpg
   youtube_link:
@@ -24,7 +24,7 @@
 - UID: daws-live-algo
   title: DAWs, Liveness, and Algorithms
   chair: Charles Martin
-  date: Monday 2020-07-06 2pm-3:30pm
+  date: Monday 2020-07-06 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/studio-composing.jpg
   youtube_link:
@@ -32,7 +32,7 @@
 - UID: C1_Monday
   title: Concert 1
   chair: Kit Devine
-  date: Monday 2020-07-06 8pm-9:30pm
+  date: Monday 2020-07-06 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/screen.jpg
   youtube_link:
@@ -42,7 +42,7 @@
 - UID: P2_Tuesday
   title: Listening Room 2
   chair:
-  date: Tuesday 2020-07-07 8am-9am
+  date: Tuesday 2020-07-07 8am-9am AEST
   type: music
   im: static/images/sessions/stair2.jpg
   youtube_link:
@@ -50,7 +50,7 @@
 - UID: musico-comp
   title: Computer Musicology and Composition
   chair: Alec Hunter
-  date: Tuesday 2020-07-07 2pm-3:30pm
+  date: Tuesday 2020-07-07 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/rehearsal-lynden.jpg
   youtube_link:
@@ -58,7 +58,7 @@
 - UID: acmc_live_1
   title: ACMC Live 1
   chair: Charles Martin
-  date: Tuesday 2020-07-07 8pm-8:15pm
+  date: Tuesday 2020-07-07 8pm-8:15pm AEST
   type: music
   im: static/images/sessions/triangle.jpg
   youtube_link:
@@ -66,7 +66,7 @@
 - UID: C2_Tuesday
   title: Concert 2
   chair: Kit Devine
-  date: Tuesday 2020-07-07 8pm-9:30pm
+  date: Tuesday 2020-07-07 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/rig3.jpg
   youtube_link:
@@ -79,7 +79,7 @@
 - UID: P3_Wednesday
   title: Listening Room 3
   chair:
-  date: Wednesday 2020-07-08 8am-9am
+  date: Wednesday 2020-07-08 8am-9am AEST
   type: music
   im: static/images/sessions/stair3.jpg
   youtube_link:
@@ -87,7 +87,7 @@
 - UID: acmc_live_2
   title: ACMC Live 2
   chair: Charles Martin
-  date: Wednesday 2020-07-08 1pm-1:30pm
+  date: Wednesday 2020-07-08 1pm-1:30pm AEST
   type: music
   im: static/images/sessions/keys.jpg
   youtube_link:
@@ -95,7 +95,7 @@
 - UID: cult-comm-eco
   title: Culture, Communities, and Ecology
   chair: Kit Devine
-  date: Wednesday 2020-07-08 2pm-3:30pm
+  date: Wednesday 2020-07-08 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/chloe-ben-performing.jpg
   youtube_link:
@@ -103,7 +103,7 @@
 - UID: C3_Wednesday
   title: Concert 3
   chair: Ben Swift
-  date: Wednesday 2020-07-08 8pm-9:30pm
+  date: Wednesday 2020-07-08 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/rig4.jpg
   youtube_link:
@@ -116,7 +116,7 @@
 - UID: P4_Thursday
   title: Listening Room 4
   chair:
-  date: Thursday 2020-07-09 8am-9am
+  date: Thursday 2020-07-09 8am-9am AEST
   type: music
   im: static/images/sessions/stair4.jpg
   youtube_link:
@@ -124,7 +124,7 @@
 - UID: spatial-perf
   title: Spatialised Audio and Performance
   chair: Alec Hunter
-  date: Thursday 2020-07-09 2pm-3:30pm
+  date: Thursday 2020-07-09 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/hololens.jpg
   youtube_link:
@@ -132,7 +132,7 @@
 - UID: C4_Thursday
   title: Concert 4
   chair: Sia Ahmad
-  date: Thursday 2020-07-09 8pm-9:30pm
+  date: Thursday 2020-07-09 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/pd.jpg
   youtube_link:
@@ -142,7 +142,7 @@
 - UID: synth-nota-inter
   title: Synthesis, Interaction, and Notation
   chair: Ben Swift
-  date: Friday 2020-07-10 2pm-3:30pm
+  date: Friday 2020-07-10 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/lens-people.jpg
   youtube_link:
