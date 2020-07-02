@@ -48,7 +48,9 @@
           {% if subtitle %}
             <div class="titlecard subtitle">{{ subtitle }}</div>
           {% endif %}
-          <div class="titlecard artist">{{ artist }}</div>
+          {% if artist %}
+            <div class="titlecard artist">{{ artist }}</div>
+          {% endif %}
 
           <!-- logo -->
           <div class="titlecard logo">ACMC2020<br>{ inclusion }</div>
