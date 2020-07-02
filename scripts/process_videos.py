@@ -323,6 +323,8 @@ def make_session_video(session_uid, skip_missing=False):
     if skip_missing:
         uid_list = [uid for uid, pos in uid_list if has_media_file(uid)]
 
+    print(f"making {session_uid} session video with UIDs: {uid_list}")
+
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
         ffmpeg_input_args.append(make_media(uid, False))
