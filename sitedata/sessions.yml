@@ -49,7 +49,7 @@
 
 - UID: musico-comp
   title: Computer Musicology and Composition
-  chair:
+  chair: Alec Hunter
   date: Tuesday 2020-07-07 2pm-3:30pm
   type: papers
   im: static/images/sessions/rehearsal-lynden.jpg
@@ -102,7 +102,7 @@
 
 - UID: C3_Wednesday
   title: Concert 3
-  chair:
+  chair: Ben Swift
   date: Wednesday 2020-07-08 8pm-9:30pm
   type: music
   im: static/images/sessions/rig4.jpg
@@ -123,7 +123,7 @@
 
 - UID: spatial-perf
   title: Spatialised Audio and Performance
-  chair:
+  chair: Alec Hunter
   date: Thursday 2020-07-09 2pm-3:30pm
   type: papers
   im: static/images/sessions/hololens.jpg
@@ -131,7 +131,7 @@
 
 - UID: C4_Thursday
   title: Concert 4
-  chair:
+  chair: Sia Ahmad
   date: Thursday 2020-07-09 8pm-9:30pm
   type: music
   im: static/images/sessions/pd.jpg
