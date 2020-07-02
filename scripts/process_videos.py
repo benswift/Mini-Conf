@@ -317,7 +317,7 @@ def is_live_session(session_uid):
     return session_uid[:10] == "acmc_live_"
 
 
-def make_session_video(session_uid, skip_missing=False):
+def make_session_video(session_uid, skip_missing=False, overwrite=False):
 
     ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
 
@@ -331,7 +331,7 @@ def make_session_video(session_uid, skip_missing=False):
 
     for uid in uid_list:
         ffmpeg_input_args.append("-i")
-        ffmpeg_input_args.append(make_media(uid, False))
+        ffmpeg_input_args.append(make_media(uid, overwrite))
 
     # construct the filter command
     n = int(len(ffmpeg_input_args)/2)
