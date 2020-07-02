@@ -280,7 +280,11 @@ def make_session_titlecard(session_uid):
 
     output_path = tmp_path / f"{session_uid}-titlecard.mkv"
 
-    render_revealjs_index_html(s["title"], f"{s['date']} AEST", f"session chair: {s['chair']}")
+    chair = s['chair']
+    if chair:
+        render_revealjs_index_html(s["title"], f"{s['date']} AEST", f"session chair: {chair}")
+    else:
+        render_revealjs_index_html(s["title"], f"{s['date']} AEST")
 
     # ok, now run decktape to get the png
     proc = subprocess.run(
