@@ -31,7 +31,7 @@
 
 - UID: C1_Monday
   title: Concert 1
-  chair:
+  chair: Kit Devine
   date: Monday 2020-07-06 8pm-9:30pm
   type: music
   im: static/images/sessions/screen.jpg
@@ -65,7 +65,7 @@
 
 - UID: C2_Tuesday
   title: Concert 2
-  chair:
+  chair: Kit Devine
   date: Tuesday 2020-07-07 8pm-9:30pm
   type: music
   im: static/images/sessions/rig3.jpg
@@ -94,7 +94,7 @@
 
 - UID: cult-comm-eco
   title: Culture, Communities, and Ecology
-  chair: Ben Swift
+  chair: Kit Devine
   date: Wednesday 2020-07-08 2pm-3:30pm
   type: papers
   im: static/images/sessions/chloe-ben-performing.jpg
