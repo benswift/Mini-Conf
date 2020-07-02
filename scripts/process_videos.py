@@ -48,10 +48,10 @@ def info_from_uid(uid):
     raise KeyError(f"no paper found with UID {uid}")
 
 
-def get_session_schedule(session_name):
+def get_session_schedule(session_uid):
     schedule = []
     for p in PAPERS:
-        if p["session_name"] == session_name:
+        if p["session_name"] == session_uid:
             schedule.append((p["UID"], p["session_position"]))
 
     return sorted(schedule, key = lambda p: p[1])
@@ -308,9 +308,9 @@ def make_session_titlecard(session_uid):
     return output_path
 
 
-def is_live_session(session_name):
+def is_live_session(session_uid):
     # a dirty heuristic, but it'll do
-    return session_name[:10] == "acmc_live_"
+    return session_uid[:10] == "acmc_live_"
 
 
 def make_session_video(session_uid, skip_missing=False):
