@@ -37,6 +37,8 @@
     </div>
   </div>
 </div>
+
+{% include 'cal_head.html' %}
 {% endblock %}
 
 {% block content %}
@@ -102,6 +104,28 @@ _Ben Swift, Charles Martin, Nat Grant, Alexander Hunter, Kit Devine, Sia Ahmad
 (ACMC committee)_
 
 {% endfilter %}
+
+<!-- Today's calendar -->
+<div id="todays-calendar">
+  <div class="border-top my-3"></div>
+  <h2>Today's schedule</h2>
+
+  <div class="form-group col">
+    <label for="tzOptions">Timezone:</label>
+    <select id="tzOptions" class="selectpicker" data-live-search="true">
+    </select>
+  </div>
+
+  <!-- full cal for browser-->
+  <div id="calendar" class="d-none d-sm-block"></div>
+
+  <!-- small cal for smart phones-->
+  <div id="calendar_small" class="d-sm-none"></div>
+
+  <script type="text/javascript">
+   make_cal("serve_main_calendar.json", "day");
+  </script>
+</div>
 
 <!-- Speakers -->
 {{ components.section("Keynote Artists") }}
