@@ -169,6 +169,7 @@ def make_titlecard(uid):
             "ffmpeg", "-y",
             # titlecard png as an input source
             "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            *ffmpeg_encoder_args,
             output_path
         ]
     )
@@ -195,6 +196,7 @@ def make_audio(uid):
             "ffmpeg", "-y",
             "-i", titlecard_path,
             "-i", mp,
+            *ffmpeg_encoder_args,
             "-map", "0:v", "-c:v", "copy", "-map", "1:a", "-c:a", "copy", tmpfile
         ]
     )
@@ -209,6 +211,7 @@ def make_audio(uid):
          "-i", titlecard_path,
          "-i", tmpfile,
          "-filter_complex", "[0:v] [0:a] [1:v] [1:a] concat=n=2:v=1:a=1 [v] [a]",
+         *ffmpeg_encoder_args,
          "-map", "[v]", "-map", "[a]", output_path
         ]
     )
@@ -295,6 +298,7 @@ def make_session_titlecard(session_uid):
             "ffmpeg", "-y",
             # titlecard png as an input source
             "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            *ffmpeg_encoder_args,
             output_path
         ]
     )
