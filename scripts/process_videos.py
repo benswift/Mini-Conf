@@ -284,7 +284,7 @@ def make_session_titlecard(session_uid):
     if chair:
         render_revealjs_index_html(s["title"], f"{s['date']} AEST", f"session chair: {chair}")
     else:
-        render_revealjs_index_html(s["title"], f"{s['date']} AEST")
+        render_revealjs_index_html(s["title"], f"{s['date']} AEST", None)
 
     # ok, now run decktape to get the png
     proc = subprocess.run(
