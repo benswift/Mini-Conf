@@ -244,7 +244,8 @@ def make_video(uid):
         ["ffmpeg", "-y",
          "-i", titlecard_path,
          "-i", mp,
-         "-filter_complex", "[1:v] scale=1920:1080, setsar=sar=1/1 [v]; [0:v] [0:a] [v] [1:a] concat=n=2:v=1:a=1",
+         # this is where we set all the videos to a consistent fps/size/aspect ratio
+         "-filter_complex", "[1:v] fps=30/1, scale=1920:1080, setsar=sar=1/1 [v]; [0:v] [0:a] [v] [1:a] concat=n=2:v=1:a=1",
          *ffmpeg_encoder_args,
          output_path
         ]
