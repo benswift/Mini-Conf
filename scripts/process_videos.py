@@ -365,6 +365,13 @@ def make_session_video(session_uid, skip_missing, overwrite):
     )
 
 
+def make_all_acmc_session_videos(skip_missing, overwrite):
+    for s in SESSIONS:
+        session_uid = s["UID"]
+        if not is_live_session(session_uid):
+            make_session_video(session_uid, skip_missing, overwrite)
+
+
 def print_video_program_status():
 
     # do we have a media file
