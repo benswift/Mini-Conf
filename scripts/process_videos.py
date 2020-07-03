@@ -396,13 +396,13 @@ def upload_to_youtube(session_uid):
                     "--category", "Music",
                     "--tags", "acmc2020, computer music",
                     "--title", f"ACMC2020 {s['title']}",
-                    "--description", f"{p['date']} video stream for the 2020 Australasian Computer Music Conference (ACMC2020).\n\nFor bios & artist statements from all featured artists, visit https://acmc2020.com/session_{session_uid}.html",
+                    "--description", f"{s['date']} video stream for the 2020 Australasian Computer Music Conference (ACMC2020).\n\nFor bios & artist statements from all featured artists, visit https://acmc2020.com/session_{session_uid}.html",
                     "--thumbnail", Path(s["im"]).absolute(),
                     processed_output_path / f"{session_uid}.mp4"
                 ],
                 cwd = youtube_upload_path
             )
-            print(proc.stdout.decode("utf-8"))
+            print(proc.stdout)
             if proc.returncode != 0:
                 raise ChildProcessError(proc.returncode)
 
