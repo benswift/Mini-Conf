@@ -149,7 +149,7 @@ def make_titlecard(uid):
     """ok, let's do it with reveal.js (and decktape)
     """
 
-    output_path = tmp_path / f"{uid}-titlecard.mkv"
+    output_path = tmp_path / f"{uid}-titlecard.mp4"
 
     info = info_from_uid(uid)
     title = info["title"].strip() # to not bork the stringly passing of args
@@ -200,7 +200,7 @@ def make_audio(uid):
     titlecard_path = make_titlecard(uid)
 
     # attach the titlecard to the actual audio file
-    tmpfile = tmp_path / f"{uid}-audio-with-titlecard.mkv"
+    tmpfile = tmp_path / f"{uid}-audio-with-titlecard.mp4"
 
     # make the
     proc = subprocess.run(
@@ -215,7 +215,7 @@ def make_audio(uid):
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
-    output_path = tmp_path / f"{uid}.mkv"
+    output_path = tmp_path / f"{uid}.mp4"
     # now smoosh it on to the front
 
     proc = subprocess.run(
@@ -236,7 +236,7 @@ def make_audio(uid):
 def make_video(uid):
 
     mp = get_media_path(uid)
-    output_path = tmp_path / f"{uid}.mkv"
+    output_path = tmp_path / f"{uid}.mp4"
 
     assert not is_audio_only(mp)
     # now smoosh it on to the front
@@ -265,7 +265,7 @@ def make_media(uid, overwrite=True):
 
     # if overwrite is False, check if a processed file already exists, and if
     # so just use that
-    output_path = tmp_path / f"{uid}.mkv"
+    output_path = tmp_path / f"{uid}.mp4"
     if not overwrite and output_path.exists():
         return output_path
 
@@ -291,7 +291,7 @@ def make_session_titlecard(session_uid):
     if not session_data:
         raise ValueError(f"no session found for UID {session_uid}")
 
-    output_path = tmp_path / f"{session_uid}-titlecard.mkv"
+    output_path = tmp_path / f"{session_uid}-titlecard.mp4"
 
     chair = s['chair']
     if chair:
@@ -359,7 +359,7 @@ def make_session_video(session_uid, skip_missing=False, overwrite=False):
          "-filter_complex",
          filter_string,
          *ffmpeg_encoder_args,
-         "-map", "[v]", "-map", "[a]", processed_output_path / f"{session_uid}.mkv",
+         "-map", "[v]", "-map", "[a]", processed_output_path / f"{session_uid}.mp4",
         ]
     )
 
