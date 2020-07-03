@@ -97,6 +97,15 @@ def video_bitrate(filename):
     raise ValueError(f"no video streams found in {filename}")
 
 
+def video_fps(filename):
+    for stream in probe(filename)["streams"]:
+        if stream["codec_type"] == "video":
+            # this eval is gross, and a huge security hole, but ffmpeg reports it as a ratio
+            return (eval(stream["r_frame_rate"]))
+
+    raise ValueError(f"no video streams found in {filename}")
+
+
 def audio_channels(filename):
     for stream in probe(filename)["streams"]:
         if stream["codec_type"] == "audio":
