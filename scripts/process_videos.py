@@ -384,8 +384,7 @@ def upload_to_youtube(session_uid):
 
     """
 
-    youtube_upload_path = Path("../../youtube-upload-master")
-    youtube_upload_path = Path("../../youtube-upload-master")
+    youtube_upload_path = Path("../youtube-upload-master")
 
     for s in SESSIONS:
         session_uid = s["UID"]
