@@ -180,7 +180,7 @@ def make_titlecard(uid):
         [
             "ffmpeg", "-y",
             # titlecard png as an input source
-            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
             *ffmpeg_encoder_args,
             output_path
         ]
@@ -314,7 +314,7 @@ def make_session_titlecard(session_uid):
         [
             "ffmpeg", "-y",
             # titlecard png as an input source
-            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
             *ffmpeg_encoder_args,
             output_path
         ]
