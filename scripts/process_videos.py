@@ -260,7 +260,7 @@ def make_video(uid):
     return output_path
 
 
-def make_media(uid, overwrite=True):
+def make_media(uid, overwrite):
 
     mp = get_media_path(uid)
 
@@ -331,7 +331,7 @@ def is_live_session(session_uid):
     return session_uid[:10] == "acmc_live_"
 
 
-def make_session_video(session_uid, skip_missing=False, overwrite=False):
+def make_session_video(session_uid, skip_missing, overwrite):
 
     ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
 
