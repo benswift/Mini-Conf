@@ -208,8 +208,9 @@ def make_audio(uid):
             "ffmpeg", "-y",
             "-i", titlecard_path,
             "-i", mp,
+            "-af", "aresample=out_sample_fmt=s16:out_sample_rate=48000",
             *ffmpeg_encoder_args,
-            "-map", "0:v", "-c:v", "copy", "-map", "1:a", "-c:a", "copy", tmpfile
+            "-map", "0:v", "-c:v", "copy", "-map", "1:a", tmpfile
         ]
     )
     if proc.returncode != 0:
