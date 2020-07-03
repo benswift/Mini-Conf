@@ -408,7 +408,7 @@ def print_video_program_status():
         print()
 
     print_problems("file")
-    print_problems("bad_resolution")
+    # print_problems("bad_resolution")
     # print_problems("bad_num_channels")
     # print_problems("no_session_assigned")
     # print_problems("no_session_position_assigned")
