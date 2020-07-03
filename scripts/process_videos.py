@@ -37,7 +37,10 @@ SESSIONS = list(yaml.safe_load(open("sitedata/sessions.yml")))
 # transform a couple of columns to integer
 for p in PAPERS:
     p["UID"] = int(p["UID"])
-    p["session_position"] = int(p["session_position"])
+    try:
+        p["session_position"] = int(p["session_position"])
+    except:
+        print(f"warning: {p['UID']} has no session position")
 
 
 def info_from_uid(uid):
