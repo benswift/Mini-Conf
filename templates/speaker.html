@@ -13,6 +13,19 @@
   </div>
 </div>
 
+<!-- Session Info -->
+<div class="pp-card m-3" style="">
+    {% if speaker.youtube_link %}
+    <div class="text-center p-3">
+    <a href="{{speaker.youtube_link}}"><b>Stream Link:</b> YouTube</a>
+    </div>
+    {% else %}
+    <div class="text-center p-3">
+    <a href="https://www.youtube.com/channel/UCKK95K68yVuok-qWNS4Z6Jw"><b>Stream Link:</b> See ACMC Youtube Channel</a>
+    </div>
+    {% endif %}
+</div>
+
 <center><img src="{{speaker.im}}" width="80%" /></center>
 
 <div class="m-3 text-muted">
