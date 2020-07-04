@@ -18,8 +18,14 @@
 
 {% if session.youtube_link %}
 <div class="m-3 text-muted">
-  <span class="card-title h4">
-    <a href="{{session.youtube_link}}">YouTube Link</a>
+  <span class="card-title h5">
+    <a href="{{session.youtube_link}}">Stream Link: YouTube</a>
+  </span>
+</div>
+{% else %}
+<div class="m-3 text-muted">
+  <span class="card-title h5">
+    <a href="https://www.youtube.com/channel/UCKK95K68yVuok-qWNS4Z6Jw">Stream Link: See ACMC Youtube Channel</a>
   </span>
 </div>
 {% endif %}
@@ -27,7 +33,7 @@
 <div class="border-top my-3"></div>
 <div class="row p-4" id="faq">
   <div class="col-12 bd-content">
-    <h2 class="text-center">{{Works}}</h2>
+    <h2 class="text-center">Works</h2>
   </div>
 </div>
 
