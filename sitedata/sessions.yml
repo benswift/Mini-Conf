@@ -102,7 +102,7 @@
 
 - UID: C3_Wednesday
   title: Concert 3
-  chair: Ben Swift
+  chair: Sia Ahmad
   date: Wednesday 2020-07-08 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/rig4.jpg
@@ -131,7 +131,7 @@
 
 - UID: C4_Thursday
   title: Concert 4
-  chair: Sia Ahmad
+  chair: Ben Swift
   date: Thursday 2020-07-09 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/pd.jpg
