@@ -328,7 +328,7 @@ def make_session_titlecard(session_uid):
 
 def is_live_session(session_uid):
     # a dirty heuristic, but it'll do
-    return session_uid[:10] == "acmc_live_"
+    return "_live" in session_uid
 
 
 def make_session_video(session_uid, skip_missing, overwrite):
