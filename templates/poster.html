@@ -34,16 +34,8 @@
       >{{ "," if not loop.last }}
       {% endfor %}
     </h3>
-    <!-- <p class="card-text text-center">
-      <span class="">Keywords:</span>
-      {% for keyword in paper.content.keywords %}
-      <a
-        href="papers.html?filter=keywords&search={{keyword}}"
-        class="text-secondary text-decoration-none"
-        >{{keyword}}</a
-      >{{ "," if not loop.last }}
-      {% endfor %}
-    </p> -->
+
+    <!-- Links Info -->
     <div class="text-center p-3">
       {% if paper.content.bandcamp %}<a class="card-link" href="{{paper.content.bandcamp}}">bandcamp</a>{% endif %}
       {% if paper.content.vimeo %}<a class="card-link" href="{{paper.content.vimeo}}">vimeo</a>{% endif %}
@@ -54,11 +46,24 @@
   </div>
 </div>
 
-<!-- {% if paper.content.bandcamp %}{{paper.content.bandcamp}}{% endif %}
-{% if paper.content.vimeo %}{{paper.content.vimeo}}{% endif %}
-{% if paper.content.soundcloud %}{{paper.content.soundcloud}}{% endif %}
-{% if paper.content.youtube %}{{paper.content.youtube}}{% endif %}
-{% if paper.content.website %}{{paper.content.website}}{% endif %} -->
+<!-- Session Info -->
+<div class="pp-card m-3" style="">
+    <div class="text-center p-3">
+    {% if paper.content.session %} 
+    <a href="/session_{{session.UID}}.html"><b>Session:</b> {{session.title}} - {{session.date}}</a>
+    {% endif %}
+    </div>
+
+    {% if session.youtube_link %}
+    <div class="text-center p-3">
+    <a href="{{session.youtube_link}}"><b>Stream Link:</b> YouTube</a>
+    </div>
+    {% else %}
+    <div class="text-center p-3">
+    <a href="https://www.youtube.com/channel/UCKK95K68yVuok-qWNS4Z6Jw"><b>Stream Link:</b> See ACMC Youtube Channel</a>
+    </div>
+    {% endif %}
+</div>
 
 {% if paper.content.image %}<center><img src="static/paper-images/{{paper.id}}.jpg" width="80%" /></center>{% endif %}
 

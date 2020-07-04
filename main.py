@@ -159,6 +159,7 @@ def poster(poster):
     v = by_uid["papers"][uid]
     data = _data()
     data["paper"] = format_paper(v)
+    data["session"] = by_uid["sessions"][v.get("session_name", "")]
     return render_template("poster.html", **data)
 
 
