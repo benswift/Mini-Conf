@@ -448,7 +448,7 @@ def print_video_program_status():
         print(f"## Found {len(pr)} **{problem_type}** problems\n")
         for uid in pr.keys():
             info = info_from_uid(uid)
-            print(f"- {uid}: _{info['title']}_ by {info['authors']} ({pr[uid]})")
+            print(f"- {uid}: {info['authors']} in session {info['session_name']}, pos {info['session_position']} ({pr[uid]})")
         print()
 
     print_problems("file")
