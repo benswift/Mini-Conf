@@ -372,8 +372,8 @@ def make_all_acmc_session_videos(skip_missing, overwrite):
             make_session_video(session_uid, skip_missing, overwrite)
 
 
-def upload_to_youtube(session_uid):
-    """create & upload session video to YouTube
+def upload_to_youtube():
+    """create & upload session videos to YouTube
 
     this function doesn't create the videos, so make sure you do that with
     make_all_acmc_session_videos() first
