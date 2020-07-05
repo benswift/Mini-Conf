@@ -121,6 +121,14 @@
   im: static/images/sessions/stair4.jpg
   youtube_link:
 
+- UID: P4_Ambisonic
+  title: Ambisonic Listening Room
+  chair:
+  date: Thursday 2020-07-09 9am AEST
+  type: music
+  im: static/images/sessions/stair4.jpg
+  youtube_link:
+
 - UID: spatial-perf
   title: Spatialised Audio and Performance
   chair: Alec Hunter
