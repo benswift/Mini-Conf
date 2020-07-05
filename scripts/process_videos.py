@@ -117,6 +117,14 @@ def audio_channels(filename):
     raise ValueError(f"no audio streams found in {filename}")
 
 
+def audio_bits_per_sample(filename):
+    for stream in probe(filename)["streams"]:
+        if stream["codec_type"] == "audio":
+            return int(stream["bits_per_sample"])
+
+    raise ValueError(f"no audio streams found in {filename}")
+
+
 def get_media_path(uid):
 
     files = list(media_path.glob(f"{uid}.*"))
