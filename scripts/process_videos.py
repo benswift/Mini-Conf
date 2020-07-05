@@ -159,14 +159,14 @@ def ffmpeg_encode_yt_recommended(uid):
 
     print(f"encoding {uid} according to YouTube recommended settings (pass 1)...")
     proc = subprocess.run(
-        ["ffmpeg", "-v", "warning", "-i", input_file, "-vf", "fps=30/1, scale=1920:1080, setsar=sar=1/1", "-b:v", "1800k", "-minrate", "900k", "-maxrate", "2610k", "-tile-columns", "2", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "31", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "1", "-speed", "4", "-y", output_file]
+        ["ffmpeg", "-v", "warning", "-i", input_file, "-vf", "fps=30/1, scale=1920:1080, setsar=sar=1/1", "-b:v", "3000k", "-minrate", "1500k", "-maxrate", "5000k", "-tile-columns", "2", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "25", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "1", "-speed", "4", "-y", output_file]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
 
     print(f"encoding {uid} according to YouTube recommended settings (pass 2)...")
     proc = subprocess.run(
-        ["ffmpeg", "-v", "warning", "-i", input_file, "-vf", "fps=30/1, scale=1920:1080, setsar=sar=1/1", "-b:v", "1800k", "-minrate", "900k", "-maxrate", "2610k", "-tile-columns", "3", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "31", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "2", "-speed", "4", "-y", output_file]
+        ["ffmpeg", "-v", "warning", "-i", input_file, "-vf", "fps=30/1, scale=1920:1080, setsar=sar=1/1", "-b:v", "3000k", "-minrate", "1500k", "-maxrate", "5000k", "-tile-columns", "3", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "25", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "2", "-speed", "4", "-y", output_file]
     )
     if proc.returncode != 0:
         raise ChildProcessError(proc.returncode)
