@@ -380,42 +380,6 @@ def make_all_acmc_session_videos(skip_missing, overwrite):
             make_session_video(session_uid, skip_missing, overwrite)
 
 
-def upload_to_youtube():
-    """create & upload session videos to YouTube
-
-    this function doesn't create the videos, so make sure you do that with
-    make_all_acmc_session_videos() first
-
-    NOTE: this relies on having set up
-    https://github.com/tokland/youtube-upload/ according to the instructions in
-    that README - which is a bit of a faff
-
-    """
-
-    youtube_upload_path = Path("../youtube-upload-master")
-
-    for s in SESSIONS:
-        session_uid = s["UID"]
-        if not is_live_session(session_uid):
-            proc = subprocess.run(
-                [
-                    "poetry", "run", "bin/youtube-upload",
-                    "--privacy", "unlisted",
-                    "--category", "Music",
-                    "--tags", "acmc2020, computer music",
-                    "--title", f"ACMC2020 {s['title']}",
-                    "--description", f"{s['date']} video stream for the 2020 Australasian Computer Music Conference (ACMC2020).\n\nFor bios & artist statements from all featured artists, visit https://acmc2020.com/session_{session_uid}.html",
-                    "--thumbnail", Path(s["im"]).absolute(),
-                    processed_output_path / f"{session_uid}.mp4"
-                ],
-                cwd = youtube_upload_path
-            )
-            print(proc.stdout)
-            if proc.returncode != 0:
-                raise ChildProcessError(proc.returncode)
-
-
-
 def print_video_program_status():
 
     # do we have a media file
