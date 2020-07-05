@@ -53,7 +53,7 @@
   date: Tuesday 2020-07-07 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/rehearsal-lynden.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/ITJ2UvQ_P8A
 
 - UID: acmc_live_1
   title: ACMC Live 1
@@ -66,7 +66,7 @@
 - UID: C2_Tuesday
   title: Concert 2
   chair: Kit Devine
-  date: Tuesday 2020-07-07 8pm-9:30pm AEST
+  date: Tuesday 2020-07-07 8:20pm-9:50pm AEST
   type: music
   im: static/images/sessions/rig3.jpg
   youtube_link:
@@ -98,7 +98,7 @@
   date: Wednesday 2020-07-08 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/chloe-ben-performing.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/0HK_UQzdNdw
 
 - UID: C3_Wednesday
   title: Concert 3
