@@ -240,11 +240,12 @@ def make_audio(uid):
     proc = subprocess.run(
         [
             "ffmpeg", "-y",
+            "-stream_loop", "-1",
             "-i", titlecard_path,
             "-i", mp,
             "-af", "aresample=out_sample_fmt=s16:out_sample_rate=48000",
             *ffmpeg_encoder_args,
-            "-map", "0:v", "-map", "1:a", tmpfile
+            "-map", "0:v", "-map", "1:a", "-shortest", tmpfile
         ]
     )
     if proc.returncode != 0:
