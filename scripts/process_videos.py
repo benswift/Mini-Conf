@@ -482,6 +482,5 @@ def check_string_lengths(uid):
 
 if __name__ == '__main__':
 
-    print_video_program_status()
-    # make_session_video("C1_Monday", True)
+    # make_session_video("P1_Monday", True, True)
     pass
