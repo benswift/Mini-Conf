@@ -19,7 +19,7 @@
   date: Monday 2020-07-06 8am-9am AEST
   type: music
   im: static/images/sessions/stair1.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/cYRb5Qn6Rio
 
 - UID: daws-live-algo
   title: DAWs, Liveness, and Algorithms
@@ -27,7 +27,7 @@
   date: Monday 2020-07-06 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/studio-composing.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/Df2m_d7aEgY
 
 - UID: C1_Monday
   title: Concert 1
@@ -35,7 +35,7 @@
   date: Monday 2020-07-06 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/screen.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/AKUVC31ZCgk
 
 # Tuesday
 
@@ -135,7 +135,7 @@
   date: Thursday 2020-07-09 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/hololens.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/Z9eg3Tb3dV0
 
 - UID: C4_Thursday
   title: Concert 4
@@ -147,10 +147,12 @@
 
 # Friday
 
+# Could have extra concert on Friday
+
 - UID: synth-nota-inter
   title: Synthesis, Interaction, and Notation
   chair: Ben Swift
   date: Friday 2020-07-10 2pm-3:30pm AEST
   type: papers
   im: static/images/sessions/lens-people.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/wYl8gwqq_Co
