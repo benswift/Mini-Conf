@@ -147,6 +147,29 @@ def has_media_file(uid):
         return False
 
 
+def ffmpeg_encode_yt_recommended(uid):
+    """re-encode file at HD, 30fps
+
+    with recommended settings according to
+    https://developers.google.com/media/vp9/settings/vod
+
+    """
+    input_file = get_media_path(uid)
+    output_file = media_path / "yt-recommended" / f"{uid}.webm"
+
+    proc = subprocess.run(
+        ["ffmpeg", "-i", input_file, "-vf", "scale=1920x1080", "-b:v", "1800k", "-minrate", "900k", "-maxrate", "2610k", "-tile-columns", "2", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "31", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "1", "-speed", "4", "-y", output_file]
+    )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+    proc = subprocess.run(
+        ["ffmpeg", "-i", input_file, "-vf", "scale=1920x1080", "-b:v", "1800k", "-minrate", "900k", "-maxrate", "2610k", "-tile-columns", "3", "-g", "240", "-threads", "8", "-quality", "good", "-crf", "31", "-c:v", "libvpx-vp9", "-b:a", "256k", "-c:a", "libopus", "-pass", "2", "-speed", "4", "-y", output_file]
+    )
+    if proc.returncode != 0:
+        raise ChildProcessError(proc.returncode)
+
+
 def render_revealjs_index_html(title, subtitle, artist):
 
     template = Template(open("scripts/reveal.js/index.j2").read())
