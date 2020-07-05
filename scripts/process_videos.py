@@ -214,7 +214,7 @@ def make_titlecard(uid):
         [
             "ffmpeg", "-y",
             # titlecard png as an input source
-            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:a", "aac", "-c:v", "copy", "-shortest",
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:a", "aac", "-c:v", "h264_nvenc", "-shortest",
             *ffmpeg_encoder_args,
             output_path
         ]
@@ -244,7 +244,7 @@ def make_audio(uid):
             "-i", mp,
             "-af", "aresample=out_sample_fmt=s16:out_sample_rate=48000",
             *ffmpeg_encoder_args,
-            "-map", "0:v", "-c:v", "copy", "-map", "1:a", tmpfile
+            "-map", "0:v", "-c:v", "h264_nvenc", "-map", "1:a", tmpfile
         ]
     )
     if proc.returncode != 0:
@@ -349,7 +349,7 @@ def make_session_titlecard(session_uid):
         [
             "ffmpeg", "-y",
             # titlecard png as an input source
-            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "copy", "-shortest",
+            "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000", "-loop", "1", "-i", titlecard_path, "-t", "10", "-c:v", "h264_nvenc", "-shortest",
             *ffmpeg_encoder_args,
             output_path
         ]
