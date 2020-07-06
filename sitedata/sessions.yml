@@ -116,7 +116,7 @@
 - UID: P4_Thursday
   title: Listening Room 4
   chair:
-  date: Thursday 2020-07-09 8am-9am AEST
+  date: Thursday 2020-07-09 8am-9:30am AEST
   type: music
   im: static/images/sessions/stair4.jpg
   youtube_link:
@@ -124,7 +124,7 @@
 - UID: P4_Ambisonic
   title: Ambisonic Listening Room
   chair:
-  date: Thursday 2020-07-09 9am AEST
+  date: Thursday 2020-07-09 9:30am-10:00am AEST
   type: music
   im: static/images/sessions/stair4.jpg
   youtube_link:
@@ -156,3 +156,13 @@
   type: papers
   im: static/images/sessions/lens-people.jpg
   youtube_link: https://youtu.be/wYl8gwqq_Co
+
+# No-Time
+
+- UID: abstract-only
+  title: Abstract Only Papers (no presentations)
+  chair: Charles Martin
+  date: All Week
+  type: papers
+  im: static/images/sessions/code_on_screen.jpg
+  youtube_link:
