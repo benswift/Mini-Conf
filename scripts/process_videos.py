@@ -400,6 +400,19 @@ def make_session_video(session_uid, skip_missing, overwrite):
     )
 
 
+def print_session_video_description(session_uid):
+
+    for s in SESSIONS:
+        if s["UID"] == session_uid:
+            s_info = s
+
+    print(f"""{s_info['date']} video stream for the 2020 Australasian Computer Music Conference (ACMC2020). For bios & artist statements from all featured artists, visit https://acmc2020.com/session_{s_info['UID']}.html
+""")
+    for (uid, pos) in get_session_schedule(s_info["UID"]):
+        p_info = info_from_uid(uid)
+        print(f"{pos}. \"{p_info['title']}\" by {p_info['authors']}")
+
+
 def make_all_acmc_session_videos(skip_missing, overwrite):
     for s in SESSIONS:
         session_uid = s["UID"]
