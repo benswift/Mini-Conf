@@ -370,11 +370,11 @@ def make_session_video(session_uid, skip_missing, overwrite):
 
     ffmpeg_input_args = ["-i", make_session_titlecard(session_uid)]
 
-    uid_list = get_session_schedule(session_uid)
-
     # filter out the missing ones, if you want to
     if skip_missing:
-        uid_list = [uid for uid, pos in uid_list if has_media_file(uid)]
+        uid_list = [uid for uid, pos in get_session_schedule(session_uid) if has_media_file(uid)]
+    else:
+        uid_list = [uid for uid, pos in get_session_schedule(session_uid)]
 
     print(f"making {session_uid} session video with UIDs: {uid_list}")
 
