@@ -158,6 +158,7 @@
   youtube_link: https://youtu.be/wYl8gwqq_Co
 
 # No-Time
+# This session is for works with no supplied media, just so that the abstract and image gets to be in the program.
 
 - UID: abstract-only
   title: Abstract Only Papers (no presentations)
