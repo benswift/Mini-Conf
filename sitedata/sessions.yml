@@ -45,7 +45,7 @@
   date: Tuesday 2020-07-07 8am-9am AEST
   type: music
   im: static/images/sessions/stair2.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/9gDckpBE2og
 
 - UID: musico-comp
   title: Computer Musicology and Composition
@@ -66,10 +66,10 @@
 - UID: C2_Tuesday
   title: Concert 2
   chair: Kit Devine
-  date: Tuesday 2020-07-07 8:20pm-9:50pm AEST
+  date: Tuesday 2020-07-07 8:15pm-9:45pm AEST
   type: music
   im: static/images/sessions/rig3.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/8WTeflA-Qs4
 
 
 
@@ -106,7 +106,7 @@
   date: Wednesday 2020-07-08 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/rig4.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/yhmkX5qVV10
 
 
 
@@ -119,7 +119,7 @@
   date: Thursday 2020-07-09 8am-9:30am AEST
   type: music
   im: static/images/sessions/stair4.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/3dyXnr6uG9w
 
 - UID: P4_Ambisonic
   title: Ambisonic Listening Room
@@ -143,7 +143,7 @@
   date: Thursday 2020-07-09 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/pd.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/8EYsL5JmhQg
 
 # Friday
 
