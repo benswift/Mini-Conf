@@ -7,7 +7,7 @@ import re
 from jinja2 import Template
 
 
-media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif", ".mp3", ".m4a"]
+media_extensions = [".mkv", ".mov", ".mp4", ".avi", ".m4v", ".wav", ".aif", ".mp3", ".m4a", ".webm"]
 # tweak as necessary for your platform, or use an empty list for defaults
 ffmpeg_encoder_args = ["-c:v", "h264_nvenc", "-preset", "slow", "-b:v", "8M", "-maxrate", "10M", "-minrate", "5M", "-bufsize", "2M", "-c:a", "aac", "-b:a", "384k"]
 
