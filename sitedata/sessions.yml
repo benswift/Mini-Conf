@@ -82,7 +82,7 @@
   date: Wednesday 2020-07-08 8am-9am AEST
   type: music
   im: static/images/sessions/stair3.jpg
-  youtube_link:
+  youtube_link: https://youtu.be/KpqYpox7zMU
 
 - UID: acmc_live_2
   title: ACMC Live 2
@@ -124,7 +124,7 @@
   date: Thursday 2020-07-09 9:30am-10:00am AEST
   type: music
   im: static/images/sessions/stair4.jpg
-  youtube_link: 
+  youtube_link: https://youtu.be/OeI2xwBy4kQ
 
 - UID: spatial-perf
   title: Spatialised Audio and Performance
