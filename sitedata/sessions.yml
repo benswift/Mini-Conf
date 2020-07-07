@@ -108,9 +108,6 @@
   im: static/images/sessions/rig4.jpg
   youtube_link: https://youtu.be/yhmkX5qVV10
 
-
-
-
 # Thursday
 
 - UID: P4_Thursday
@@ -127,7 +124,7 @@
   date: Thursday 2020-07-09 9:30am-10:00am AEST
   type: music
   im: static/images/sessions/stair4.jpg
-  youtube_link:
+  youtube_link: 
 
 - UID: spatial-perf
   title: Spatialised Audio and Performance
@@ -143,7 +140,7 @@
   date: Thursday 2020-07-09 8pm-9:30pm AEST
   type: music
   im: static/images/sessions/pd.jpg
-  youtube_link: https://youtu.be/8EYsL5JmhQg
+  youtube_link: https://youtu.be/-Y8QfZ70Nk0
 
 # Friday
 
