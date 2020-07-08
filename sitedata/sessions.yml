@@ -120,11 +120,11 @@
 
 - UID: P4_Ambisonic
   title: Ambisonic Listening Room
-  chair:
+  chair: Charles Martin
   date: Thursday 2020-07-09 9:30am-10:00am AEST
   type: music
   im: static/images/sessions/stair4.jpg
-  youtube_link: https://youtu.be/OeI2xwBy4kQ
+  youtube_link: https://youtu.be/7CBVftnQjII
 
 - UID: spatial-perf
   title: Spatialised Audio and Performance
